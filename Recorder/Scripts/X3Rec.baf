@@ -1,0 +1,537 @@
+//On Rested Conversations (If placed too low won't fire!)
+
+IF 
+PartyRested()
+InParty("X3Rec") 
+RealGlobalTimerExpired("X3RecTalkTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(2)
+Global("X3RecTalk","GLOBAL",1)
+Global("X3RecTalk","GLOBAL",5)
+THEN RESPONSE #100
+IncrementGlobal("X3RecTalk","GLOBAL",1) 
+StartDialogueNoSet(Player1) 
+END
+
+//Experience 
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPLT(Player1,1251)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",1000) 
+
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,1250)
+XPLT(Player1,2501)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",1250)
+AddSpecialAbility("SPWI102")// Mage Armor 
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,2500)
+XPLT(Player1,5001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",2500)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,5000)
+XPLT(Player1,10001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",5000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,10000)
+XPLT(Player1,20001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",10000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,20000)
+XPLT(Player1,40001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",20000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,40000)
+XPLT(Player1,70001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",40000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball 
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,70000)
+XPLT(Player1,110001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",70000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball  
+AddSpecialAbility("SPWI211")//Melf's Acid Arrow
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,110000)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",110000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball  
+AddSpecialAbility("SPWI211")//Melf's Acid Arrow
+AddSpecialAbility("SPWI305")//Haste
+END
+
+IF 
+Global("X3PauseTimer","GLOBAL",0)
+InParty(Myself)
+THEN RESPONSE #100 
+SetGlobal("X3PauseTimer","GLOBAL",1)
+RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+END 	
+// First Talk 
+IF 
+   See([PC])
+   Global("X3RecPalQuest","GLOBAL",0)
+   AreaCheck("AR3900")
+  THEN
+    RESPONSE #100
+	Dialogue([PC])		
+END 	
+// Quest 
+IF 
+AreaCheck("AR3901") // Is in Ulcaster Ruins. 
+Global("X3RecUlcaster","GLOBAL",0) // Has never said this before. 
+Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished. 
+InParty("X3Rec")
+THEN RESPONSE #100 
+SetGlobal("X3RecUlcaster","GLOBAL",1) 
+Wait(1)
+StartDialogueNoSet(Player1) 
+END 
+
+IF 
+!AreaCheck("AR3901") // Is not in Ulcaster Ruins
+!AreaCheck("AR3900") // Is not in Ulcaster 
+Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished .
+Global("X3RecQuestWarning","GLOBAL",0)
+InParty("X3Rec")
+THEN RESPONSE #100 
+SetGlobal("X3RecQuestWarning","GLOBAL",1)
+SetGlobalTimer("X3RecQuestTimer","GLOBAL",ONE_DAY)
+END 
+
+IF 
+GlobalTimerExpired("X3RecQuestTimer","GLOBAL")
+!AreaCheck("AR3901") // Is not in Ulcaster Ruins
+!AreaCheck("AR3900") // Is not in Ulcaster 
+InParty("X3Rec")
+Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished .
+!ActuallyInCombat()
+OR(2)
+Global("X3RecQuestWarning","GLOBAL",1)
+Global("X3RecQuestWarning","GLOBAL",3)
+THEN RESPONSE #100 
+IncrementGlobal("X3RecQuestWarning","GLOBAL",1)
+END 
+
+IF 
+GlobalTimerExpired("X3RecQuestTimer","GLOBAL")
+!AreaCheck("AR3901") // Is not in Ulcaster Ruins
+!AreaCheck("AR3900") // Is not in Ulcaster 
+InParty("X3Rec") 
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished .
+OR(2)
+Global("X3RecQuestWarning","GLOBAL",2)
+Global("X3RecQuestWarning","GLOBAL",4)
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1)
+END 
+
+IF 
+!ActuallyInCombat()
+!See([ENEMY])
+InParty("X3Rec")
+OR(2)
+Global("X3RecPalQuest","GLOBAL",2)
+Global("X3RecPalQuest","GLOBAL",29)
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1) 
+END 
+
+// Second Quest Trigger 
+
+IF 
+Global("X3RecPalQuest","GLOBAL",3)
+InParty("X3Rec")
+PartyHasItem("X3RSWORD")
+Global("X3RecSecQuest","GLOBAL",0)
+THEN RESPONSE #100 
+SetGlobal("X3RecSecQuest","GLOBAL",1)
+SetGlobalTimer("X3RecTalkTimer","GLOBAL",ONE_DAY)
+END 
+
+IF 
+GlobalTimerExpired("X3RecTalkTimer","GLOBAL")
+Global("X3RecSecQuest","GLOBAL",2)
+InParty("X3Rec") 
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN RESPONSE #100
+SetGlobal("X3RecSecQuest","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END 
+
+IF 
+AreaCheck("AR0200") // Is in Baldur's Gate North District
+Global("X3ReBaldurQuest","GLOBAL",0)
+OR(2)
+Global("X3RecSecQuest","GLOBAL",3)
+Global("X3RecSecQuest","GLOBAL",4)
+THEN RESPONSE #100 
+SetGlobal("X3ReBaldurQuest","GLOBAL",1)
+Wait(1) 
+StartDialogueNoSet(Player1)
+END 
+
+IF 
+Global("X3ReMurderEnd","GLOBAL",0)
+OR(2)  // The only way for these two to die is for the PC to kill them in some fashion. Recorder will leave the party when this happens.
+Dead("X3RCin")
+Dead("X3RArn")
+THEN RESPONSE #100 
+LeaveParty() 
+SetGlobal("X3ReMurderEnd","GLOBAL",1)
+DisplayString(Player1,~With the murder of one of Sir Mark's family, Recorder has abandoned the party. It is unlikely you will ever see her again.~)
+EscapeArea() //She stands no chance and will just leave the area.
+END 
+
+IF 
+Global("X3ReBaldurQuest","GLOBAL",3)
+!AreaCheck("AR0012") 
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1)
+END 
+
+// "Gustav". Similiar to Aura and Koko. 
+
+IF
+	HasItem("X3RFer",Myself)
+    CombatCounter(0)
+	Global("X3RecGustavTime","LOCALS",0)
+	GlobalGT("X3RecTalk","GLOBAL",4)
+THEN
+  RESPONSE #100
+	SetGlobal("X3RecGustavTime","LOCALS",1)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+END
+	
+IF
+	ActionListEmpty()
+	HasItem("X3RFer",Myself)
+    CombatCounter(0)
+	RealGlobalTimerExpired("X3RecGustavHour","LOCALS")
+	GlobalGT("X3RecTalk","GLOBAL",4)
+THEN
+  RESPONSE #10
+	DisplayStringHead(Myself,~Your fur's all over the place, ferret. I'm giving you a brush soon.~ [X3RF2])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~You're so messy, Gustav. I'm getting you into a bath later.~ [X3RF2])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~Don't jump out just yet, Gustav.~ [X3RF3])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~Do you hear that, Gustav? There are so many wondrous sounds in this world.~ [X3RF2])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~I wonder if you like music, Gustav. I can't tell.~ [X3RF3])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~Ow, my ear. Ferrets!~ [X3RF3])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #10
+	DisplayStringHead(Myself,~Sneaky ferret. Food is for later, not now.~ [X3RF3])
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+  RESPONSE #30 	
+	NoAction()
+END  
+// Muffy and Gustav 
+IF
+	InParty(Myself)
+	HasItem("X3RFer",Myself)
+	PartyHasItem("c0muffy")
+    CombatCounter(0)
+	PartyRested()
+	GlobalGT("X3RecTalk","GLOBAL",4)
+THEN
+  RESPONSE #10
+	DisplayStringHead(Myself,~Gustav! Leave the nice Muffy alone!~ [X3RF1])
+  RESPONSE #10
+	DisplayStringHead(Myself,~Play with your friends later, it's time for our march.~ [X3RF3])
+  RESPONSE #10
+	DisplayStringHead(Myself,~Come on, Gustav. We can all play together later. ~ [X3RF2])
+  RESPONSE #70
+	NoAction()
+END
+
+// Gustav 
+IF
+	InParty(Myself)
+	HasItem("X3RFer",Myself)
+    CombatCounter(0)
+	PartyRested()
+	!PartyHasItem("c0muffy")
+	GlobalGT("X3RecTalk","GLOBAL",4)
+THEN
+  RESPONSE #10
+	DisplayStringHead(Myself,~I used to be a morning person, then you kept me up all the time, silly ferret.~ [X3RF1])
+  RESPONSE #10
+	DisplayStringHead(Myself,~Here, one last bite before we go, Gustav.~ [X3RF3])
+  RESPONSE #10
+	DisplayStringHead(Myself,~Come on Gustav, hop into my pack now.~ [X3RF2])
+  RESPONSE #70
+	NoAction()
+END
+
+//Talks: Initialize 
+IF 
+InParty("X3Rec") 
+Global("X3RecTalk","GLOBAL",0)
+Global("X3RecPalQuest","GLOBAL",3)// Recorder's Quest MUST be complete to start any talks. 
+THEN RESPONSE #100 
+SetGlobal("X3RecTalk","GLOBAL",1) 
+SetGlobalTimer("X3RecTalkTimer","GLOBAL",ONE_HOUR)
+END 
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("X3RecTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          
+!See([ENEMY])
+!AreaType(DUNGEON)			  
+OR(7)             
+Global("X3RecTalk","GLOBAL",3)
+Global("X3RecTalk","GLOBAL",7)
+Global("X3RecTalk","GLOBAL",9)
+Global("X3RecTalk","GLOBAL",11)
+Global("X3RecTalk","GLOBAL",13)
+Global("X3RecTalk","GLOBAL",15)
+Global("X3RecTalk","GLOBAL",17)
+THEN
+RESPONSE #100
+IncrementGlobal("X3RecTalk","GLOBAL",1)
+END
+
+IF
+RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+OR(6)                                    // YOU WILL NEED TO ADD +1 TO THIS OR NUMBER FOR EVERY ADDITONAL TALK YOU ADD  
+Global("X3RecTalk","GLOBAL",4)
+Global("X3RecTalk","GLOBAL",8)
+Global("X3RecTalk","GLOBAL",10)
+Global("X3RecTalk","GLOBAL",12)
+Global("X3RecTalk","GLOBAL",14) 
+Global("X3RecTalk","GLOBAL",18)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+PlaySong(0)
+PlaySound("X3RSong") 
+StartDialogueNoSet(Player1)
+END
+
+
+// Approval Shifts and -90 Conversation. 
+IF
+GlobalGT("X3RecorderApproval","GLOBAL",74)
+Global("X3Luck","GLOBAL",0)
+THEN RESPONSE #100 
+SetGlobal("X3Luck","GLOBAL",1)
+ChangeStat(Myself,LUCK,1,ADD)
+END
+
+IF
+GlobalLT("X3RecorderApproval","GLOBAL",75)
+Global("X3Luck","GLOBAL",1)
+THEN RESPONSE #100 
+SetGlobal("X3Luck","GLOBAL",0)
+ChangeStat(Myself,LUCK,-1,ADD)
+END
+
+IF
+GlobalGT("X3RecorderApproval","GLOBAL",90)
+THEN RESPONSE #100 
+SetGlobal("X3RecorderApproval","GLOBAL",90)
+END
+
+IF 
+GlobalLT("X3RecorderApproval","GLOBAL",-89)
+Global("X3Break","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("X3Break","GLOBAL",2) 
+SetGlobal("X3RecorderApproval","GLOBAL",-90)
+END
+IF
+GlobalLT("X3RecorderApproval","GLOBAL",-89)
+Global("X3Break","GLOBAL",3)
+THEN RESPONSE #100 
+SetGlobal("X3Break","GLOBAL",4)
+END 
+
+IF 
+InParty("X3Rec") 
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+OR(2)
+Global("X3Break","GLOBAL",2)
+Global("X3Break","GLOBAL",4)
+THEN RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+IF
+ReputationGT(Player1,12)
+Global("X3RecGoodBoost","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("X3RecGoodBoost","GLOBAL",1)
+IncrementGlobal("X3RecorderApproval","GLOBAL",3)
+END
+IF
+ReputationGT(Player1,16)
+Global("X3RecGoodBoost","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("X3RecGoodBoost","GLOBAL",2)
+IncrementGlobal("X3RecorderApproval","GLOBAL",6)
+END
+IF
+ReputationGT(Player1,20)
+Global("X3RecGoodBoost","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("X3RecGoodBoost","GLOBAL",3)
+IncrementGlobal("X3RecorderApproval","GLOBAL",9)
+END
+IF
+ReputationLT(Player1,9)
+Global("X3RecBadLoss","GLOBAL",0)
+THEN RESPONSE #100
+SetGlobal("X3RecBadLoss","GLOBAL",1)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
+END
+IF
+ReputationLT(Player1,6)
+Global("X3RecBadLoss","GLOBAL",1)
+THEN RESPONSE #100
+SetGlobal("X3RecBadLoss","GLOBAL",2)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
+END
+IF
+ReputationLT(Player1,4)
+Global("X3RecBadLoss","GLOBAL",2)
+THEN RESPONSE #100
+SetGlobal("X3RecBadLoss","GLOBAL",3)
+SetGlobal("X3RecorderApproval","GLOBAL",-90)
+END
+
+// SEX CHANGE
+
+IF
+    InParty(Myself)
+	Gender(Myself,MALE)
+	HasItemEquiped("belt05",Myself)
+    Global("X3RecSexChange","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(1)
+	SetGlobal("X3RecSexChange","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END

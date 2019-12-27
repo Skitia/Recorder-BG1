@@ -1,0 +1,63 @@
+IF
+	Global("X32RecTalk","GLOBAL",13)
+	Global("bd_plot","global",495)
+	InParty("X3Rec")  
+THEN
+	RESPONSE #100
+		SetGlobal("X32RecTalk","GLOBAL",14)
+END
+
+IF
+	Global("X32RecTalk","GLOBAL",14)
+	InParty("X3Rec")  // X3Rec
+	IsValidForPartyDialogue("X3Rec")  // X3Rec
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		ActionOverride("X3Rec",StartDialogNoSet(Player1))
+END
+
+IF
+	Global("X32RecTalk","GLOBAL",15)
+	Global("bd_plot","global",590)
+	InParty("X3Rec")  
+THEN
+	RESPONSE #100
+		SetGlobal("X32RecTalk","GLOBAL",16)
+END
+
+IF
+	Global("X32RecTalk","GLOBAL",16)
+	InParty("X3Rec")  // X3Rec
+	IsValidForPartyDialogue("X3Rec")  // X3Rec
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		ActionOverride("X3Rec",StartDialogNoSet(Player1))
+END
+
+
+IF
+	Global("bd_MDD892a_ot","bd4300",0)
+	Global("bd_poison_dsc_supplies","global",0)
+	Dead("bdbelben")  // Belben
+	CombatCounter(0)
+	IsValidForPartyDialog("X3Rec")  // X3Rec
+THEN
+	RESPONSE #100
+		SetGlobal("bd_MDD892a_ot","bd4300",1)
+		SetGlobalTimer("bd_MDD892a_ot_timer","bd4300",ONE_MINUTE)
+		DisplayStringHead("X3Rec",~I have observed a troubling amount of carnage on this path of yours, <CHARNAME>.~) 
+END
+
+IF
+  Global("bd_plot","global",370)
+  !GlobalTimerNotExpired("bd_mdd905a_ot_timer","bd4300")
+  Global("bd_ot_X3Rec","bd4300",0)
+  IfValidForPartyDialog("X3Rec")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("bd_mdd905a_ot_timer","bd4300",THREE_MINUTES)
+    SetGlobal("bd_ot_X3Rec","bd4300",1)
+    DisplayStringHead("X3Rec",~Only a fool would stay past his time. RUN!~)
+END

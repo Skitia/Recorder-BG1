@@ -1,0 +1,11 @@
+// Talks 8 and 9
+IF
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!AreaType(DUNGEON)
+Global("X3RecTalk","GLOBAL",16)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

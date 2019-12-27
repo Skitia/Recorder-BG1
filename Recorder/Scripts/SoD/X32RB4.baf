@@ -1,0 +1,33 @@
+
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+		ActionOverride("X32RB2",Enemy())
+		ActionOverride("X32RB1",Enemy())
+		ActionOverride("X32RB3",Enemy())
+		ActionOverride("X32RB5",Enemy())
+		ActionOverride("X32RB6",Enemy())
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("potn10",Myself)
+ THEN
+ RESPONSE #100
+	DisplayStringHead(Myself,@17) //quaffs a potion
+	UseItem("potn10",Myself)
+	Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+END
+

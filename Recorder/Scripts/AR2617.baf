@@ -1,0 +1,9 @@
+IF 
+Global("X3RecCandleQuest","GLOBAL",1)
+Global("X3RecCandleSpawnPal","GLOBAL",0)
+THEN 
+RESPONSE #100 
+SetGlobal("X3RecCandleSpawnPal","GLOBAL",1)
+CreateCreature("X3RPal",[376.192],SW)
+Continue()
+END 

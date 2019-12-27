@@ -1,0 +1,68 @@
+/* We need to check for three instances, fortunately, only for this area.
+The first is if Rec never spawned, was in party. The second is if Rec never spawned, was not in party. The last is if Rec was spawned, was not killed, and is not in party.*/
+IF
+  Global("X3RecMarch","BD0101",0)
+  Global("X3RecSpawn","GLOBAL",0)
+  BeenInParty("X3Rec")
+THEN
+  RESPONSE #100
+    SetGlobal("X3RecMarch","BD0101",1)
+	SetGlobal("X3RecSpawn","GLOBAL",1) 
+	MoveGlobal("BD0101","X3Rec",[612.528])
+	ActionOverride("X3Rec",Face(SE))
+    ReallyForceSpellDeadRES("BDREJUVE","X3Rec") // In case Rec died and was never raised. 	
+    ChangeEnemyAlly("X3Rec",NEUTRAL)
+    ChangeSpecifics("X3Rec",ALLIES)
+    ActionOverride("X3Rec",SetGlobal("bd_joined","LOCALS",0))
+    ActionOverride("X3Rec",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
+    ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+    ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
+    ActionOverride("X3Rec",ChangeAIScript("BDBARD01",GENERAL))
+	ActionOverride("X3Rec",Polymorph("MAGE_FEMALE_GNOME"))
+    Continue()
+END
+
+
+
+	// Never had Rec in the party. Creating Rec.
+IF
+  Global("X3RecMarch","BD0101",0)
+  Global("X3RecSpawn","GLOBAL",0)
+  !BeenInParty("X3Rec")
+THEN
+  RESPONSE #100
+    SetGlobal("X3RecMarch","BD0101",1)
+	SetGlobal("X3RecSpawn","GLOBAL",1) 
+	CreateCreature("X32Rec",[612.528],SE)
+	ActionOverride("X3Rec",MakeGlobal())
+    ChangeEnemyAlly("X3Rec",NEUTRAL)
+    ChangeSpecifics("X3Rec",ALLIES)
+    ActionOverride("X3Rec",SetGlobal("bd_joined","LOCALS",0))
+    ActionOverride("X3Rec",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
+    ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+    ActionOverride("X3Rec",ChangeAIScript("BDTHIE01",GENERAL))
+	ActionOverride("X3Rec",Polymorph("MAGE_FEMALE_GNOME"))
+    Continue()
+END	
+
+IF
+	Global("bd_mdd010z_ot","bd0101",1)
+	!GlobalTimerNotExpired("bd_mdd010z_ot_timer","bd0101")
+	InMyArea("X3Rec")
+	!InParty("X3Rec")
+THEN
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Rec",~This is your last snack before the march, Gustav. I don't want you eating too much again.~) 
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Rec",~I wish you were marching beside me, Sir Harmon.~) 
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Rec",~I can barely concentrate on my preparations with all of this noise.~) 
+	RESPONSE #90 
+		Continue()
+END

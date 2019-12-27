@@ -1,0 +1,24 @@
+
+
+IF
+  Global("X3Rec_kicked_bd4700","global",1) 
+  !Dead("X3Rec")
+  !InParty("X3Rec")
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    MoveGlobal("bd4300","X3Rec",[1042.432]) // This will never happen.
+    ActionOverride("X3Rec",Face(SW))
+END
+
+
+IF
+  Global("X3Rec_kicked_bd4700","global",0)
+  !Dead("X3Rec")
+  !InParty("X3Rec")
+THEN
+  RESPONSE #100
+  CutSceneId(Player1)
+  MoveGlobal("bd4300","X3Rec",[1956.1459]) //coordinates wherever Recorder should be waiting if he wasn't with the PC to Avernus. For example near Rayphus who is at [1840.1260], in the room to the northeast.
+  ActionOverride("X3Rec",Face(W))
+END

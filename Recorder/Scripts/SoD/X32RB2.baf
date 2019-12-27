@@ -1,0 +1,142 @@
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+		ActionOverride("X32RB1",Enemy())
+		ActionOverride("X32RB3",Enemy())
+		ActionOverride("X32RB4",Enemy())
+		ActionOverride("X32RB5",Enemy())
+		ActionOverride("X32RB6",Enemy())
+END
+
+
+IF
+    See(NearestEnemyOf(Myself))
+	Global("X3Cast","LOCALS",0)
+ THEN
+ RESPONSE #100
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	ReallyForceSpell(Myself,WIZARD_HASTE)
+	Wait(2)
+	SetGlobal("X3Cast","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SPIRIT_ARMOR)
+ THEN
+ RESPONSE #100
+	Spell(Myself,WIZARD_SPIRIT_ARMOR)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CONTAGION)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_CONTAGION)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FIREBALL)
+ THEN
+ RESPONSE #100
+	Spell(FarthestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SKULL_TRAP)
+ THEN
+ RESPONSE #100
+	Spell(FarthestEnemyOf(Myself),WIZARD_SKULL_TRAP)  // SPWI304.SPL (Fireball)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_HORROR)
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_HORROR)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_GREASE)
+ THEN
+ RESPONSE #100
+	Spell(FarthestEnemyOf(Myself),WIZARD_GREASE)  // SPWI304.SPL (Fireball)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_PROTECTION_FROM_EVIL)
+ THEN
+ RESPONSE #100
+	Spell(Myself,WIZARD_PROTECTION_FROM_EVIL)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_AGANNAZAR_SCORCHER)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_AGANNAZAR_SCORCHER)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_MAGIC_MISSILE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_VAMPIRIC_TOUCH)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_VAMPIRIC_TOUCH)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_GHOUL_TOUCH)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_GHOUL_TOUCH)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CHILL_TOUCH)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_CHILL_TOUCH)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),WIZARD_LARLOCH_MINOR_DRAIN)
+END
+
+
+
+IF
+    See(NearestEnemyOf(Myself))
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+END

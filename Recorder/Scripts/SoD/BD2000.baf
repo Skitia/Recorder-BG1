@@ -1,0 +1,43 @@
+IF
+	Global("bd_plot","global",250)
+	!GlobalTimerNotExpired("bd_mdd410z_ot_timer","bd2000")
+	Global("bd_ot_X3Rec","bd2000",0)
+	IfValidForPartyDialogue("X3Rec") // Recorder
+	!IfValidForPartyDialogue("X3Kale")  // Kale
+	TriggerOverride("X3Rec",Range([ENEMY.0.0.0.CRUSADERS],30))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Rec","bd2000",1)
+		DisplayStringHead("X3Rec",~Hold nothing back!~)  
+END
+
+IF
+	Global("bd_plot","global",250)
+	!GlobalTimerNotExpired("bd_mdd410z_ot_timer","bd2000")
+	Global("bd_ot_X3Rec","bd2000",0)
+	IfValidForPartyDialogue("X3Rec")
+	IfValidForPartyDialogue("X3Kale")  
+	TriggerOverride("X3Rec",Range([ENEMY.0.0.0.CRUSADERS],30))
+	Switch("bd_ot_X3Rec","bd2000")
+	Global("bd_ot_X3KaleX3Rec","bd2000",1)
+THEN
+	RESPONSE #0
+		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Rec","bd2000",1)
+		SetGlobal("bd_ot_X3KaleX3Rec","bd2000",2)
+		DisplayStringHead("X3Rec",~Just shut up and swing, Kale!~)  
+END
+
+IF
+	Global("bd_plot","global",260)
+	Global("X3R_betrayal_discussion","bd2000",0)
+	IsValidForPartyDialog("X3Rec")  // Recorder
+THEN
+	RESPONSE #100
+	SetGlobal("X3R_betrayal_discussion","bd2000",1)
+	ActionOverride("X3Rec",StartDialogueNoSet(Player1))
+END
+
+
+

@@ -1,0 +1,34 @@
+/* x3bd3000.baf
+Moves ERec into the Coalition Camp if she was not in party */
+
+IF
+    InParty("X3Rec")
+	Global("X3Rec_MoveCamp","BD3000",0)
+THEN
+  RESPONSE #100
+    SetGlobal("X3Rec_MoveCamp","BD3000",1)
+END
+
+IF
+  Global("X3Rec_MoveCamp","bd3000",0)
+  !Dead("X3Rec")
+  !InPartyAllowDead("X3Rec")
+THEN
+  RESPONSE #100
+    SetGlobal("X3Rec_MoveCamp","bd3000",1)
+    MoveGlobal("bd3000","X3Rec",[1364.1434]) 
+    ActionOverride("X3Rec",Face(SW))
+    ReallyForceSpellDeadRES("bdrejuve","X3Rec")
+    ChangeEnemyAlly("X3Rec",NEUTRAL)
+    ChangeSpecifics("X3Rec",ALLIES)
+    ActionOverride("X3Rec",SetGlobal("bd_joined","locals",0))
+    ActionOverride("X3Rec",SetGlobal("bd_retreat","locals",0))
+    ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))
+    ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
+    ActionOverride("X3Rec",ChangeAIScript("bdasc3",CLASS))
+    ActionOverride("X3Rec",ChangeAIScript("BDSHOUT",RACE))
+    ActionOverride("X3Rec",ChangeAIScript("BDBARD01",GENERAL))
+    ActionOverride("X3Rec",ChangeAIScript("",DEFAULT))
+    ActionOverride("X3Rec",SetDialogue("X32Rec"))
+    Continue()
+END

@@ -1,0 +1,39 @@
+
+IF
+  Global("X3Rec_MoveCamp","bd1000",0)
+  !Dead("X3Rec")
+  !InPartyAllowDead("X3Rec")
+THEN
+  RESPONSE #100
+    SetGlobal("X3Rec_MoveCamp","bd1000",1)
+    MoveGlobal("bd1000","X3Rec",[1340.3436]) //look up area coordinates for bd1000.are
+    ActionOverride("X3Rec",Face(E))
+    ReallyForceSpellDeadRES("bdrejuve","X3Rec")
+    ChangeEnemyAlly("X3Rec",NEUTRAL)
+    ChangeSpecifics("X3Rec",ALLIES)
+    ActionOverride("X3Rec",SetGlobal("bd_joined","locals",0))
+    ActionOverride("X3Rec",SetGlobal("bd_retreat","locals",0))
+    ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))
+    ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
+    ActionOverride("X3Rec",ChangeAIScript("bdasc3",CLASS))
+    ActionOverride("X3Rec",ChangeAIScript("BDSHOUT",RACE))
+    ActionOverride("X3Rec",ChangeAIScript("BDBARD01",GENERAL))
+    ActionOverride("X3Rec",ChangeAIScript("",DEFAULT))
+    Continue()
+END
+
+IF
+  Global("bd_plot","global",170)
+  Global("bd_mdd016b_X3Rec","bd1000",0)
+  !GlobalTimerNotExpired("bd_mdd016b_timer","bd1000")
+  IfValidForPartyDialog("X3Rec")
+  NextTriggerObject("X3Rec")
+  Detect(Player1)
+THEN
+  RESPONSE #50
+    SetGlobal("bd_mdd016b_X3Rec","bd1000",1)
+  RESPONSE #50
+    SetGlobal("bd_mdd016b_X3Rec","bd1000",1)
+    SetGlobalTimer("bd_mdd016b_timer","bd1000",ONE_ROUND)
+    DisplayStringHead("X3Rec",~By all appearances she seems noble and good. But her cause is just so wrong.~)
+END

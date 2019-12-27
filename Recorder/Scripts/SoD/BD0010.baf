@@ -1,0 +1,9 @@
+IF 
+Global("X3RecordCindySoDSpawn","GLOBAL",0)
+Global("Chapter","GLOBAL",7)
+THEN 
+RESPONSE #100 
+SetGlobal("X3RecordCindySoDSpawn","GLOBAL",1) 
+CreateCreature("X32RCIN",[1118.905],NW)
+Continue()
+END 

@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("X3Rec")
+		ApplySpellRES("BDSLOW",Myself) // No such index
+		Wait(2)
+		SmallWait(109)
+		MoveToPoint([756.1141])
+END
+// Going to experiment and have this append Beamdog's cutscene. 

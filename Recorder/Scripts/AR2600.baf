@@ -1,0 +1,11 @@
+IF 
+Global("X3RecordCandleKeepSpawn","GLOBAL",0)
+THEN 
+RESPONSE #100 
+SetGlobal("X3RecordCandleKeepSpawn","GLOBAL",1) 
+CreateCreature("X3Rec",[3877.520],SW)
+ChangeEnemyAlly("X3Rec",NEUTRAL)
+ChangeSpecifics("X3Rec",ALLIES)
+Continue()
+END 
+

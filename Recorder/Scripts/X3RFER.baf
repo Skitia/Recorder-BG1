@@ -1,0 +1,7 @@
+IF
+    HPPercentLT(Myself,25)
+ THEN
+ RESPONSE #100
+    ChangeEnemyAlly(Myself,GOODBUTBLUE)
+	EscapeAreaDestroy(3)
+END

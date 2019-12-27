@@ -1,0 +1,22 @@
+IF
+  Global("RecorderQuestThree","GLOBAL",5)
+  Global("RecorderEnemySpawn","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RecorderEnemySpawn","GLOBAL",1)
+    CreateCreature("X32RB1",[2844.1100],S)
+	CreateCreature("X32RB2",[2874.1030],S)
+	CreateCreature("X32RB3",[2808.1026],S)
+	CreateCreature("X32RB4",[2797.1138],S)
+	CreateCreature("X32RB5",[2706.1130],S)
+	CreateCreature("X32RB6",[2710.1039],S)
+    Continue()
+END 
+
+IF 
+	PartyHasItem("X32RMC")
+	Global("RecorderItemFound","GLOBAL",0)
+	THEN RESPONSE #100 
+	SetGlobal("RecorderItemFound","GLOBAL",1)
+	AddJournalEntry(@36,QUEST)
+END 	

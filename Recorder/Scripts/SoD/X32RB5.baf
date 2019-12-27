@@ -1,0 +1,59 @@
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+		ActionOverride("X32RB1",Enemy())
+		ActionOverride("X32RB3",Enemy())
+		ActionOverride("X32RB4",Enemy())
+		ActionOverride("X32RB2",Enemy())
+		ActionOverride("X32RB6",Enemy())
+END
+
+
+IF
+    See(NearestEnemyOf(Myself))
+	Global("X3Cast","LOCALS",0)
+ THEN
+ RESPONSE #100
+	ReallyForceSpell(Myself,CLERIC_CHAOTIC_COMMANDS)
+	ReallyForceSpell(Myself,CLERIC_TRUE_SIGHT)
+	ReallyForceSpell(Myself,CLERIC_MAGIC_RESISTANCE)
+	Wait(2)
+	SetGlobal("X3Cast","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(TALOS_STORMSHIELD)
+ THEN
+ RESPONSE #100
+	Spell(Myself,TALOS_STORMSHIELD)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_HOLD_PERSON)
+	!StateCheck(NearestEnemyOf(Myself),STATE_IMMOBILE)
+ THEN
+ RESPONSE #100
+	Spell(NearestEnemyOf(),CLERIC_HOLD_PERSON)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)
+ THEN
+ RESPONSE #100
+	Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+END

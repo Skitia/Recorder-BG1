@@ -1,0 +1,9 @@
+IF 
+Dead("X3RNec")
+!ActuallyInCombat()
+!See([ENEMY])
+Global("X3RNecResolutionTalk","GLOBAL",0)
+THEN RESPONSE #100 
+SetGlobal("X3RNecResolutionTalk","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END 

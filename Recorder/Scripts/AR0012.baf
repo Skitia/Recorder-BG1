@@ -1,0 +1,8 @@
+IF 
+GlobalGT("X3ReBaldurQuest","GLOBAL",1)
+Global("x3ReBaldurSpawn","GLOBAL",0)
+THEN RESPONSE #100 
+CreateCreature("X3RCin",[138.281],SE)
+CreateCreature("X3RARN",[444.130],SE)
+SetGlobal("x3ReBaldurSpawn","GLOBAL",1)
+END

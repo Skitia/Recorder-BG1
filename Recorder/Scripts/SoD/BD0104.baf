@@ -1,0 +1,20 @@
+
+IF
+	Global("chapter","global",13)
+	!GlobalTimerNotExpired("bd_jail_visitors_timer","bd0104")
+	!GlobalTimerNotExpired("bd_jail_visitors2_timer","bd0104")
+	Global("bd_jail_visitors","bd0104",0) //Recorder will go first.
+	Global("X3Rec_jail_visitors","bd0104",0) //check variable for this script block
+	!Dead("X3Rec")  
+	OR(2)
+	Global("X3RecorderApproval","GLOBAL",25) // A certain amount of approval is required OR 
+	Global("X32RecRomanceActive","GLOBAL",2) // The Romance culminated, in case approval fell but the romance remained active.
+THEN
+	RESPONSE #100
+		SetGlobal("X3Rec_jail_visitors","bd0104",1)
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",FIVE_ROUNDS)
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)
+		MoveGlobal("bd0104","X3Rec",[720.620])  //coordinates true for all visiting NPCs
+		ActionOverride("X3Rec",ChangeAIScript("bdvisit",OVERRIDE)) //this script will handle the "NPC walks up to the PC's prison door and initiates dialogue"
+END
+	

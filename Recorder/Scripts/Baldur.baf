@@ -1,0 +1,7 @@
+IF 
+Global("X3RFERSTART","GLOBAL",1)
+!InMyArea("X3RFER") 
+!Dead("X3RFER")
+THEN RESPONSE #100 
+MoveGlobalObject("X3RFER","X3Rec")
+END 

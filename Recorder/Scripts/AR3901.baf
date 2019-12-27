@@ -1,0 +1,59 @@
+/* In Recorder's Spawn Script for Ulcaster, we have a condition to move her if she already exists. This is because of the potion reward, we want it to be available to the PC.
+if they never helped/started the mod outside of Candlekeep. 
+This isn't necessary for the paladin, it should be safe to create them. We should confirm via a new game.*/
+
+IF 
+	Global("X3RecPalQuest","GLOBAL",1) // Must speak to Recorder to start the quest at all. It matters little as Recorder speaks to the PC when she sees them anyway. 
+	Global("X3RecPalQuestSpawn","GLOBAL",0) // Did not spawn prior.
+THEN 
+RESPONSE #100 
+	SetGlobal("X3RecPalQuestSpawn","GLOBAL",1) // Has spawned now
+	CreateCreature("X3RPal",[1690.1344],SW)
+	CreateCreature("X3RNEC",[1568.1328],SW)
+	CreateCreature("X3Ruby",[1462.1408],NW) 
+	CreateCreature("X3RLead",[1136.298],S) // David
+	CreateCreature("X3RHawk",[1194.244],S)
+	CreateCreature("X3Bryce",[1344.363],E)
+	CreateCreature("SKELET_A",[1568.1328],SW)
+	CreateCreature("SKELET_A",[1568.1328],SW)
+	Wait(1)
+   ActionOverride("X3RPal",Polymorph("SLEEPING_MAN_HUMAN"))
+   Kill("X3RHawk")
+   Kill("X3RLead")
+   Continue()
+END 
+
+IF 
+	Dead("X3RPal")
+	InParty("X3Rec")
+	Global("X3RecPalQuest","GLOBAL",1)
+THEN 
+RESPONSE #100 
+GiveItemCreate("X3RSWORD","X3REC",0,0,0)
+SetGlobal("X3RecPalQuest","GLOBAL",2)
+SetGlobal("X3RPalDeadReact","GLOBAL",1)
+AddJournalEntry(@7,QUEST_DONE)
+END 
+
+IF 
+	Dead("X3RPal")
+	InParty("X3Rec")
+	Global("X3RecPalQuest","GLOBAL",1)
+THEN 
+RESPONSE #100 
+GiveItemCreate("X3RSWORD","X3REC",0,0,0)
+SetGlobal("X3RecPalQuest","GLOBAL",2)
+SetGlobal("X3RPalDeadReact","GLOBAL",1)
+AddJournalEntry(@7,QUEST_DONE)
+END 
+
+IF 
+	Dead("X3RPal")
+	!InParty("X3Rec")
+	Global("X3RecPalQuest","GLOBAL",1)
+THEN 
+RESPONSE #100 
+GiveItemCreate("X3RSWORD",Player1,0,0,0)
+SetGlobal("X3RecPalQuest","GLOBAL",2)
+AddJournalEntry(@16,QUEST)
+END 

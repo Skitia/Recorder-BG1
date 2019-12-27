@@ -1,0 +1,11 @@
+
+IF
+	Global("X3_NPC01","MYAREA",0)
+	IsValidForPartyDialog("X3Rec") // Recorder
+	Delay(2)
+THEN
+	RESPONSE #100
+		SetGlobal("X3_NPC01","MYAREA",1)
+		DisplayStringHead("X3Rec",~Few magi can be fully trusted with the power of Mystra's gift. This is why.~)  
+END
+

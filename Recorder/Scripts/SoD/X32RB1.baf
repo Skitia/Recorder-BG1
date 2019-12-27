@@ -1,0 +1,40 @@
+IF
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	NumberOfTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+		ActionOverride("X32RB2",Enemy())
+		ActionOverride("X32RB3",Enemy())
+		ActionOverride("X32RB4",Enemy())
+		ActionOverride("X32RB5",Enemy())
+		ActionOverride("X32RB6",Enemy())
+END
+
+IF
+    HPPercentLT(Myself,50)
+	HaveSpell(BERSERKER_RAGE)
+ THEN
+ RESPONSE #100
+    DisplayString(Myself,@1) // Berserk
+	Spell(Myself,BERSERKER_RAGE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+END
+

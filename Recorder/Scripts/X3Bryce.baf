@@ -1,0 +1,19 @@
+// Quest 
+IF 
+Global("X3RecBryce","GLOBAL",0)
+See([PC])
+THEN RESPONSE #100 
+SetGlobal("X3RecBryce","GLOBAL",1) 
+Wait(1)
+StartDialogueNoSet([PC]) 
+END 
+
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(1)
+		Enemy()
+END

@@ -1,0 +1,10 @@
+IF
+	Global("X3_NPC01","MYAREA",0)
+	IsValidForPartyDialog("X3Rec")  // Vien
+	RandomNum(2,2)
+	Delay(3)
+THEN
+	RESPONSE #100
+		SetGlobal("X3_NPC01","MYAREA",1)
+		DisplayStringHead("X3Rec",~I have only read of such places where the weave cannot come to you. I feel a great sense of trepidation here.~)  
+END

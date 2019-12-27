@@ -1,0 +1,11 @@
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("X3Rec")
+THEN
+	RESPONSE #100
+		ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
+		CutSceneId(Player1)
+		ActionOverride("X3Rec",SetDialogue("X32RecJ"))
+		ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
+		
+END
