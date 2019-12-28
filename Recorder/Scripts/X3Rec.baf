@@ -332,7 +332,7 @@ THEN
 	DisplayStringHead(Myself,~Sneaky ferret. Food is for later, not now.~ [X3RF3])
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
   RESPONSE #30 	
-	NoAction()
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
 END  
 // Muffy and Gustav 
 IF
@@ -391,14 +391,13 @@ See(Player1)
 CombatCounter(0)                          
 !See([ENEMY])
 !AreaType(DUNGEON)			  
-OR(7)             
+OR(6)             
 Global("X3RecTalk","GLOBAL",3)
 Global("X3RecTalk","GLOBAL",7)
 Global("X3RecTalk","GLOBAL",9)
 Global("X3RecTalk","GLOBAL",11)
 Global("X3RecTalk","GLOBAL",13)
 Global("X3RecTalk","GLOBAL",15)
-Global("X3RecTalk","GLOBAL",17)
 THEN
 RESPONSE #100
 IncrementGlobal("X3RecTalk","GLOBAL",1)
@@ -413,13 +412,11 @@ See(Player1)
 CombatCounter(0)
 !See([ENEMY])
 !AreaType(DUNGEON)
-OR(6)                                    // YOU WILL NEED TO ADD +1 TO THIS OR NUMBER FOR EVERY ADDITONAL TALK YOU ADD  
+OR(4)                                    // YOU WILL NEED TO ADD +1 TO THIS OR NUMBER FOR EVERY ADDITONAL TALK YOU ADD  
 Global("X3RecTalk","GLOBAL",4)
 Global("X3RecTalk","GLOBAL",8)
 Global("X3RecTalk","GLOBAL",10)
 Global("X3RecTalk","GLOBAL",12)
-Global("X3RecTalk","GLOBAL",14) 
-Global("X3RecTalk","GLOBAL",18)
 THEN
 RESPONSE #100
 RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
@@ -427,7 +424,32 @@ PlaySong(0)
 PlaySound("X3RSong") 
 StartDialogueNoSet(Player1)
 END
-
+// Talk 7 Trigger
+IF 
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          
+!See([ENEMY])
+!AreaType(DUNGEON)
+Global("X3RecTalk","GLOBAL",14)
+GlobalGT("Chapter","GLOBAL",2)
+THEN RESPONSE #100 
+StartDialogueNoSet(Player1)
+END
+// Talk 9/Final Talk Trigger
+IF 
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+AreaCheck("AR0123")
+Global("X3RecTalk","GLOBAL",17)
+THEN RESPONSE #100 
+SetGlobal("X3RecTalk","GLOBAL",18)
+StartDialogueNoSet(Player1)
+END
 
 // Approval Shifts and -90 Conversation. 
 IF
@@ -535,3 +557,18 @@ THEN
 	SetGlobal("X3RecSexChange","GLOBAL",1)
 	StartDialogueNoSet(Player1)
 END
+
+// IF Recorder was used to talk to Carsa
+IF 
+Global("X3RCarsaTalk","LOCALS",1)
+Dead("KAHRK")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN RESPONSE #100 
+SetGlobal("X3RCarsaTalk","LOCALS",2)
+StartDialogueNoSet(Player1)
+END 
