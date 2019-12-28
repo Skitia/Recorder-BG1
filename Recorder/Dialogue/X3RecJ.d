@@ -1098,7 +1098,7 @@ I_C_T Pallon 3 X3RecPallon3
 END
 
 EXTEND_TOP Brage 2 #7
-+~IsValidForPartyDialog("X3Rec")~+ ~Any ideas, Recorder~ EXTERN X3RecJ X3RecBrageR 
++~IsValidForPartyDialog("X3Rec")~+ ~Any ideas, Recorder?~ EXTERN X3RecJ X3RecBrageR 
 END 
 
 CHAIN X3RecJ X3RecBrageR
@@ -1166,11 +1166,13 @@ I_C_T HAFIZ 3 X3RecHafiz3
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~You are a seer of sorts then, kin? These images you speak of sound frightening, but we can trust him, <CHARNAME>.~
 END
 
-I_C_T CARSA 6 X3RecCarsa 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Wait! <CHARNAME>, she is distressed. Perhaps I and my flute can help if you let me etry.~
-END
+I_C_T CARSA 5 X3RecCarsa 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Wait! <CHARNAME>, she is distressed. Perhaps I and my flute can help if you let me try.~
+END 
 
-EXTEND_TOP CARSA 6 #2
+
+
+EXTEND_TOP CARSA 6 #1
 +~IsValidForPartyDialog("X3Rec")~+ ~Go ahead and try, Recorder, but it seems like a lost cause.~ EXTERN X3RecJ X3RecCarsa2
 END 
 
