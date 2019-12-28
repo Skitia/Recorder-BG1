@@ -470,19 +470,35 @@ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
 EXIT 
 
 CHAIN X3RecJ T3.7 
-~That is concerning that danger can penetrate even the keep. Those who seek knowledge should be able to do so in peace and safety.~
+~That is concerning that danger can penetrate even the keep. Those who seek knowledge should be able to do so in peace and safety. All of the sanctuaries of Oghma throughout the land are assured protection from curious thieves and malicious murderers alike.~
 EXTERN X3RecJ T3.10
 
 CHAIN X3RecJ T3.8 
-~Perhaps. But a good rest means a nice, clear mind. Sometimes, I would give a lot for that.~
-EXIT 
+~Perhaps. But a good rest means a nice, clear mind. Sometimes, I would give a lot for that. It is not easy to keep up with everything when you're tired and at risk of forgetting crucial details in the history that is happening now.~
+== X3RecJ ~But even if it doesn't get easier, I will remember. Everything that is being done should not be forgotten.~
+END 
+++ ~You look exhausted. We can camp and make time. There's no need to push yourself so much.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + T3.Rest 
+++ ~Good. I am thankful for all that you do for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + T3.11 
+++ ~As it should be. Are you ready to go?~ + T3.9 
+
 
 CHAIN X3RecJ T3.9 
 ~I am ready to proceed on. There is much for us to do.~
 EXIT 
 
 CHAIN X3RecJ T3.10 
-~I fear this is as awake as I will manage. I am ready.~
+~I'm glad harm didn't come upon you at least. I owe you so much because you lived to help me, and I'll do my best with my knowledge and magic to protect you.~
+END 
+++ ~You look exhausted. We can camp and make time. There's no need to push yourself so much.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + T3.Rest 
+++ ~Good. I am thankful for all that you do for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + T3.11 
+++ ~As it should be. Are you ready to go?~ + T3.9 
+
+CHAIN X3RecJ T3.Rest 
+~If you give the word, I will <CHARNAME>. It would be kind...but I can make do.~
+EXIT 
+
+CHAIN X3RecJ T3.11 
+~Thank you! Please, let us proceed on. I am ready.~
 EXIT 
 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",8)~ THEN X3RecJ Talk4
@@ -495,7 +511,7 @@ END
 
 CHAIN X3RecJ T4.Writing 
 ~Everything that we've come to pass, or about you, I've been trying to scrawl in parchment as we travel. I want to remember, and look back when I'm ready to properly record it.~
-~Maybe my complete will even line the shelves of Candlekeep someday, if the temple of Oghma is pleased with my donation of my records.~
+~Maybe my complete work even line the shelves of Candlekeep someday, if the temple of Oghma is pleased with my donation of my records.~
 END 
 ++ ~That sounds ambitious. Perhaps I could look at your notes sometime?~ + T4.Notes 
 ++ ~Do I get any payment from this?~ + T4.Pay 
@@ -552,8 +568,8 @@ END
 ++ ~Come. let's keep moving.~ + T4.Exit 
 
 CHAIN X3RecJ T4.MidInt 
-~I think I still need time to make an interpretation. Our journey has only been so long.~
-== X3RecJ ~As our time together grows longer, perhaps I will have an answer for you then.~
+~I think I still need time to make an interpretation. Our time together has been short, though our adventures have certainly been exciting.~
+== X3RecJ ~As our time together grows longer, perhaps I will have an answer for you then to your question.~
 EXIT 
 
 CHAIN X3RecJ T4.BadInt 
@@ -641,7 +657,7 @@ EXIT
 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",12)~ THEN X3RecJ Talk6 
 ~Do you mind if I ask you another question about your family, <CHARNAME>, while it's quiet?~
-DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",3000)~
+DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",6000)~
 END 
 ++ ~For your writing, I assume?~ + Talk6.Writing 
 ++ ~Sure, go ahead and ask.~ + Talk6.Mother 
@@ -704,21 +720,57 @@ CHAIN X3RecJ Talk6.Childhood
 ~It was. Some of it, at least...~
 EXTERN X3RecJ Talk6.Later 
 
-CHAIN X3RecJ Talk6.Later 
-~But we can talk more about that later. I don't mean to start having us drag our feet.~
-EXIT 
 
 CHAIN X3RecJ Talk6.Boring 
 ~Boring? I can see how one might think some of the older texts are dry, but some of the stories inside the books my father repaired were so exciting and rich in intrigue.~
 == X3RecJ  ~You wouldn't hold that opinion after reading them.~
 EXTERN X3RecJ Talk6.Later 
 
+CHAIN X3RecJ Talk6.Later 
+~I remember when I was given my first flute by my father. He adored how much I played with it, sometimes a bit too late in the night, which annoyed mother.~
+== X3RecJ ~Music is...it's just so enriching. There is a whole world of sounds you can dive into that can make you feel mellow or excited and lively. It's a whole magic on its own. The introuction to that world was the greatest gift my father ever gave me.~
+== X3RecJ ~My mother and I moved from Lantan not long after, and I've not had the opportunity to return to see him since.~
+END 
+++ ~Your father didn't go with you?~ + Talk6.Seperate
+++ ~Your parents seperated?~ + Talk6.Seperate 
+++ ~Perhaps you can visit him sometime.~ + X3RecJ Talk6.Visit 
+
+CHAIN X3RecJ Talk6.Visit 
+~I want to. And I hope to. It's just...the world doesn't like to stay still to make things easy.~
+EXTERN X3RecJ Talk6.Thanks 
+
+CHAIN X3RecJ Talk6.Seperate
+~Love is a...strange thing sometimes. My parents believed their marriage was just a trick by Garl and didn't enjoy the company of eachother anymore.~
+== X3RecJ ~It was hard at first, but you adapt, though I wish I got the chance to see my father.~
+EXTERN X3RecJ Talk6.Thanks 
+
+CHAIN X3RecJ Talk6.Thanks 
+~This was nice to talk about though. I don't usually share much of myself, but it was nice to do it for once.~
+END 
+++ ~I am always here. Just say if you need anything.~ + Talk6.Say 
+++ ~You do often ask more of other's lives than speak of your own.~ + Talk6.Lives 
+++ ~It passed the time, though we should get moving again.~ + Talk6.Continue 
+
+CHAIN X3RecJ Talk6.Say 
+~Thank you <CHARNAME>. I will. You are easy to talk to.~
+EXIT 
+
+CHAIN X3RecJ Talk6.Say 
+~Thank you <CHARNAME>. I will. You are easy to talk to.~
+EXIT 
+
+CHAIN X3RecJ Talk6.Lives 
+~It is why I am a scholar. I like to record and listen, rather than talk of myself so much. It makes me slightly nervous and uncomfortable.~
+== ~But you are easy to tak to. I like that about you. I'll try to be more open with you and the others.~
+EXIT 
+
+
 // Talk 7 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",14)~ THEN X3RecJ Talk7 
-~Things are starting to get seriously dangerous for us, aren't they?~
+~Things are starting to get seriously dangerous for us, aren't they? We've a name, but know so little about them.~
 DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",3000)~
 END 
-++ ~I have a feeling they are only just beginning.~ + Talk7.Beginning 
+++ ~I have a feeling we are only beginning to understand a piece of a big puzzle..~ + Talk7.Beginning 
 +~GlobalLT("Chapter","GLOBAL",5)~+ ~Every step we get closer to who is responsible for all the problems in the region.~ + Talk7.Beginning 
 ++ ~I've survived all the assassins so far, let them keep coming.~ + Talk7.Beginning 
 ++ ~Don't tell me you are afraid.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk7.Afraid 
@@ -778,10 +830,11 @@ CHAIN X3RecJ Talk7.Glory
 ~I can understand the pull of glory. Less so gold...but if it motivates you, I suppose as long as it doesn't harm anyone...~
 == X3RecJ ~Just be careful. Greed and vanity can blind us to our own evils. I will always be here to advice you if you ever ask for it.~
 EXIT 
+
 // Talk 8 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",16)~ THEN X3RecJ Talk8
 ~We're finally stopping? This last march was so long. I'll just squeeze in a little bit of recording time before rest.~
-DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",3000)~
+DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~
 END 
 ++ ~Are you talking about your notes?~ + Talk8.Notes 
 ++ ~Are you going to play your flute?~ + Talk8.Flute 
@@ -810,24 +863,25 @@ END
 ++ ~Just don't be too loud.~ + Talk8.Loud
 
 CHAIN X3RecJ Talk8.Play 
-~I would be happy to, <CHARNAME>. Just ask.~
+~I would be happy to, <CHARNAME>. Just ask. For now, I just need to write in peace before rest. Sleep well.~
 DO ~RestParty()~
 EXIT 
 
 CHAIN X3RecJ Talk8.Dreary 
-~That is a gloomy outlook.And maybe in some artist's interpretation, that may be the case.~
-== X3RecJ ~But I see...beauty, and hope. And that is what I would want to capture above all.~
+~That is a gloomy outlook. And maybe in some artist's interpretation, that may be the case.~
+== X3RecJ ~But I see...beauty, and hope. And that is what I would want to capture above all. I hope your dreams can be like this as well.~
 DO ~RestParty()~
 EXIT 
 
 CHAIN X3RecJ Talk8.Loud 
-~Um, I will keep to a soft volume, yes. The others won't have to worry about being disturbed.~
+~Um, I will keep to a soft volume, yes. The others won't have to worry about being disturbed. Sleep well.~
 DO ~RestParty()~
 EXIT 
+
 //Talk 9 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",18)~ THEN X3RecJ Talk9
 ~I've seen so much by your side now, <CHARNAME>. I can't help but remember the first time I saw you in Candlekeep. To think this is what awaited for me after that little meeting.~
-DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",3000)~
+DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~
 END 
 ++ ~I've enjoyed every moment. I wish we talked sooner.~ + Talk9.Sooner 
 ++ ~It's been a long time on the road.~ + Talk9.Road 
@@ -838,12 +892,12 @@ CHAIN X3RecJ Talk9.Sooner
 EXTERN X3RecJ Talk9.Road
 
 CHAIN X3RecJ Talk9.Road 
-~It has been a long journey. But I know it will come to an end, soon.~
+~It has been a long journey. But this...we are close. And however it bodes...I am glad I got to know you.~
 END 
-+~GlobalGT("X3RecorderApproval","GLOBAL",45)~+ ~Will  you still be with me, even when we get there?~ + Talk9.Know 
-+~GlobalLT("X3RecorderApproval","GLOBAL",46)~+ ~Will  you still be with me, even when we get there?~ + Talk9.No 
++~GlobalGT("X3RecorderApproval","GLOBAL",45)~+ ~Will  you still be with me, even when this is over?~ + Talk9.Know 
++~GlobalLT("X3RecorderApproval","GLOBAL",46)~+ ~Will  you still be with me, even when this is over?~ + Talk9.No 
 ++ ~It comes. And I will be ready for it.~ + Talk9.Ready 
-++ ~Enough talk then. Let's walk the rest of the way~ + Talk9.Walk 
+++ ~Enough talk then. Let's do this.~ + Talk9.Walk 
 
 
 CHAIN X3RecJ Talk9.Tease 
@@ -859,20 +913,19 @@ CHAIN X3RecJ Talk9.Ready
 EXTERN X3RecJ Talk9.Time  
 
 CHAIN X3RecJ Talk9.No 
-~I am afraid I won't. I'll be turning in all that I've written to my church, and seeing my mother again. It's been so long.~
+~I am afraid I won't. I'll be turning in all that I've written to my church, and seeing my mother again...assuming we live. It's been so long.~
 EXTERN X3RecJ Talk9.Time 
 
 CHAIN X3RecJ Talk9.Time 
 ~But I have truly cherished this time, and I won't forget any of it, not the friends we've made on the way, or our time together.~
 == X3RecJ ~It will resonate to me like a timeless tune, that always sticks in your head, even if the melody starts to annoy you the hundredth time.~
-== X3RecJ ~And who knows? Maybe we'll see each other again. But that is still far away, isn't it? Let's enjoy the now.~
+== X3RecJ ~But for now? Let us finish the tale we are weaving now.~
 EXIT 
 
 CHAIN X3RecJ Talk9.Know 
-~After I submit my records to the church? Anything is possible. But I don't want to say yes when our path is still uncertain.~
-== X3RecJ ~Something could happen, and one of us may not be at the end of the road. But I like to believe that we'll be there, standing together.~
-== X3RecJ ~Harmony and melody, blending into a striking chord, resonating and inspiring the land still on.~
-== X3RecJ ~I will have faith that maybe, that is a possibility for us.~
+~After I submit my records to the church? Anything is possible. But I don't want to say yes when our path is still uncertain, especially with what is immediately ahead.~
+== X3RecJ ~Something could very well happen to one of us. I hope not...but we have to be a little realistic.~
+== X3RecJ ~But I will have faith that we will all presevere through the immediate storm.~
 EXIT 
 
 // Interjections 
@@ -1048,7 +1101,150 @@ I_C_T Pallon 3 X3RecPallon3
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~There are so many planes as well. I have only read about such...it truly is fascinating.~
 END
 
-APPEND X3RecJ 
+EXTEND_TOP Brage 2 #7
++~IsValidForPartyDialog("X3Rec")~+ ~Any ideas, Recorder~ EXTERN X3RecJ X3RecBrageR 
+END 
+
+CHAIN X3RecJ X3RecBrageR
+~It sounds almost maddening. But perhaps...wind, or death. I feel like it could fit one of those answers.~
+COPY_TRANS Brage 2
+
+I_C_T Brage 2 X3RecBrage2
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~To have such terrible actions not done from your own will, but a commanding curse, is horrible. If he can be healed, <CHARNAME>, please, let us do that much for him.~
+END 
+ADD_TRANS_ACTION Brage BEGIN 4 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~
+ADD_TRANS_ACTION Brage BEGIN 5 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~ 
+
+I_C_T CHARLE 8 X3RecCharle8 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~This is absolutely fascinating. There is so much that could be discovered or learned here. This is exactly the sort of work Mark and I would have loved to have helped with. We should lend a hand if we can.~
+END 
+
+I_C_T CHARLE 18 X3RecCharle18 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~This is exciting. I am writing about this right now, and going to sketch the details. The temple will be ecstatic about such a discovery.~
+END 
+
+I_C_T GALLOR 1 X3RecGallor1 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~How foul! He reminds me of Rick. Betraying his own leader for his own selfish wants, and not for the pursuit of knowledge.~
+END 
+
+I_C_T GALLOR 6 X3RecGallor6
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~You are actually...you are terrible just for thinking it. I may be indebted to you, but I speak my mind on this when I say this is a horrible act you consider.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~ 
+END 
+
+I_C_T GALLOR 7 X3RecGallor7
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~You are actually...you are terrible just for thinking it. I may be indebted to you, but I speak my mind on this when I say this is a horrible act you consider.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~ 
+END 
+
+I_C_T VOLO 0 X3RecJVOLO0
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Mr. Volo?! It is an honor! Your works are very well respected, and I have read each of them twice. I hope to see half as much as you have someday.~
+== VOLO ~A fellow scholar, are we? Perhaps someday I will be happy to speak to you more on this, but present times demand a different focus.~
+END
+
+I_C_T DRIENN 1 X3RecDRIENN1 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~The poor child...we should see to the cat's aid, though I worry it may be too late. I don't even think Gustav could survive such a fall.~
+END
+
+I_C_T ALBERT 1 X3RecAlbert1 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~I'm sure we can lend a hand. Goodness knows how many times Gustav has scurried off.~ [X3RF2]
+END
+
+I_C_T NOSFER 2 X3RecNOSFER2 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~What a pretty, if tragic peace. I will have to remember that one.~ [X3RF2]
+END
+
+I_C_T GAZIB 0 X3RecGazib0
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~What illusion could accomplish such a thing? Please, let's watch!~ [X3RF2]
+END
+
+I_C_T NARCIL 2 X3RecNARCiL2 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~This is fascinating, the ability to control ooze like this...though also an odd, sticky choice for pursuit of knowledge.~
+END
+
+I_C_T POE 16 X3RecPOE16 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~It is beautiful. I look forward to hearing it in full someday, you have such talent.~
+END
+
+I_C_T HAFIZ 3 X3RecHafiz3 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~You are a seer of sorts then, kin? These images you speak of sound frightening, but we can trust him, <CHARNAME>.~
+END
+
+I_C_T CARSA 6 X3RecCarsa 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Wait! <CHARNAME>, she is distressed. Perhaps I and my flute can help if you let me etry.~
+END
+
+EXTEND_TOP CARSA 6 #2
++~IsValidForPartyDialog("X3Rec")~+ ~Go ahead and try, Recorder, but it seems like a lost cause.~ EXTERN X32RecJ X32RecBrageR 
+END 
+
+CHAIN X3RecJ X3RecCarsa2
+~Miss Carsa, you said something earlier about your companions, about the blood caused from the jar.~
+== CARSA ~Yes...so much blood...stay away! Stay away or I will say it!~
+== X3RecJ ~I promise, I will stay right here. Here, my hands are on my flute. I am just going to play a s-.~
+DO ~SetGlobal("X3RCarsaTalk","LOCALS",1)~
+EXTERN Carsa 8
+
+CHAIN IF ~Global("X3RCarsaTalk","LOCALS",2)Dead("KAHRK")~ THEN X3RecJ X3RecCarsa3
+~I...I thought I could save her. I guess I was a fool. Her words about her companions...it reminded me so much of my former friends.~
+END 
+++ ~Do not blame yourself. That jar's magic hold on her was too strong.~ + Carsa4
+++ ~Next time let me take the lead. You risked us all with your need to save everyone.~ + Carsa5
+++ ~Think nothing of it. Just forget about it and move on.~ + Carsa6 
+ 
+CHAIN X3RecJ Carsa4 
+~You are right but...no there had to have been a way. A different approach, maybe if I had been a step further back, or my hands were to my sides a little longer...~
+END 
+++ ~Second thinking does us nothing. There is what happened, not what if may have happened.~ + Carsa7
+++ ~She and her companions could have also been more careful, or she could have trusted us. We cannot control their reactions.~ + Carsa7
+++ ~If. What I know is the creature responsible is dead. That is all that matters.~ + Carsa8
+
+CHAIN X3RecJ Carsa5 
+~I am sorry <CHARNAME>, but how was I supposed to know an ogre mage would come at us like that? I was trying to save her.~
+== X3RecJ ~Nevermind. I chose to follow you, and you are our group leader. You'll not hear further argument from me.~
+END 
+++ ~That doesn't mean I don't appreciate your advice, Recorder. But that was too risky.~ + Carsa9
+++ ~Fine with me. Let's keep moving.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ EXIT 
+++ ~Good, you've learned your place.~ + Carsa10
+
+CHAIN X3RecJ Carsa6 
+~Forget about it? <CHARNAME>, I do not know about you, but I remember things. I write everything down and memorize it so I can learn.~
+== X3RecJ ~If we forget because it is inconvenient...we become liars, or cold, and we learn less.~
+END 
+++ ~I do not mean to not remember, Recorder. But dwelling does no good for anyone.~ + Carsa7
+++ ~We kill many, Recorder. Many die around us. You cannot be empathetic in this work.~ + Carsa8
+++ ~That is how I prefer it. I'd also prefer if you drop this. We've work to do.~ + Carsa11
+
+CHAIN X3RecJ Carsa7
+~You...are right, again. *Sigh* There's no point in dwelling on it further, now. I hope I am more fortunate on the next opportunity to help someone suffering from such a thing.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~
+EXIT 
+
+CHAIN X3RecJ Carsa8 
+~Someone died. That matters. It...forget it. I don't mean to be a bother. I just wish she could have been helped.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
+EXIT 
+
+CHAIN X3RecJ Carsa9
+~I didn't mean to endanger everyone else. I'm sorry. *Sigh*. Please, let's... let's just go.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~
+EXIT 
+
+CHAIN X3RecJ Carsa10
+~My *place*? Sometimes...you are a real ass.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~
+EXIT 
+
+CHAIN X3RecJ Carsa11 
+~As you wish...~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
+EXIT 
+
+
+ADD_TRANS_ACTION GALLOR BEGIN 2 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~
+
+
+APPEND X3RecJ  
 
 // -90 Approval 
 
