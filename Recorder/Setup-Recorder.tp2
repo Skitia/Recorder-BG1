@@ -56,9 +56,9 @@ Advantages:
 
 SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
-Level 1: +1 Intelligence, +1 to All Saves, Immunity to Charm and Domination 
-Level 15: +2 Intelligence, +2 to All Saves, Immunity to Charm, Domination and Sleep.
-Level 20: +3 Intelligence, +3 to All Saves, Immunity to Charm, domination, Sleep, Rigid/Feeblemind and Maze. 
+Level 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
+Level 15: +2 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind and Confusion
 
 Disadvantages:
 - No Pickpocketing Skill.
@@ -102,16 +102,16 @@ COPY	"Recorder/Spells/x3rpkit2.spl" override
 	SAY 0x50 ~SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
 Level 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
-Level 15: +2 Int, +2 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
-Level 20: +3 Int, +3 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind, Maze, and Confusion~
+Level 15: +2 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind and Confusion~
 COPY	"Recorder/Spells/x3rpkit4.spl" override
 	SAY NAME1 ~Sonata~
 	SAY NAME2 ~Sonata~
 	SAY 0x50 ~SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
 Level 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
-Level 15: +2 Int, +2 to All Saves, retains previous level immunities.
-Level 20: +3 Int, +3 to All Saves, adds Immunity to Confusion, Maze, and Rigid/Feeblemind.~
+Level 15: +2 Int, +2 to All Saves, retains previous level immunities, adds Rigid/Feeblemind protection.
+Level 20: +3 Int, +3 to All Saves, adds Immunity to Confusion~
 	COPY "Recorder/Spells/X3RSHOUT.SPL" override 
 SAY NAME1 ~Greater Deafness~
 SAY NAME2 ~Greater Deafness~
