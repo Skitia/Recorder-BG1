@@ -733,7 +733,7 @@ CHAIN X3RecJ Talk6.Later
 END 
 ++ ~Your father didn't go with you?~ + Talk6.Seperate
 ++ ~Your parents seperated?~ + Talk6.Seperate 
-++ ~Perhaps you can visit him sometime.~ + X3RecJ Talk6.Visit 
+++ ~Perhaps you can visit him sometime.~ + Talk6.Visit 
 
 CHAIN X3RecJ Talk6.Visit 
 ~I want to. And I hope to. It's just...the world doesn't like to stay still to make things easy.~
@@ -755,13 +755,9 @@ CHAIN X3RecJ Talk6.Say
 ~Thank you <CHARNAME>. I will. You are easy to talk to.~
 EXIT 
 
-CHAIN X3RecJ Talk6.Say 
-~Thank you <CHARNAME>. I will. You are easy to talk to.~
-EXIT 
-
 CHAIN X3RecJ Talk6.Lives 
 ~It is why I am a scholar. I like to record and listen, rather than talk of myself so much. It makes me slightly nervous and uncomfortable.~
-== ~But you are easy to tak to. I like that about you. I'll try to be more open with you and the others.~
+== X3RecJ ~But you are easy to tak to. I like that about you. I'll try to be more open with you and the others.~
 EXIT 
 
 
@@ -1175,7 +1171,7 @@ I_C_T CARSA 6 X3RecCarsa
 END
 
 EXTEND_TOP CARSA 6 #2
-+~IsValidForPartyDialog("X3Rec")~+ ~Go ahead and try, Recorder, but it seems like a lost cause.~ EXTERN X32RecJ X32RecBrageR 
++~IsValidForPartyDialog("X3Rec")~+ ~Go ahead and try, Recorder, but it seems like a lost cause.~ EXTERN X3RecJ X3RecCarsa2
 END 
 
 CHAIN X3RecJ X3RecCarsa2
