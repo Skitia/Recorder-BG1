@@ -1166,6 +1166,10 @@ I_C_T HAFIZ 3 X3RecHafiz3
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~You are a seer of sorts then, kin? These images you speak of sound frightening, but we can trust him, <CHARNAME>.~
 END
 
+I_C_T GALILE 0 X3RecGALiLE0
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Astrology? I wish I had the ability to gain knowledge of events just from looking at the sky. We could do so much more...~
+END
+
 I_C_T CARSA 5 X3RecCarsa 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Wait! <CHARNAME>, she is distressed. Perhaps I and my flute can help if you let me try.~
 END 
@@ -1488,9 +1492,9 @@ SAY ~Um, which one exactly?~
 +~InParty("X3Kale")~+ ~Kale~ + Em.Kale 
 +~InParty("X3Helga")~+ ~Helga~ + Em.Helga
 +~InParty("c0aura")~+ ~Aura~ + Em.Aura 
-+~InParty("c0Sirene")~+ ~Sirene~ + Em.Aura 
++~InParty("c0Sirene")~+ ~Sirene~ + Em.Sirene
 +~!Race("X3mily",Aasimar)InParty("X3mily")~+ ~Emily~ + Em.Emily
-+~Race("X3mily",Aasimar)InParty("X3mily")~+ ~Emily~ + Em.Emily
++~Race("X3mily",Aasimar)InParty("X3mily")~+ ~Emily~ + Em.Emily2
 
 // Myself 
 
