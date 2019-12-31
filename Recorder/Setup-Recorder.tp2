@@ -298,14 +298,6 @@ SAY DESC ~This expedition has gathered outside the Ulcaster school and plans to 
 
 This was completely worth turning down the assassination offer on <CHARNAME>. I might even go back to them and take it up after playing with my new knowledge. It would be nice to practice obliterating new foes after I am done with this expedition.~ 
 
-ACTION_IF FILE_EXISTS_IN_GAME ~neera.dlg~ THEN BEGIN
-    APPEND ~interdia.2da~ ~BAELOTH BBAELOTH~
-    UNLESS ~BAELOTH~
-   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BBAELOTH.dlg~) THEN BEGIN
-   COMPILE ~Recorder/Dialogue/BBAELOTHFix.d~
-  END
-END
-
 // Adds custom IsValidForPartyDialogue state used throughout
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   ~0x80101FEF CD_STATE_NOTVALID~
