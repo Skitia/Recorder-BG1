@@ -42,7 +42,7 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("X3RecGustavTime","LOCALS",1)
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
 END
 	
 IF
@@ -53,25 +53,25 @@ IF
 THEN
   RESPONSE #10
 	DisplayStringHead(Myself,~I really should brush your fur, Gustav.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Gustav! I need that unscratched.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~I promise, I'll let you run about soon, Gustav.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~I wonder if the crusaders have ferrets. Or even gnomes.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~You take up so much of my pack, Gustav. I can barely stuff anything in there.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Gustav, you're tickling me! I'll play with you later, I promise. I love you too.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~I see you trying to poke into our rations. Sneaky ferret.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #30 	
 	NoAction()
 END  
