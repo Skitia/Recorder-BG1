@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.25~
+VERSION ~1.26~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
@@ -513,6 +513,9 @@ END
 
 BEGIN ~Recorder's Music~
 SUBCOMPONENT ~Choose whether or not to have Recorder's custom soundtrack play during timed talks.~
+
+	COPY_EXISTING ~sw1h01.itm~ ~override/bg1npcmusic.g3~
+
 	MKDIR ~music/blank~
 	COPY ~Recorder/Music/blank.mus~ ~music~
 		~Recorder/Music/blank.acm~ ~music/blank/blanka.acm~
