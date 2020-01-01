@@ -300,7 +300,7 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("X3RecGustavTime","LOCALS",1)
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
 END
 	
 IF
@@ -312,27 +312,27 @@ IF
 THEN
   RESPONSE #10
 	DisplayStringHead(Myself,~Your fur's all over the place, ferret. I'm giving you a brush soon.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~You're so messy, Gustav. I'm getting you into a bath later.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Don't jump out just yet, Gustav.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Do you hear that, Gustav? There are so many wondrous sounds in this world.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~I wonder if you like music, Gustav. I can't tell.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Ow, my ear. Ferrets!~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Sneaky ferret. Food is for later, not now.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #30 	
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",TWO_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
 END  
 // Muffy and Gustav 
 IF
