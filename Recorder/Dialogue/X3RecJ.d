@@ -133,7 +133,7 @@ IF ~~ DO ~SetGlobalTimer("X3RecQuestTimer","GLOBAL",ONE_DAY)IncrementGlobal("X3R
 END 
 
 // Warning 2 
-IF ~!AreaCheck("AR3900")!AreaCheck("AR3901")Global("X3RecPalQuest","GLOBAL",1)Global("X3RecQuestWarning","GLOBAL",4)~ X3RecPalQuestND 
+IF ~!AreaCheck("%bg1_eet_symbol%3900")!AreaCheck("%bg1_eet_symbol%3901")Global("X3RecPalQuest","GLOBAL",1)Global("X3RecQuestWarning","GLOBAL",4)~ X3RecPalQuestND 
 SAY ~<CHARNAME>, Mark is running out of time. We can't wander away when he is in peril!~
 ++ ~If you are that impatient, you are on your own.~ + X3RecPalQuestNotDone
 ++ ~I have other things to do as well. Many others are also suffering~ + X3RecPalQuestNotDone
@@ -142,7 +142,7 @@ END
 
 IF ~~ X3RecPalQuestNotDone
 SAY ~I can't wait around for you. I'll be returning to the ruins. If you don't make your way their quickly I will have to do it on my own.~
-IF ~~ DO ~LeaveParty()EscapeAreaMove("AR3900",3036,626,SW)SetGlobal("X3RecKickedOut","GLOBAL",1)~ EXIT
+IF ~~ DO ~LeaveParty()EscapeAreaMove("%bg1_eet_symbol%3900",3036,626,SW)SetGlobal("X3RecKickedOut","GLOBAL",1)~ EXIT
 END 
 
 IF ~Global("X3RecPalQuest","GLOBAL",2)~ X3RecPalQuestDone1
@@ -187,7 +187,7 @@ END
 IF ~~ Q6 
 SAY ~*Sigh*. As you wish. I will head to the Temple of Wisdom in the Friendly Arm Inn to pray. They are kind there, and I can grieve in peace for a time Farewell.~
 = ~Goodbye. I hope we meet again.~
-IF ~~ DO ~MoveGlobal("AR2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+IF ~~ DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 END 
 
@@ -927,15 +927,15 @@ EXIT
 // Interjections 
 
 I_C_T BOYBA2 0 X3RecBoyBa2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~Don't you remember me? Recorder?~
-== BOYBA2 IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~Oh, hi. I like your music. Where's Uncle Harmon?~
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~He...no. You should ask your mother sometime later. She will be the best to tell you.~
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~Don't you remember me? Recorder?~
+== BOYBA2 IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~Oh, hi. I like your music. Where's Uncle Harmon?~
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~He...no. You should ask your mother sometime later. She will be the best to tell you.~
 END 
 
 I_C_T BOYBA2 1 X3RecBoyBa2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~Don't you remember me? Recorder?~
-== BOYBA2 IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~Oh, hi. I like your music. Where's Uncle Harmon?~
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("AR0012")~ THEN ~He...no. You should ask your mother sometime later. She will be the best to tell you.~
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~Don't you remember me? Recorder?~
+== BOYBA2 IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~Oh, hi. I like your music. Where's Uncle Harmon?~
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID) AreaCheck("%bg1_eet_symbol%0012")~ THEN ~He...no. You should ask your mother sometime later. She will be the best to tell you.~
 END 
 
 I_C_T PRISM 2 X3RecPrism2 

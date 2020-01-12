@@ -4,17 +4,17 @@ BEGIN X3Rec
 
 //Candlekeep Style Quest. (Note the long text blocks). It's impossible to lose approval, and this can net 9 approval to start the character off.
 
-CHAIN IF ~AreaCheck("AR2600")Global("X3RecCandleQuest","GLOBAL",0)~ THEN X3Rec CandleTalk 
+CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",0)~ THEN X3Rec CandleTalk 
 ~Hey. You are Gorion's ward, are you not? I am Recorder. I'm sorry that we never spoke before, but could I trouble you? I'm finishing my packing for the Ulcaster expedition, but Sir Mark seems late. Can you see if he is in the inn and ask him to come here? I understand if you are too busy.~ [X3RCon1]
 DO ~MakeGlobal()SetGlobal("X3RecCandleQuest","GLOBAL",1)AddJournalEntry(@1,QUEST)~
 EXIT 
 
-CHAIN IF ~AreaCheck("AR2600")Global("X3RecCandleQuest","GLOBAL",2)~ THEN X3Rec CandleTalk1 
+CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",2)~ THEN X3Rec CandleTalk1 
 ~Thank you! We might just catch up to the others in the Ulcaster expedition. Please, take this. It can help you learn the secrets of magical objects you may find. It'd be terrible if you accidentally used something that was cursed. It's the least I could do.~ [X3RTY]
 DO ~GiveItem("X3RPOT1",Player1)ActionOverride("X3RPal",EscapeArea())EscapeArea()AddJournalEntry(@3,QUEST_DONE)AddexperienceParty(50)IncrementGlobal("X3RecorderApproval","GLOBAL",9)~
 EXIT 
 
-CHAIN IF ~AreaCheck("AR2600")Global("X3RecCandleQuest","GLOBAL",1)~ THEN X3Rec CandleTalk2 
+CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",1)~ THEN X3Rec CandleTalk2 
 ~Did you see him yet? He was so entranced by a lady in the inn, he may still be in his room.~ [X3RCom5]
 EXIT 
 
@@ -174,7 +174,7 @@ EXIT
 CHAIN X3Rec Q6 
 ~*Sigh*. As you wish. I will head to the Temple of Wisdom in the Friendly Arm Inn to pray. They are kind there, and I can grieve in peace for a time Farewell.~
 == X3Rec ~Goodbye. I hope we meet again.~
-DO ~MoveGlobal("AR2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q7 

@@ -1,11 +1,11 @@
 BEGIN X3RPal
 
-CHAIN IF ~AreaCheck("AR2617")NumTimesTalkedTo(0)~ THEN X3RPal CandleQuest
+CHAIN IF ~AreaCheck("%bg1_eet_symbol%2617")NumTimesTalkedTo(0)~ THEN X3RPal CandleQuest
 ~Recorder sent you? I was just appreciating the beauty of a maiden the night before, and the night seemed to slip by. I'll report to my bard now. I hope our quest to the Ulcaster ruins inspires a beautiful song from her lips. Milil bless.~
-DO ~EscapeAreaMove("AR2600",3906,532,SW)AddJournalEntry(@2,QUEST)SetGlobal("X3RecCandleQuest","GLOBAL",2)~
+DO ~EscapeAreaMove("%bg1_eet_symbol%2600",3906,532,SW)AddJournalEntry(@2,QUEST)SetGlobal("X3RecCandleQuest","GLOBAL",2)~
 EXIT 
 
-CHAIN IF ~NumTimesTalkedToGT(0)AreaCheck("AR2600")~ THEN X3RPal CandleQuest1 
+CHAIN IF ~NumTimesTalkedToGT(0)AreaCheck("%bg1_eet_symbol%2600")~ THEN X3RPal CandleQuest1 
 ~The lovely maiden Recorder will want to give you a gift before we depart.~
 EXIT 
 

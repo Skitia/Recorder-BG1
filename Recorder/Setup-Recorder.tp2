@@ -1,13 +1,13 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.26~
+VERSION ~1.27~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
 END 
 
-AUTO_TRA ~Recorder/tra/%s~ //~%~
+AUTO_TRA ~Recorder/tra/%s~ 
 LANGUAGE 
   ~English~ 
   ~english~
@@ -16,6 +16,13 @@ LANGUAGE
  
 
 BEGIN ~Recorder NPC MoD~ 
+ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
+OUTER_SPRINT "bg1_eet_symbol" AR
+END
+
+ACTION_IF GAME_IS ~EET~ THEN BEGIN
+OUTER_SPRINT "bg1_eet_symbol" BG
+END
 INCLUDE "Recorder/Lib/fl#add_kit_ee.tpa"
 
 ADD_KIT ~X3Bard~
@@ -43,7 +50,7 @@ ADD_KIT ~X3Bard~
 	~Recorder/Spells/X3Bardcl.2da~
 	~~ 
 	~0x00080000 5~
-	~BA0~
+	~X3R~
 	~* * * * * * * * * * * * * * * * * * *  *~
 	SAY ~lorekeeper~
 	SAY ~Lorekeeper~
@@ -65,15 +72,6 @@ Disadvantages:
 - Can only be proficient in club, dagger, crossbow, and quarterstaff.~
 
 LAF fl#add_kit_ee
-/*Notice this INT_VAR section is commented out below. Since this is for an NPC a player won't use,
-we don't need to include an automatic biography, or one at all. You can do the same RESOLVE_STR_REF ~Text~ next to it if you did want it.
-We don't need briefdesc, we already have that in our SAY line earlier. And this isn't a ranger or paladin class, so we do not need fallen notices. 
-INT_VAR*/
-/*		biography = 29492
-		briefdesc = RESOLVE_STR_REF ~~
-		fallen = 0
-		fallen_notice = RESOLVE_STR_REF (~~)*/
-// The below sets some more variables.		
 	STR_VAR
 		kit_name = ~X3Bard~ // Same as your ADD KIT line. 
 /* The backstab part is commented out. We don't need it, as we are a bard class. If you're a thief class, then you can set it as per thief progression, 
@@ -95,7 +93,23 @@ this activates on weapons you are not proficient in. Standard here is three. */
 //		crippstr = ~0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 END
 
+//HLA 
+COPY	"%MOD_FOLDER%/Spells/LUX3R.2da" override
 //Spell
+COPY    "%MOD_FOLDER%/Spells/X3RBS.bam" override 
+COPY    "%MOD_FOLDER%/Spells/X3RHLA.spl" override 
+SAY NAME1 ~Symphony of Scholars~
+SAY NAME2 ~Symphony of Scholars~
+SAY 0x50 ~Symphony of Scholars: A powerful song unique to lorekeepers, the song gives the bard a 6 point bonus to their AC, and 10% magic resistance due to the magic of the song. As well, the bard’s party receives +4 Intelligence, +2 to all saves, +5% MR, +15% chance of a critical hit, and immunity to charm, domination, sleep, rigid/feeblemind, confusion, and fear. 
+This ability replaces the current bard song. It does not stack with Sonata, Enhanced Bard Song or other song sources, and cannot be learned if Enhanced Bard Song is known.
+~
+COPY    "%MOD_FOLDER%/Spells/X3RHLAS.spl" override 
+SAY NAME1 ~Symphony of Scholars~
+SAY NAME2 ~Symphony of Scholars~
+SAY 0x50 ~Symphony of Scholars: A powerful song unique to lorekeepers, the song gives the bard a 6 point bonus to their AC, and 10% magic resistance due to the magic of the song. As well, the bard’s party receives +4 Intelligence, +2 to all saves, +5% MR, +15% chance of a critical hit, and immunity to charm, domination, sleep, rigid/feeblemind, confusion, and fear. 
+This ability replaces the current bard song. It does not stack with Sonata, Enhanced Bard Song or other song sources, and cannot be learned if Enhanced Bard Song is known.
+~
+
 COPY	"Recorder/Spells/x3rpkit2.spl" override
 	SAY NAME1 ~Sonata~
 	SAY NAME2 ~Sonata~
@@ -176,7 +190,7 @@ SAY NAME1 ~Recorder's Flute~
 SAY NAME2 ~Recorder's Flute~
 SAY DESC  ~This flute is a masterpiece, adorned in precious metal and crafted with love. It appears very expensive, and Recorder clearly treasures the item.
 
-Abiltiies: Once per day may cast the spell Friends, lasting 24 rounds.~
+Abilities: Once per day may cast the spell Friends, lasting 24 rounds.~
 	  OUTER_SET strref = RESOLVE_STR_REF (~Recorder holds up a hand when you reach for her instrument. "Please, don't touch it. It's quite expensive." ~ [X3ReRar1])
 	  APPEND item_use.2da ~x3flute Recorder %strref% 3~
 	  
@@ -392,17 +406,17 @@ ADD_JOURNAL TITLE (@29) @30 @31 @34 @35 @36 USING ~Recorder/Tra/English/Setup.tr
  
 // Area Scripts   
   
-      EXTEND_TOP ~ar2600.bcs~ ~Recorder/Scripts/ar2600.baf~
+      EXTEND_TOP ~ar2600.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%2600.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar2617.bcs~ ~Recorder/Scripts/ar2617.baf~
+      EXTEND_TOP ~ar2617.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%2617.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar3900.bcs~ ~Recorder/Scripts/ar3900.baf~
+      EXTEND_TOP ~ar3900.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%3900.baf~
         EVALUATE_BUFFER  		
-      EXTEND_TOP ~ar3901.bcs~ ~Recorder/Scripts/ar3901.baf~
+      EXTEND_TOP ~ar3901.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%3901.baf~
         EVALUATE_BUFFER  	
-      EXTEND_TOP ~ar0012.bcs~ ~Recorder/Scripts/ar0012.baf~
+      EXTEND_TOP ~ar0012.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%0012.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar0200.bcs~ ~Recorder/Scripts/ar0200.baf~
+      EXTEND_TOP ~ar0200.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%0200.baf~
         EVALUATE_BUFFER  		
 //Other Scripts 
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Rec.baf~

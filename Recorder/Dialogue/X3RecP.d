@@ -42,7 +42,7 @@ EXIT
 CHAIN X3RecP Q6 
 ~*Sigh*. As you wish. I will head to the Temple of Wisdom in the Friendly Arm Inn to pray. They are kind there, and I can grieve in peace for a time Farewell.~
 == X3Rec ~Goodbye. I hope we meet again.~
-DO ~MoveGlobal("AR2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3RecP Q7 
@@ -86,14 +86,14 @@ END
 
 IF ~~ X3RecKickedOutQuest1 
 SAY ~I will wait by the entrance. Please, please, report back if you hear anything.~
-IF ~AreaCheck("AR3900")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([3036.626])~ EXIT 
-IF ~AreaCheck("AR3901")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([1737.322])~ EXIT 
+IF ~AreaCheck("%bg1_eet_symbol%3900")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([3036.626])~ EXIT 
+IF ~AreaCheck("%bg1_eet_symbol%3901")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([1737.322])~ EXIT 
 END 
 
 IF ~~ X3RecKickedOutQuest2
 SAY ~I... will find a way myself, then.~
-IF ~AreaCheck("AR3900")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([3036.626])~ EXIT 
-IF ~AreaCheck("AR3901")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([1737.322])~ EXIT 
+IF ~AreaCheck("%bg1_eet_symbol%3900")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([3036.626])~ EXIT 
+IF ~AreaCheck("%bg1_eet_symbol%3901")~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)MoveToPoint([1737.322])~ EXIT 
 END 
 
 
@@ -110,7 +110,7 @@ END
 
 IF ~~ kicked1a 
 SAY ~I will head to the Temple of Garl in the Friendly Arm Inn then. The priestess is there is so kind. Farewell, and be careful.~ [X3RBye]
-IF ~~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)EscapeAreaMove("AR2304",431,243,SW)~ EXIT
+IF ~~ DO ~SetGlobal("X3RecKickedOut","GLOBAL",1)EscapeAreaMove("%bg1_eet_symbol%2304",431,243,SW)~ EXIT
 END 
 // Recorder previously kicked out, and not in party. 
 

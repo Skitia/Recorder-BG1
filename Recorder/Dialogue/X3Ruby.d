@@ -82,7 +82,7 @@ EXIT
 
 CHAIN X3RecJ tD.4 
 ~*Sigh*. If you change your mind, I'll be at the Temple of Garl in the Friendly Arm Inn. Farewell, I guess.~
-DO ~MoveGlobal("AR2304","X3Rec",[431.243])AddexperienceParty(1200)~ 
+DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddexperienceParty(1200)~ 
 EXIT 
 
 CHAIN X3RecJ tAlive 

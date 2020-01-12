@@ -163,14 +163,14 @@ END
 IF 
    See([PC])
    Global("X3RecPalQuest","GLOBAL",0)
-   AreaCheck("AR3900")
+   AreaCheck("%bg1_eet_symbol%3900")
   THEN
     RESPONSE #100
 	Dialogue([PC])		
 END 	
 // Quest 
 IF 
-AreaCheck("AR3901") // Is in Ulcaster Ruins. 
+AreaCheck("%bg1_eet_symbol%3901") // Is in Ulcaster Ruins. 
 Global("X3RecUlcaster","GLOBAL",0) // Has never said this before. 
 Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished. 
 InParty("X3Rec")
@@ -181,8 +181,8 @@ StartDialogueNoSet(Player1)
 END 
 
 IF 
-!AreaCheck("AR3901") // Is not in Ulcaster Ruins
-!AreaCheck("AR3900") // Is not in Ulcaster 
+!AreaCheck("%bg1_eet_symbol%3901") // Is not in Ulcaster Ruins
+!AreaCheck("%bg1_eet_symbol%3900") // Is not in Ulcaster 
 Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished .
 Global("X3RecQuestWarning","GLOBAL",0)
 InParty("X3Rec")
@@ -193,8 +193,8 @@ END
 
 IF 
 GlobalTimerExpired("X3RecQuestTimer","GLOBAL")
-!AreaCheck("AR3901") // Is not in Ulcaster Ruins
-!AreaCheck("AR3900") // Is not in Ulcaster 
+!AreaCheck("%bg1_eet_symbol%3901") // Is not in Ulcaster Ruins
+!AreaCheck("%bg1_eet_symbol%3900") // Is not in Ulcaster 
 InParty("X3Rec")
 Global("X3RecPalQuest","GLOBAL",1) // Quest is not yet finished .
 !ActuallyInCombat()
@@ -207,8 +207,8 @@ END
 
 IF 
 GlobalTimerExpired("X3RecQuestTimer","GLOBAL")
-!AreaCheck("AR3901") // Is not in Ulcaster Ruins
-!AreaCheck("AR3900") // Is not in Ulcaster 
+!AreaCheck("%bg1_eet_symbol%3901") // Is not in Ulcaster Ruins
+!AreaCheck("%bg1_eet_symbol%3900") // Is not in Ulcaster 
 InParty("X3Rec") 
 !StateCheck(Player1,CD_STATE_NOTVALID) 
 !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -260,7 +260,7 @@ StartDialogueNoSet(Player1)
 END 
 
 IF 
-AreaCheck("AR0200") // Is in Baldur's Gate North District
+AreaCheck("%bg1_eet_symbol%0200") // Is in Baldur's Gate North District
 Global("X3ReBaldurQuest","GLOBAL",0)
 OR(2)
 Global("X3RecSecQuest","GLOBAL",3)
@@ -285,7 +285,7 @@ END
 
 IF 
 Global("X3ReBaldurQuest","GLOBAL",3)
-!AreaCheck("AR0012") 
+!AreaCheck("%bg1_eet_symbol%0012") 
 THEN RESPONSE #100 
 StartDialogueNoSet(Player1)
 END 
@@ -444,7 +444,7 @@ InParty(Myself)
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
 !StateCheck(Myself,CD_STATE_NOTVALID)
-AreaCheck("AR0123")
+AreaCheck("%bg1_eet_symbol%0123")
 Global("X3RecTalk","GLOBAL",17)
 THEN RESPONSE #100 
 SetGlobal("X3RecTalk","GLOBAL",18)
