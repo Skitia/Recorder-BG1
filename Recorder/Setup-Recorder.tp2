@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.27~
+VERSION ~1.28~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
@@ -406,17 +406,17 @@ ADD_JOURNAL TITLE (@29) @30 @31 @34 @35 @36 USING ~Recorder/Tra/English/Setup.tr
  
 // Area Scripts   
   
-      EXTEND_TOP ~ar2600.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%2600.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%2600.bcs~ ~Recorder/Scripts/AR2600.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar2617.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%2617.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%2617.bcs~ ~Recorder/Scripts/AR2617.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar3900.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%3900.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%3900.bcs~ ~Recorder/Scripts/AR3900.baf~
         EVALUATE_BUFFER  		
-      EXTEND_TOP ~ar3901.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%3901.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%3901.bcs~ ~Recorder/Scripts/AR3901.baf~
         EVALUATE_BUFFER  	
-      EXTEND_TOP ~ar0012.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%0012.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%0012.bcs~ ~Recorder/Scripts/AR0012.baf~
         EVALUATE_BUFFER  
-      EXTEND_TOP ~ar0200.bcs~ ~Recorder/Scripts/%bg1_eet_symbol%0200.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%0200.bcs~ ~Recorder/Scripts/AR0200.baf~
         EVALUATE_BUFFER  		
 //Other Scripts 
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Rec.baf~
