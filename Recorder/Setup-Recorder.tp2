@@ -63,9 +63,9 @@ Advantages:
 
 SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
-Level 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
-Level 15: +2 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
-Level 20: +3 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind and Confusion
+Level 1: +1 Int, +1 to Saves vs Spells, Immunity to Charm and Sleep. 
+Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion
 
 Disadvantages:
 - No Pickpocketing Skill.
@@ -191,7 +191,7 @@ SAY NAME2 ~Recorder's Flute~
 SAY DESC  ~This flute is a masterpiece, adorned in precious metal and crafted with love. It appears very expensive, and Recorder clearly treasures the item.
 
 Abilities: Once per day may cast the spell Friends, lasting 24 rounds.~
-	  OUTER_SET strref = RESOLVE_STR_REF (~Recorder holds up a hand when you reach for her instrument. "Please, don't touch it. It's quite expensive." ~ [X3ReRar1])
+	  OUTER_SET strref = RESOLVE_STR_REF (~Recorder will not give up her flute, but she does give you a brief performance.~ [X3RBored])
 	  APPEND item_use.2da ~x3flute Recorder %strref% 3~
 	  
 COPY	"Recorder/Items/x3RLet.itm" override
@@ -278,7 +278,8 @@ SAY NAME2 ~Gustav~
 SAY DESC ~This ferret appears quite well fed and occasionally pokes its head out of Recorder's pack. When asked how her mother purchased it from the grand markets of Amn, introducing it to her in the evening dinner. The pair have been inseparable ever since.
 
 Weight: 1~
-
+	  OUTER_SET strref = RESOLVE_STR_REF (~The Ferret growls when you try to remove it from its comfortable spot in Recorder's pack.~ [X3RF3])
+APPEND item_use.2da ~X3RFER Recorder %strref% 3~
 COPY "Recorder/Items/X3RARM.bam" override 
 COPY "Recorder/Items/X3RLEAT.itm" override 
 SAY NAME1 ~Sonneter's Leather~
