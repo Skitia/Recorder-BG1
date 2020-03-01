@@ -7,7 +7,7 @@ See("C0Aura")
 Global("CrossAuraRec","LOCALS",0)~ THEN X3RecB AuRecBanter1
 ~You visited Kozakura, Aura? Is it true they write their words in symbols?~
 DO ~SetGlobal("CrossAuraRec","LOCALS",1)~
-== BC0Aura ~Yep... actually, it's a bit more than that. Sometimes words can be expressed within single symbol... or they can be in a group of syllables known as the 'kana'. Then you get into all the different styles and dialects and... it's all very complicated. I've only really mastered the Seinai dialect*, myself.~
+== BC0Aura ~Yep... actually, it's a bit more than that. Sometimes words can be expressed within single symbol... or they can be in a group of syllables known as the 'kana'. Then you get into all the different styles and dialects and... it's all very complicated. I've only really mastered the Seinai dialect, myself.~
 == X3RecB ~It sounds like such an unusual language. All the other languages I know, Elven, Celestial, Draconic, seem to follow more normal language conventions.~
 == BC0Aura ~Ooh, Draconic? I'm still picking up the basics on that one. My elven's a little rusty, but my dwarven isn't bad.~
 == X3RecB ~There were never any writings on the Dwarven language from the books father re-binded. Maybe we could swap what we know and learn a bit from each other sometime?~
