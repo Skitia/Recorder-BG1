@@ -63,7 +63,7 @@ Advantages:
 
 SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
-Level 1: +1 Int, +1 to Saves vs Spells, Immunity to Charm and Sleep. 
+Level 1: +1 Int, +1 Saves vs Spells, Immunity to Charm and Sleep. 
 Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
 Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion
 
@@ -115,18 +115,18 @@ COPY	"Recorder/Spells/x3rpkit2.spl" override
 	SAY NAME2 ~Sonata~
 	SAY 0x50 ~SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
-Level 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
-Level 15: +2 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
-Level 20: +3 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind and Confusion~
+Level 1: +1 Int, +1 Saves vs Spells, Immunity to Charm and Sleep. 
+Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion~
 COPY	"Recorder/Spells/x3rpkit4.spl" override
 	SAY NAME1 ~Sonata~
 	SAY NAME2 ~Sonata~
 	SAY 0x50 ~SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
 
-evel 1: +1 Int, +1 to All Saves, Immunity to Charm, Domination and Sleep. 
-Level 15: +2 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, and Rigid/Feeblemind.
-Level 20: +3 Int, +1 to All Saves, Immunity to Charm, Domination, Sleep, Rigid/Feeblemind and Confusion~
-	COPY "Recorder/Spells/X3RSHOUT.SPL" override 
+Level 1: +1 Int, +1 Saves vs Spells, Immunity to Charm and Sleep. 
+Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion~
+COPY "Recorder/Spells/X3RSHOUT.SPL" override 
 SAY NAME1 ~Greater Deafness~
 SAY NAME2 ~Greater Deafness~
 SAY DESC ~Greater Deafness
