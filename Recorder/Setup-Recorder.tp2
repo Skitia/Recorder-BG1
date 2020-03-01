@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.28~
+VERSION ~1.29~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
