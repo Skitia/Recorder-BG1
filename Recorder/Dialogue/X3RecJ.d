@@ -1170,7 +1170,7 @@ I_C_T GALILE 0 X3RecGALiLE0
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Astrology? I wish I had the ability to gain knowledge of events just from looking at the sky. We could do so much more...~
 END
 
-I_C_T DUSHAI10 X3RecDushai
+I_C_T DUSHAI 10 X3RecDushai
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Thank you for the story, kin. I am an aspiring scholar myself, and I hope to be able to share all the knowledge I've gained with others.~
 == DUSHAI ~Aye, perhaps you will yet, young one. You have the eye I did when I was in my younger ears.~
 END 
