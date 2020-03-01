@@ -334,7 +334,7 @@ END
 ++ ~You should be.~ + T1.9
 
 CHAIN X3RecJ T1.4 
-~Really? I thought I was the only one. Still, I know how important rest is. I will be less disruptive.~
+~Really? I thought I was the only one. I guess I feel better that I am not alone, but I hope I don't disrupt anyone else's rest like this anymore.~
 DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOBAL",3000)~
 EXIT 
 
@@ -1170,9 +1170,16 @@ I_C_T GALILE 0 X3RecGALiLE0
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Astrology? I wish I had the ability to gain knowledge of events just from looking at the sky. We could do so much more...~
 END
 
+I_C_T DUSHAI10 X3RecDushai
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Thank you for the story, kin. I am an aspiring scholar myself, and I hope to be able to share all the knowledge I've gained with others.~
+== DUSHAI ~Aye, perhaps you will yet, young one. You have the eye I did when I was in my younger ears.~
+END 
+
 I_C_T CARSA 5 X3RecCarsa 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Wait! <CHARNAME>, she is distressed. Perhaps I and my flute can help if you let me try.~
 END 
+
+
 
 
 
