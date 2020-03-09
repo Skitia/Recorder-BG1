@@ -1196,6 +1196,7 @@ EXTERN Carsa 8
 
 CHAIN IF ~Global("X3RCarsaTalk","LOCALS",2)Dead("KAHRK")~ THEN X3RecJ X3RecCarsa3
 ~I...I thought I could save her. I guess I was a fool. Her words about her companions...it reminded me so much of my former friends.~
+DO ~IncrementGlobal("X3RCarsaTalk","LOCALS",1)~
 END 
 ++ ~Do not blame yourself. That jar's magic hold on her was too strong.~ + Carsa4
 ++ ~Next time let me take the lead. You risked us all with your need to save everyone.~ + Carsa5
