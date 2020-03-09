@@ -476,16 +476,16 @@ END
 
 IF 
 GlobalLT("X3RecorderApproval","GLOBAL",-89)
-Global("X3Break","GLOBAL",0)
+Global("X3RecBreak","GLOBAL",0)
 THEN RESPONSE #100
-SetGlobal("X3Break","GLOBAL",2) 
+SetGlobal("X3RecBreak","GLOBAL",2) 
 SetGlobal("X3RecorderApproval","GLOBAL",-90)
 END
 IF
 GlobalLT("X3RecorderApproval","GLOBAL",-89)
-Global("X3Break","GLOBAL",3)
+Global("X3RecBreak","GLOBAL",3)
 THEN RESPONSE #100 
-SetGlobal("X3Break","GLOBAL",4)
+SetGlobal("X3RecBreak","GLOBAL",4)
 END 
 
 IF 
@@ -496,8 +496,8 @@ See(Player1)
 CombatCounter(0)
 !See([ENEMY])
 OR(2)
-Global("X3Break","GLOBAL",2)
-Global("X3Break","GLOBAL",4)
+Global("X3RecBreak","GLOBAL",2)
+Global("X3RecBreak","GLOBAL",4)
 THEN RESPONSE #100
 StartDialogueNoSet(Player1)
 END
@@ -543,6 +543,7 @@ THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",3)
 SetGlobal("X3RecorderApproval","GLOBAL",-90)
 END
+
 
 // SEX CHANGE
 
