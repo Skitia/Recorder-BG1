@@ -300,7 +300,7 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("X3RecGustavTime","LOCALS",1)
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
 END
 	
 IF
@@ -309,30 +309,31 @@ IF
     CombatCounter(0)
 	RealGlobalTimerExpired("X3RecGustavHour","LOCALS")
 	GlobalGT("X3RecTalk","GLOBAL",4)
+	!AreaType(DUNGEON)
 THEN
   RESPONSE #10
 	DisplayStringHead(Myself,~Your fur's all over the place, ferret. I'm giving you a brush soon.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~You're so messy, Gustav. I'm getting you into a bath later.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Don't jump out just yet, Gustav.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Do you hear that, Gustav? There are so many wondrous sounds in this world.~ [X3RF2])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~I wonder if you like music, Gustav. I can't tell.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Ow, my ear. Ferrets!~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #10
 	DisplayStringHead(Myself,~Sneaky ferret. Food is for later, not now.~ [X3RF3])
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
   RESPONSE #30 	
-	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
+	RealSetGlobalTimer("X3RecGustavHour","LOCALS",FOUR_HOURS)
 END  
 // Muffy and Gustav 
 IF
@@ -363,7 +364,7 @@ IF
 	GlobalGT("X3RecTalk","GLOBAL",4)
 THEN
   RESPONSE #10
-	DisplayStringHead(Myself,~I used to be a morning person, then you kept me up all the time, silly ferret.~ [X3RF1])
+	DisplayStringHead(Myself,~I used to be a morning person, then you kept me up all the time, Gustav.~ [X3RF1])
   RESPONSE #10
 	DisplayStringHead(Myself,~Here, one last bite before we go, Gustav.~ [X3RF3])
   RESPONSE #10

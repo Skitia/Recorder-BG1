@@ -2,6 +2,7 @@ IF
     HPPercentLT(Myself,25)
  THEN
  RESPONSE #100
-    ChangeEnemyAlly(Myself,GOODBUTBLUE)
-	EscapeAreaDestroy(3)
+    Enemy() // This is to remove the player from control, they'll never get a chance to attack it.
+	ChangeEnemyAlly(Myself,NEUTRAL) // Reassign it to neutral. 
+	EscapeAreaDestroy(3) // Run away
 END
