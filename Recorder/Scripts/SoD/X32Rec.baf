@@ -50,6 +50,7 @@ IF
 	HasItem("X3RFer",Myself)
     CombatCounter(0)
 	RealGlobalTimerExpired("X3RecGustavHour","LOCALS")
+	!AreaType(DUNGEON)
 THEN
   RESPONSE #10
 	DisplayStringHead(Myself,~I really should brush your fur, Gustav.~ [X3RF2])
