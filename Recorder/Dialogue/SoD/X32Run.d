@@ -66,7 +66,7 @@ EXTERN X32Run QuestFailC
 
 CHAIN X32Run QuestFailC 
 ~Bully! I can handle you!~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)Enemy()~ 
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)Enemy()~ 
 EXIT 
 
 CHAIN X32Run QuestForward 

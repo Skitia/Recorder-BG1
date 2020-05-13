@@ -64,10 +64,10 @@ CHAIN X3Ruby tD.1
 == X3Ruby ~You need not stay with me, Recorder. In fact I would prefer to  be alone...it will be easier for me to deal with what has passed.~
 == X3RecJ ~*Sigh*. if that is what you wish. If you do not mind, may I stay with you, <CHARNAME>, on your travels? I don't know where else to go right now. I can barely think.~
 END 
-++ ~I'd be glad to have you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ EXTERN X3RecJ tD.2 
+++ ~I'd be glad to have you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ EXTERN X3RecJ tD.2 
 ++ ~If that is what you want.~  EXTERN X3RecJ tD.2
 ++ ~I think you should take time for yourself for now.~ EXTERN X3RecJ tD.3
-++ ~Not a chance. I did my part and that's it.~ DO ~IncrementGlobal("X3RecJorderApproval","GLOBAL",-3)~ EXTERN X3RecJ tD.4
+++ ~Not a chance. I did my part and that's it.~ DO ~IncrementGlobal("X3RecJorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXTERN X3RecJ tD.4
 
 CHAIN X3RecJ tD.2 
 ~Thank you! I will do my part for the tales you craft, and record them if you don't mind. I still have so much to see and learn.~

@@ -7,7 +7,7 @@ CHAIN IF ~IsValidForPartyDialogue("X3Rec")Global("X3RecBryce","GLOBAL",1)~ THEN 
 END 
 ++ ~Calm down, and tell me exactly what is going on.~ + 1.A 
 ++ ~Run if you like. But I'm going to investigate this.~ + 1.B 
-++ ~And you will be dead next if you don't get out of my way.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + 1.B
+++ ~And you will be dead next if you don't get out of my way.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + 1.B
 
 CHAIN X3Bryce 1.A 
 ~We were betrayed by Harris. I was only along for the money to protect the group, myself, I did not care about any dusty book. Dirty necromancer summoned undead to keep the rest of us from advancing. He wants everything for himself, and I say let him have it!~

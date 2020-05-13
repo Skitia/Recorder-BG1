@@ -76,13 +76,13 @@ END
 
 CHAIN X3RCin GetOutBad 
 ~Get out now, or I will find the guards! Out!~
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXIT 
 
 CHAIN X3RCin GetOutGreedy 
 ~You greedy... Is this the kind of friends you honor my brother with, Recorder?~
 == X3RecJ ~<CHARNAME> didn't mean that, they-~
 == X3RCin ~Get out of my home, all of  you!~
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
 
 CHAIN X3RecJ GetOutRecorder 
 ~I guess you're right. Goodbye, Cindy.~ 
@@ -92,13 +92,13 @@ CHAIN X3RCin Defend
 ~What? Why you...you...~
 == X3RCin ~You... are right. I am sorry Recorder. I just need time.~
 == X3RecJ ~We understand. We will depart and give you space. I'm sorry for the pain this brings you.~
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ EXIT 
 
 CHAIN X3RecJ GetOutGood 
 ~I will try to come back and visit sometime, and we can talk of the good memories.~
 == X3RCin ~Perhaps but...for now, I need space. For Sir Mark's safe, be careful out there, Recorder.~
 == X3RecJ ~I'll do my best. I promise.~ 
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",6)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ EXIT 
 
 CHAIN IF ~Global("X3RecSecQuest","GLOBAL",5)~ THEN X3RCin GetOut 
 ~Please, leave me alone.~

@@ -4,8 +4,8 @@ BEGIN X32RECJ
 
 // Talk 1 
 
-IF ~Global("X3RecTalk","GLOBAL",2)~ Talk1 
-SAY ~Have you thought about her, <CHARNAME>? The woman we are opposing?~
+IF ~Global("X32RecTalk","GLOBAL",2)~ Talk1 
+SAY ~Have you thought about her, <CHARNAME>? The woman we are opposing?~ [X3RSong]
 ++ ~Caelar is the enemy. Nothing more.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk1.1 
 ++ ~I have a lot of questions about her. Soon, I will have answers.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk1.2 
 ++ ~No, not really. Why do you ask?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk1.2
@@ -20,7 +20,7 @@ IF ~~ Talk1.2
 SAY ~She has such a following. There is something about her that seems to pull so many people to action.~
 = ~There are very few people like that. To a bard, it is almost exciting, if you did not see the effects first hand.~
 ++ ~I suppose I can see why people may easily leap to her cause.~ + Talk1.3 
-++ ~A mistake for them. The more that join her, the more that I cut down to get to her.~  DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk1.4
+++ ~A mistake for them. The more that join her, the more that I cut down to get to her.~  DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk1.4
 ++ ~We've no more time to talking. We've a march to continue.~ + Talk1.Exit 
 END 
 
@@ -32,8 +32,8 @@ END
 IF ~~ Talk1.3 
 SAY ~There may be opportunities ahead to convince them to put down their arms, or avoid harming them at all.~
 = ~I truly believe it starts with understanding why they chose their path.~
-++ ~If that is a possibility, I will take it. Even for Caelar, if she can be reasoned with.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk1.5 
-++ ~That is a naive thought. Mistakes have consequences, and if they choose to oppose me, they choose death.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk1.6 
+++ ~If that is a possibility, I will take it. Even for Caelar, if she can be reasoned with.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk1.5 
+++ ~That is a naive thought. Mistakes have consequences, and if they choose to oppose me, they choose death.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk1.6 
 ++  ~We will see. I will do as I feel when the situation arises. Nothing more or less.~ + Talk1.7 
 ++ ~We've no more time to talking. We've a march to continue.~ + Talk1.Exit 
 END 
@@ -60,8 +60,8 @@ END
 
 // Talk 2 
 
-IF ~Global("X3RecTalk","GLOBAL",4)~ Talk2
-SAY ~I was thinking about something, about your old home, Candlekeep.~
+IF ~Global("X32RecTalk","GLOBAL",4)~ Talk2
+SAY ~I was thinking about something, about your old home, Candlekeep.~ [X3RSong]
 ++ ~Oh? What is it?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk2.1 
 ++ ~I didn't know you were familiar with Candlekeep.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk2.11
 ++ ~You were there for a time, as I remember. What are you thinking of?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk2.1 
@@ -71,7 +71,7 @@ END
 IF ~~ Talk2.1 
 SAY ~I was remembering the musical chantings of the monks. They do it hours, every day, so ritualistically. And yet their performance is always perfect.~
 ++ ~Only you would find that amazing.~ + Talk2.2 
-++ ~They have a certain dedication. I found their tenacity inspiring for myself.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk2.3 
+++ ~They have a certain dedication. I found their tenacity inspiring for myself.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@37)~ + Talk2.3 
 ++ ~I remember listening to it before I left. Before Gorion...~ + Talk2.4 
 END  
 
@@ -97,9 +97,9 @@ END
 
 IF ~~ Talk2.5
 SAY ~When I think back on them, and then think of myself, I wonder if my own contribution is quality enough for the cause.~
-++ ~You've helped us out in tight moments many times, Recorder. Do not feel so insecure.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk2.6 
-++ ~You are trying to help. That is all that matters.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk2.7
-++ ~Well, if I can be blunt about it? You're useless bar a biographer for myself.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk2.8
+++ ~You've helped us out in tight moments many times, Recorder. Do not feel so insecure.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk2.6 
+++ ~You are trying to help. That is all that matters.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk2.7
+++ ~Well, if I can be blunt about it? You're useless bar a biographer for myself.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk2.8
 END 
 
 IF ~~ Talk2.6 
@@ -123,8 +123,8 @@ IF ~~ EXIT
 END 
 
 // Talk 3 
-IF ~Global("X3RecTalk","GLOBAL",6)~ Talk3
-SAY ~Mi Sol Sol, Re Sol Sol...Mi Sol La Do La...Sol...~
+IF ~Global("X32RecTalk","GLOBAL",6)~ Talk3
+SAY ~Mi Sol Sol, Re Sol Sol...Mi Sol La Do La...Sol...~ [X3RSong]
 ++ ~What are you doing, dancing like that?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk3.1 
 ++ ~What language are you speaking?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk3.1 
 ++ ~Someone had a good rest.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk3.1 
@@ -134,9 +134,9 @@ END
 IF ~~ Talk3.1 
 SAY ~Oh, how embarrassing. I was just really in the moment.~
 = ~I was speaking the way the bards articulate notes in the theory of music, while just dancing to a tune. I hope I didn't wake anyone.~
-++ ~It was beautiful. You dance with passion.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk3.2 
+++ ~It was beautiful. You dance with passion.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.2 
 ++ ~It looked a bit silly, but was entertaining.~ + Talk3.3 
-++ ~It was annoying. I was having a good night's rest for once.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk3.4
+++ ~It was annoying. I was having a good night's rest for once.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk3.4
 ++ ~The theory of music?~ + Talk3.Theory 
 END 
 
@@ -144,9 +144,9 @@ IF ~~ Talk3.Theory
 SAY ~Oh, I could go on all day about this. Music has its own magic, it's own systems and rules and art to it.~
 = ~And then there is beautiful ways to break that entire system of order and form something shocking, yet beautiful.~
 = ~Some bards dedicate their entire life just studying and forming concepts. Just thinking about it made me feel awe and happiness.~
-++ ~It was enchanting. Your dance is beautiful~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk3.2 
-++ ~It seems odd. But your dancing was entertaining~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk3.3
-++ ~It sounds like nonsense to me, just don't be so noisy next time.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk3.4
+++ ~It was enchanting. Your dance is beautiful~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.2 
+++ ~It seems odd. But your dancing was entertaining~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.3
+++ ~It sounds like nonsense to me, just don't be so noisy next time.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk3.4
 ++ ~Yeah, you are rambling. We have a march to get to.~ + Talk3.4
 END 
 
@@ -172,7 +172,7 @@ END
 
 IF ~~ Talk3.5 
 SAY ~I know we're in constant danger, but it felt so good to let go a moment.~
-++ ~Perhaps you can dance with me next time.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk3.6 
+++ ~Perhaps you can dance with me next time.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.6 
 ++ ~You aren't bothered by everything going on around us?~ + Talk3.7
 ++ ~You can dance more later. It's time for us to march.~ + Talk3.Exit 
 END 
@@ -194,8 +194,8 @@ END
 
 // Talk 4 
 
-IF ~Global("X3RecTalk","GLOBAL",8)~ Talk4 
-SAY ~Do you feel different, <CHARNAME>? Different than you were before you were the hero of Baldur's Gate?~
+IF ~Global("X32RecTalk","GLOBAL",8)~ Talk4 
+SAY ~Do you feel different, <CHARNAME>? Different than you were before you were the hero of Baldur's Gate?~ [X3RSong]
 ++ ~I'm still the same old <CHARNAME> as I always was.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk4.1 
 ++ ~Stronger. More respected. Wealthier too.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk4.2 
 ++ ~The world seems different. And that leaves me more troubled.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk4.3 
@@ -219,7 +219,7 @@ END
 IF ~~ Talk4.4 
 SAY ~Everyone seems to take what you were able to do before, and carry difficult tasks on your own merits.~
 = ~I couldn't do that. Under so much weight...I would cave and fall. How do you manage it?~ 
-++ ~The truth is I don't do it alone. If it were just me, I couldn't do this.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~ + Talk4.5 
+++ ~The truth is I don't do it alone. If it were just me, I couldn't do this.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ + Talk4.5 
 ++ ~With confidence, focus, and strength. I know my power.~ + Talk4.6 
 ++ ~I don't know. I just try and hope it turns out well.~ + Talk4.7 
 END 
@@ -242,8 +242,8 @@ END
 IF ~~ Talk4.8 
 SAY ~Every step we move closer to the end...so many fall in battle. We may not make it...~
 ++ ~Do not be afraid. Belief in failure will only have you perform worse.~ + Talk4.9 
-++ ~And this has you hesitate? You've not faltered for me yet.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk4.9 
-++ ~If you are going to whine, do it away from me. I'll not have you lower morale.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk4.10
+++ ~And this has you hesitate? You've not faltered for me yet.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk4.9 
+++ ~If you are going to whine, do it away from me. I'll not have you lower morale.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk4.10
 END 
 
 IF ~~ Talk4.9 
@@ -251,14 +251,14 @@ SAY ~*Sigh*, you are right. I don't know why I feel so nervous now. The story ha
 IF ~~ + Talk4.10 
 END 
 
-IF ~Global("X3RecTalk","GLOBAL",10)~ Talk4.10
+IF ~Global("X32RecTalk","GLOBAL",10)~ Talk4.10
 SAY ~I'm sorry. Please, forget I've said anything.~
 IF ~~ EXIT 
 END 
 
 // Talk 5 
-IF ~Global("X3RecTalk","GLOBAL",10)~ Talk5 
-SAY ~<CHARNAME>...about our talk, before, if you remember. About my fears of things failing...~
+IF ~Global("X32RecTalk","GLOBAL",10)~ Talk5 
+SAY ~<CHARNAME>...about our talk, before, if you remember. About my fears of things failing...~ [X3RSong]
 ++ ~Are you still afraid?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk5.1 
 ++ ~I remember. What is it  you wished to say?~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk5.2 
 ++ ~I don't want to hear any more about this. Quiet and keep moving.~ DO ~SetGlobalTimer("X32RecGameTalkTimer","GLOBAL",THREE_DAYS)RealSetGlobalTimer("X32RecRealTalkTimer","GLOBAL",ONE_HOUR)IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk5.Exit 
@@ -286,9 +286,9 @@ IF ~~ Talk5.3
 SAY ~Your actions inspire me. Every time there is a hard decision to be made you always know the right thing to do.~
 = ~Before I was so afraid of failing sometimes, of not being able to complete my task of recording everything that is transpiring.~
 = ~But with you, I feel hopeful, and soothed. And if there is anything I can do to help you feel the same, I will be glad to do it.~
-++ ~Your faith in me is enough, Recorder. That keeps me strong.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk5.3A 
+++ ~Your faith in me is enough, Recorder. That keeps me strong.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk5.3A 
 ++ ~Your music keeps me inspired, and moving forward. Keep at it is all I ask.~ + Talk5.3B 
-++ ~Thank you, Recorder. You humble me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk5.3C 
+++ ~Thank you, Recorder. You humble me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk5.3C 
 ++ ~I am glad you feel that way. I hope you still do when this is over.~ + Talk5.3D 
 END 
 
@@ -333,9 +333,9 @@ IF ~~ Talk5.4
 SAY ~Sometimes I watch, and I see you struggle. Sometimes you make mistakes, and sometimes you push through.~
 = ~But always, at the end you still stand. You are still here. And that inspires me, and gives me hope.~
 = ~I don't know if I can help you make the right decision. But if you ever need advice, I will be glad to give it.~
-++ ~Do not be afraid to speak up. I will hear what you have to say.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk5.4A
-++ ~Your advice is unwanted. What I do is my decision alone.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk5.4B 
-++ ~I will consider it. But that does not mean I will act on it. I will do what I think is best in the end.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk5.4B
+++ ~Do not be afraid to speak up. I will hear what you have to say.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk5.4A
+++ ~Your advice is unwanted. What I do is my decision alone.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk5.4B 
+++ ~I will consider it. But that does not mean I will act on it. I will do what I think is best in the end.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk5.4B
 ++ ~Thank you for your words. What I do is not easy. I'm glad you understand that.~ + Talk5.4C 
 END 
 
@@ -358,10 +358,10 @@ IF ~~ Talk5.5
 SAY ~When I feel afraid, it isn't because I may not survive. It's become a reality that I understand, that we pass, and our time comes when Garl Glittergold says it's time.~
 = ~I am afraid for what you may do. Sometimes your actions...do you even care about people? Are you even thinking about them?~
 = ~I am here, writing of the records of the expedition. And every time I write about you on the page...I become dreadfully worried for the future.~
-++ ~You said it yourself before. What I do is not easy. And yet now you judge me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + Talk5.5A 
-++ ~I did not ask to be written about. Reality is not the pages of fantasy that you want to evoke on your page.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~ + Talk5.5B 
-++ ~You are a fool, then. What I do is right and necessary.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~ + Talk5.5C 
-++ ~I am sorry. I have struggled...I know you do not understand, but I try, I do.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + Talk5.5D  
+++ ~You said it yourself before. What I do is not easy. And yet now you judge me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk5.5A 
+++ ~I did not ask to be written about. Reality is not the pages of fantasy that you want to evoke on your page.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + Talk5.5B 
+++ ~You are a fool, then. What I do is right and necessary.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~ + Talk5.5C 
+++ ~I am sorry. I have struggled...I know you do not understand, but I try, I do.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk5.5D  
 END 
 
 IF ~~ Talk5.5A 
@@ -409,8 +409,8 @@ END
 
 // Talk 6 
 
-IF ~Global("X3RecTalk","GLOBAL",12)~ Talk6 
-SAY ~We're a long way away from Baldur's gate now. And yet it feels like I saw you preparing the march there almost yesterday.~
+IF ~Global("X32RecTalk","GLOBAL",12)~ Talk6 
+SAY ~We're a long way away from Baldur's gate now. And yet it feels like I saw you preparing the march there almost yesterday.~ [X3RSong]
 ++ ~Reminiscing again?~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk6.1
 ++ ~It has felt like little time has passed, despite the lengthy journey.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk6.2
 ++ ~No time for thinking back. We've got to move forward still. We can reflect when we're finished.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk6.3 
@@ -473,21 +473,21 @@ SAY ~Lately...I've become more and more concerned about my recordings. About how
 = ~I've become fond of you, and always think well of you. How can I keep to a fair view when my feelings are compromised?~
 ++ ~Are you saying what I think you are saying?~ + Talk6.Confess1 
 ++ ~I care about you too, Recorder. I'm sorry I didn't say anything sooner.~ + Talk6.Confess2 
-++ ~Maybe this will help. I don't return your affections. You're just a companion to me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~ + Talk6.Confess3 
+++ ~Maybe this will help. I don't return your affections. You're just a companion to me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~ + Talk6.Confess3 
 END 
 
 IF ~~ Talk6.Confess1 
 SAY ~Yes. I've started to feel this way recently. I know I shouldn't. I don't even know why I am saying it.~
 ++ ~Thank you for telling me, but the conflict with Caelar comes first before personal affections. I hope you understand.~ + Talk6.Confess4  
 ++ ~I care about you too, Recorder. I'm sorry I didn't say anything sooner.~  + Talk6.Confess2 
-++ ~Maybe this will help. I don't return your affections. You're just a companion to me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~ + Talk6.Confess3 
+++ ~Maybe this will help. I don't return your affections. You're just a companion to me.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~ + Talk6.Confess3 
 END 
 
 IF ~~ Talk6.Confess2 
 SAY ~You...you do? My heart is singing.~
 = ~But...what now?~
-++ ~A kiss to seal the moment.~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",2)IncrementGlobal("X3RecorderApproval","GLOBAL",9)~ + Talk6.Confess5 
-++ ~We can figure it out as we go. But now we know how we feel.~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",2)IncrementGlobal("X3RecorderApproval","GLOBAL",9)~ + Talk6.Confess6 
+++ ~A kiss to seal the moment.~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",2)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@40)~ + Talk6.Confess5 
+++ ~We can figure it out as we go. But now we know how we feel.~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",2)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@40)~ + Talk6.Confess6 
 ++ ~Nothing. Caelar comes first, and I can't risk distractions.~ + Talk6.Confess4 
 END 
 
@@ -539,12 +539,12 @@ IF ~~ EXIT
 END 
 
 // Talk 7 
-IF ~Global("X3RecTalk","GLOBAL",14)~ Talk7 
+IF ~Global("X32RecTalk","GLOBAL",14)~ Talk7 
 SAY ~So this is it. I could not have anticipated we would be going into Avernus. I can't lie, <CHARNAME>...I am terrified. But I have faith in you.~
-+~!Global("X32RecRomanceActive","GLOBAL",2)~+ ~You'll be fine, my friend. We've come this far.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk7.1 
-+~Global("X32milyRomanceActive","GLOBAL",2)~+ ~I'll not let anything happen to you. You are precious to me.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk7.2 
-+~!Global("X32RecRomanceActive","GLOBAL",2)~+ ~You do not have to come, Recorder.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk7.3 
-+~Global("X32milyRomanceActive","GLOBAL",2)~+ ~You do not have to come, Recorder.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk7.4 
++~!Global("X32RecRomanceActive","GLOBAL",2)~+ ~You'll be fine, my friend. We've come this far.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.1 
++~Global("X32milyRomanceActive","GLOBAL",2)~+ ~I'll not let anything happen to you. You are precious to me.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.2 
++~!Global("X32RecRomanceActive","GLOBAL",2)~+ ~You do not have to come, Recorder.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.3 
++~Global("X32milyRomanceActive","GLOBAL",2)~+ ~You do not have to come, Recorder.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.4 
 ++ ~Let's finish this.~ + Talk7.5
 END 
 
@@ -579,12 +579,12 @@ IF ~~ EXIT
 END 
 
 // Talk 8 
-IF ~Global("X3RecTalk","GLOBAL",16)~ Talk8 
+IF ~Global("X32RecTalk","GLOBAL",16)~ Talk8 
 SAY ~I can't believe it. We went into Avernus. And more stunning, we came out of Avernus.~
 = ~I don't know if the temple is ever going to believe this.~
-++ ~Perhaps if I sign your notes, they may believe it.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk8.1 
-++ ~When everyone of this army spreads the story, they'll know it's truth.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk8.2 
-++ ~They would be fools to still underestimate my powers and capabilities.~ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)~ + Talk8.3 
+++ ~Perhaps if I sign your notes, they may believe it.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk8.1 
+++ ~When everyone of this army spreads the story, they'll know it's truth.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk8.2 
+++ ~They would be fools to still underestimate my powers and capabilities.~ DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk8.3 
 END 
 
 IF ~~ Talk8.1 
@@ -666,13 +666,13 @@ END
 
 IF ~~ ThirdQuest.Decline1 
 SAY ~Time? If that is what you think. Never mind.~
-IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)SetGlobal("RecorderQuestThree","GLOBAL",-1)~ EXIT 
+IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)SetGlobal("RecorderQuestThree","GLOBAL",-1)~ EXIT 
 END 
 
 IF ~~ ThirdQuest.Accept 
 SAY ~I heard the Runner only just arrived. We can perhaps check near the well in the camp.~
-IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
-IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
 END 
 
 IF ~~ ThirdQuest.Decline2 
@@ -694,7 +694,7 @@ END
 
 IF ~~ ThirdQuest.Later
 SAY ~Don't say it like that. It's insensitive. Just leave me be for a while.~
-IF ~~ DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~ EXIT 
+IF ~~ DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
 END 
 
 IF ~~ ThirdQuest.Coming 
@@ -744,7 +744,7 @@ END
 
 IF ~~ ThrixTalk5
  SAY ~*Sigh* Just... leave me alone.~
-IF ~~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",-25)~ EXIT
+IF ~~ DO ~SetGlobal("X32RecRomanceActive","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",-25)DisplayStringNoNameDlg(Player1,@39)~ EXIT
 END
 
 IF ~~ ThrixTalk6
@@ -880,27 +880,27 @@ CHAIN X32RecJ X32RecBDCROMMU13
 EXTERN BDCARLIN 2
 // Mkhiin approval loss. 
 
-ADD_TRANS_ACTION BDMKHIIN BEGIN 18 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
 I_C_T BDMKHIIN 18 X32RecBDMKHIIN18
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~A goblin at our side does nothing good for our reputation, <CHARNAME>.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
 == BDMKHIIN IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~True. But could be worse.~
 END
 
-ADD_TRANS_ACTION BDMKHIIN BEGIN 29 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
 I_C_T BDMKHIIN 29 X32RecBDMKHIIN29
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~A goblin at our side does nothing good for our reputation, <CHARNAME>.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
 == BDMKHIIN IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~True. But could be worse.~
 END
 
-ADD_TRANS_ACTION BDMKHIIN BEGIN 22 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
 I_C_T BDMKHIIN 22 X32RecBDMKHIIN22
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~A goblin at our side does nothing good for our reputation, <CHARNAME>.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
 == BDMKHIIN IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~True. But could be worse.~
 END
 
-ADD_TRANS_ACTION BDMKHIIN BEGIN 21 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
 I_C_T BDMKHIIN 21 X32RecBDMKHIIN21
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Inviting a goblin into camp does not look well on us. We can do better than inviting a goblin into this expedition.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
 == BDMKHIIN IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Could do worse. I'll be at this camp.~
 END
 
@@ -908,47 +908,47 @@ END
 I_C_T BDBAELOT 32 X32RECBDBAELOT32 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~I am really uncomfortable being next to a drow. I wonder if I am going to get questioned for such an entry.~
 == BDBAELOT IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Such a simpering scholar!~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
 END
 
 //Glint Meeting, picked to join 
 I_C_T BDGLINT 23 X32RECBDGLINT23 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~It's quite an honor to have a kin join this tale. Welcome to our party, Glint "Three Eyes" Gardnersonson.~
 == BDGLINT IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Oh, a scholar. Or a writer? Very interesting. We should talk more later.~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
 END
 
 I_C_T BDCOLDH 24 X32RecBDCOLDH24 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Is this who you want to be, <CHARNAME>? This is how you want to be thought as?~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~
 END
 
 // Statue woman 
 I_C_T BDTELERI 3 X32RecBDTELERI3 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Please, <CHARNAME>, try to be more thoughtful on who you help. This only hurt the innocent.~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~
 END
 
 I_C_T BDISABEL 40 X32RecBDISABEL40 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~<CHARNAME>...*sigh*.~
 == BDISABEL ~Die!~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~
 END 
 
 I_C_T BDISABEL 55 X32RecBDISABEL55 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~I'll be happy to make a record of this.~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~
 END 
 
 I_C_T BDMADELE 22 X32RECBDMADELE22 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~I do not know if she will heed your words, but I will hope.~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~
 == BDMADELE ~Goodbye, child of murder.~
 END 
 
 I_C_T BDMADELE 23 X32RECBDMADELE22 
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Is this the path you want others to walk, <CHARNAME>? I think this was an unwise choice.~
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~
 == BDMADELE ~Goodbye, child of murder.~
 END 
 
@@ -1027,12 +1027,12 @@ I_C_T BDDOSIA 25 X32RecBDDOSIA25
 END 
 
 // Approval is only lost if the player goes through with the payment, or tells Dosia to execute them. 
-ADD_TRANS_ACTION BDDOSIA BEGIN 18 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
-ADD_TRANS_ACTION BDDOSIA BEGIN 21 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~
-ADD_TRANS_ACTION BDDOSIA BEGIN 23 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~
-ADD_TRANS_ACTION BDDOSIA BEGIN 27 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)~
-ADD_TRANS_ACTION BDDOSIA BEGIN 28 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)~
-ADD_TRANS_ACTION BDDOSIA BEGIN 29 END BEGIN END ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 18 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",1)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 21 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",1)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 23 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 27 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 28 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",3)~
+ADD_TRANS_ACTION BDDOSIA BEGIN 29 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",5)~
 
 I_C_T BDHALAT 17 X32RecBDHALAT17
 == X32RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~Knowledge is a wonderful reward. But this... is a vague warning.~
@@ -1450,8 +1450,8 @@ END
 IF ~Global("X3RecMusicComment1","GLOBAL",1)~ M1 
 SAY ~This is...beautiful. I have never seen anything like this.~
 = ~The story behind it teaches love to everything, us and animals alike. It's so often we get immersed in our own troubles we forget about nature.~
-++ ~I thought you might like it.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~ + M1.1 
-++ ~You speak truth. But animals don't seem to dig themselves into grave plights.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + M1.2 
+++ ~I thought you might like it.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ + M1.1 
+++ ~You speak truth. But animals don't seem to dig themselves into grave plights.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + M1.2 
 ++ ~All right, enough rambling. I just want you to use it to help us.~ + M1.3
 END 
 
@@ -1478,8 +1478,8 @@ END
 IF ~Global("X3RecMusicComment2","GLOBAL",1)~ M2 
 SAY ~Oh, this is beautiful. It reminds me of my own. I can tell it's crafted from a trees in Lantan even.~
 = ~It even brings about the smell of home. I could almost cry...thank you, <CHARNAME>.~
-++ ~I'm glad I could bring about a smile.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)~ + M2.1 
-++ ~They make these in your homeland?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + M2.2
+++ ~I'm glad I could bring about a smile.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ + M2.1 
+++ ~They make these in your homeland?~ + M2.2
 ++ ~Please don't cry.~ + M2.3 
 END 
 
@@ -1508,8 +1508,8 @@ IF ~Global("X3RecMusicComment3","GLOBAL",1)~ M3
 SAY ~What a peculiar instrument. I've never seen anything like this.~
 = ~The strings are all criss-crossed...but hrm...the sound it makes is kind of sweet.~
 ++ ~You can experiment with it. Maybe it can be useful.~ + M3.1 
-++ ~I know it looks odd, but I thought you might find it interesting.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + M3.2 
-++ ~I gave it to you so you can use it. I want you to be useful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~  + M3.3 
+++ ~I know it looks odd, but I thought you might find it interesting.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + M3.2 
+++ ~I gave it to you so you can use it. I want you to be useful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~  + M3.3 
 END  
 
 IF ~~ M3.1 
@@ -1593,7 +1593,7 @@ END
 
 IF ~~ Break.6
 SAY ~I...I can stay and see. Please, I do hope you keep to your word.~
-IF ~~ DO ~SetGlobal("X3RecBreak","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",15)~
+IF ~~ DO ~SetGlobal("X3RecBreak","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",15)DisplayStringNoNameDlg(Player1,@42)~
 EXIT 
 END 
 
@@ -1702,7 +1702,7 @@ SAY ~Go on.~ [X3RCom4]
 +~Global("X32RecInBG1","GLOBAL",0)Global("RecPBefore","GLOBAL",0)~+ ~What's your history? What did you do before signing up for the expedition?~ DO ~SetGlobal("RecPBefore","GLOBAL",1)~ + RecP.Before1 
 +~Global("X3RecRealName","GLOBAL",0)~+ ~Is Recorder really your real name?~ DO ~IncrementGlobal("X3RecRealName","GLOBAL",1)~ + RecP.RealName // Also in SoD, Approval Based. 
 +~GlobalGT("X3RecorderApproval","GLOBAL",69)Global("X3RecSpecial","GLOBAL",0)~+ ~Is there anyone special in your life?~ DO ~SetGlobal("X3RecRealName","GLOBAL",1)~ + RecP.Special // Also in SoD, Approval Based.  
-+~GlobalGT("X3RecTalk","GLOBAL",10)Global("X3RecTravel","GLOBAL",0)~+ ~Can you tell me of other places you've traveled?~ DO ~SetGlobal("X3RecTravel","GLOBAL",1)~ + RecP.Candlekeep 
++~GlobalGT("X32RecTalk","GLOBAL",10)Global("X3RecTravel","GLOBAL",0)~+ ~Can you tell me of other places you've traveled?~ DO ~SetGlobal("X3RecTravel","GLOBAL",1)~ + RecP.Candlekeep 
 +~GlobalGT("X3RecorderApproval","GLOBAL",9)Global("X3RecFluteP","GLOBAL",0)~+ ~Why do you play the flute, and not some other instrument?~ DO ~SetGlobal("X3RecFluteP","GLOBAL",1)~ + RecP.Flute // Approval Based 
 +~GlobalGT("X3RecorderApproval","GLOBAL",29)Global("X3RecTeachP","GLOBAL",0)~+ ~Could you teach me to play?~ DO ~SetGlobal("X3RecTeachP","GLOBAL",1)~ + RecP.Teach // Approval Based 
 ++ ~Can you recount our journey thus far?~ + RecP.Poetry // Recorder recites a poem that gets longer as the chapter increases. 
@@ -1870,7 +1870,7 @@ IF ~~ RecP.RealName
 SAY ~Hrm? What is so odd about Recorder?~
 ++ ~It's not a name I would expect, even for a gnome.~ + RN.Truth 
 ++ ~It doesn't feel like the truth. Are you keeping secrets from me?~ + RN.Truth  
-++ ~You look more like a Rebeca.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + RN.Rebeca 
+++ ~You look more like a Rebeca.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + RN.Rebeca 
 END 
 
 IF ~~ RN.Rebeca 
@@ -1882,7 +1882,7 @@ IF ~~ RN.Truth
 SAY ~You are right, <CHARNAME>, it's not my name. But it is what I do, and play. It feels all encompassing, and what I am most comfortable being called.~
 ++ ~What is your name, then?~ + RN.Name 
 ++ ~I suppose it is suiting.~ + RN.Suit 
-++ ~I think you should consider something more creative.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + RN.Create
+++ ~I think you should consider something more creative.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + RN.Create
 END 
 
 IF ~~ RN.Name 
@@ -1908,7 +1908,7 @@ END
 IF ~~ RecP.Special 
 SAY ~Um, well...~
 = ~No. There was once, someone that I cared for, if that is what you mean. But not presently.~
-++ ~So you are "available", as it were?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + SpecialP.1 
+++ ~So you are "available", as it were?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.1 
 ++ ~What happened with him, or her?~ + SpecialP.2 
 ++ ~Let's talk about something else.~  + RecP.Talk 
 ++ ~I see. That is all I wanted to know.~ EXIT
@@ -1934,15 +1934,15 @@ SAY ~My previous lover got...attached, and a little possessive. Not in the innoc
 = ~It resulted in these flare ups in anger. A shift from a calm like a gentle spring shower to the fury of a rainstorm. Sometimes in hurtful words, sometimes painfully physical~
 = ~I wish there was a way to help him, or us, but it was too much pain for me. I gave up, left, and never looked back.~
 ++ ~Is there a chance he would pursue you here?~ + SpecialP.4 
-++ ~I am sorry. I wouldn't have asked if I had known.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + SpecialP.5 
-++ ~I would kill someone who treated me that way.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + SpecialP.6 
+++ ~I am sorry. I wouldn't have asked if I had known.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.5 
+++ ~I would kill someone who treated me that way.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.6 
 END 
 
 IF ~~ SpecialP.4 
 SAY ~No. I've done everything to ensure I'm not found. My name...my location...my appearance. And I hope it always remains that way.~
 +~Global("X3RecRealName","GLOBAL",1)~+ ~Is this why you call yourself Recorder?~ + SpecialP.7 
-++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + SpecialP.8 
-++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + SpecialP.9
+++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
+++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
 ++ ~I know this bothers you. Let's talk about something else.~ + RecP.Talk
 ++ ~Let's keep moving.~ EXIT 
 END 
@@ -1951,8 +1951,8 @@ IF ~~ SpecialP.5
 SAY ~You can't know what comes next, or what you will discover when you first open a book's pages.~
 = ~I will be all right, <CHARNAME>. I've done all I could to ensure I'm not found by him. My name, my location, my appearance. I can't be pursued.~
 +~Global("X3RecRealName","GLOBAL",1)~+ ~Is this why you call yourself Recorder?~ + SpecialP.7 
-++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + SpecialP.8 
-++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + SpecialP.9
+++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
+++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
 ++ ~I know this bothers you. Let's talk about something else.~ + RecP.Talk
 ++ ~Let's keep moving.~ EXIT 
 END 
@@ -1961,8 +1961,8 @@ IF ~~ SpecialP.6
 SAY ~Maybe you think you would. But when you love someone that much...you don't want to hurt them. You want the best for them, and for your relationship.~
 = ~And sometimes, running is best for all. I've done everything to ensure I'm not found. My name...my location...my appearance. And I hope it always remains that way.~
 +~Global("X3RecRealName","GLOBAL",1)~+ ~Is this why you call yourself Recorder?~ + SpecialP.7 
-++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + SpecialP.8 
-++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + SpecialP.9
+++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
+++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
 ++ ~I know this bothers you. Let's talk about something else.~ + RecP.Talk
 ++ ~Let's keep moving.~ EXIT 
 END 
@@ -1993,14 +1993,14 @@ SAY ~I was performing in the Three Old Keg's, and Sir Harmon was trying to woo o
 = ~She wanted to tip me for my performance, and Sir Harmon stepped up with her. He asked if he could borrow my instrument to impress her, and...hee, it didn't go very well.~
 = ~He asked me if I could teach him, and that's how we started our friendship. *Sigh* I miss him.~
 ++ ~Was he able to win the maid?~ + HarmonP.1 
-++ ~So you were a tool for him?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + HarmonP.2 
-++ ~He sounds like he would have been a nice companion for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + HarmonP.3
+++ ~So you were a tool for him?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + HarmonP.2 
+++ ~He sounds like he would have been a nice companion for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + HarmonP.3
 END  
 
 IF ~~ HarmonP.1 
 SAY ~Oh, she left with another man. But it allowed us to bond over music, and I think he cherished that more.~
-++ ~So you were a tool for him?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + HarmonP.2 
-++ ~He sounds like he would have been a nice companion for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + HarmonP.3 
+++ ~So you were a tool for him?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + HarmonP.2 
+++ ~He sounds like he would have been a nice companion for us.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + HarmonP.3 
 ++ ~Let's talk about something else.~  + RecP.Talk 
 ++ ~Let's keep moving.~ EXIT 
 END  
@@ -2024,9 +2024,9 @@ SAY ~Hee, Candlekeep is my favorite place, but I could tell you about others.~
 = ~There is the tower of thought in Selgaunt, which itself was founded by a poor novelist. The city celebrates its roots of arts and knowledge, and is always at least visited once by any prestigious scholar.~
 = ~I think you would like it there. There is so much to get in trouble with.~
 = ~Most recently of my own travels was the Font of Knowledge in Waterdeep. It was only just finished this year. The city itself is so marvelous and such a mixture of many things.~
-++ ~These places sound so fascinating.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + CandlekeepP.1 
+++ ~These places sound so fascinating.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + CandlekeepP.1 
 ++ ~Heh, I see you're  focused on where the scholars are at.~ + CandlekeepP.2  
-++ ~These places sound pretty dull.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + CandlekeepP.3
+++ ~These places sound pretty dull.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + CandlekeepP.3
 END 
 
 IF ~~ CandlekeepP.1 
@@ -2080,8 +2080,8 @@ END
 
 IF ~~ RecP.Teach 
 SAY ~Well, I can try. Here, take it, and put it to your mouth. Create a diamond like shape, put your fingers over the hole here, and blow.~
-IF ~Class(Player1,BARD_ALL)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + TeachP.1 
-IF ~CheckStatGT(Player1,14,CON)CheckStatGT(Player1,12,CHR)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + TeachP.2 
+IF ~Class(Player1,BARD_ALL)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + TeachP.1 
+IF ~CheckStatGT(Player1,14,CON)CheckStatGT(Player1,12,CHR)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + TeachP.2 
 IF ~OR(2)CheckStatLT(Player1,15,CON)CheckStatLT(Player1,13,CHR)~ + TeachP.3
 END 
 
@@ -2130,14 +2130,14 @@ SAY ~Hrm, I suppose it is harmless. I'll read what I have so far...it's admitted
 = ~"<CHARNAME> restlessly twists and turns. Each night seems more restless for them then the next. Some of the others notice, but mostly seem to keep it to themselves.~
 ++ ~You're watching me sleep?~ + NotesP.1 
 ++ ~It's not bad.~ + NotesP.2 
-++ ~This is what you are writing all the time?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~  + NotesP.2 
+++ ~This is what you are writing all the time?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~  + NotesP.2 
 END
 
 IF ~~ NotesP.1 
 SAY ~Yes...well, "listening", really. It's always a little concerning, but we've faced so much. Are you okay, though?~
 ++ ~I admit I haven't slept well as of late.~ + NotesP.3 
 ++ ~There's nothing to worry about.~ + NotesP.4 
-++ ~Of course I am. Keep your concern to yourself~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + NotesP.5
+++ ~Of course I am. Keep your concern to yourself~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + NotesP.5
 END  
 
 IF ~~ NotesP.2 
@@ -2145,7 +2145,7 @@ SAY ~It's not very exciting as some of my previous records, but...I want people 
 = ~We've faced so much though, and I can't help but ask...are you okay?~
 ++ ~I admit I haven't slept well as of late.~ + NotesP.3 
 ++ ~There's nothing to worry about.~ + NotesP.4 
-++ ~Of course I am. Keep your concern to yourself~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + NotesP.4
+++ ~Of course I am. Keep your concern to yourself~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + NotesP.4
 END  
 
 IF ~~ NotesP.3 
@@ -2180,7 +2180,7 @@ SAY ~Not long after I left you, I delivered a hefty record to the church of Oghm
 ++ ~You are welcome.~ + RecP.BeforeW
 +~ReputationGT(Player1,9)~+ ~And what do those records have to say about me?~ + RecP.BeforeGood
 +~ReputationLT(Player1,10)~+ ~And what do those records have to say about me?~ + RecP.BeforeBad
-++ ~You too, played an integral part. You should give yourself credit.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + RecP.BeforeC
+++ ~You too, played an integral part. You should give yourself credit.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + RecP.BeforeC
 END 
 
 
@@ -2224,8 +2224,8 @@ END
 IF ~~ RecP.BeforeSir 
 SAY ~A friend, a paladin of Milil. A bit of a rake, but he was courageous and heroic. He died buying time for me to escape a horrible necromancer that had betrayed our companions. Regrettably, I never got the chance to get justice for him.~
 ++ ~I am sorry for your loss.~ + RecP.BeforeSorry
-++ ~He sounds like a good man.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + RecP.BeforeGain
-++ ~I hope you are capable. We will need to fight such enemies, not flee them.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + RecP.BeforeLoss
+++ ~He sounds like a good man.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + RecP.BeforeGain
+++ ~I hope you are capable. We will need to fight such enemies, not flee them.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + RecP.BeforeLoss
 ++ ~You mentioned earlier you wrote records about the crisis. Do they have anything to say about me?~ + RecP.BeforeMe
 END 
 
@@ -2268,10 +2268,10 @@ END
 
 IF ~~ RecP.BeforeGood 
 SAY ~They tell of the good deeds you did. Of your bravery, accomplishments and feats against the Iron Throne which go widely appreciated in the city.~
-++ ~That sounds quite accurate.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + RecP.BeforeAccurate 
+++ ~That sounds quite accurate.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + RecP.BeforeAccurate 
 ++ ~I'm not sure if that's what I'd say about it.~ + RecP.BeforeLossA
 ++ ~Interesting, to have my own acts recorded.~ + RecP.BeforeInterest
-++ ~You should have added a bit more grandeur to it. I could tell you a tale or two you could include.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + RecP.BeforeLossF
+++ ~You should have added a bit more grandeur to it. I could tell you a tale or two you could include.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + RecP.BeforeLossF
 END
 
 IF ~~ RecP.BeforeBad 
@@ -2279,7 +2279,7 @@ SAY ~They ... they tell of some of the deeds you did. They were not all good, no
 ++ ~That sounds quite accurate.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)~ + RecP.BeforeAccurate 
 ++ ~I'm not sure if that's what I'd say about it.~ + RecP.BeforeLossA
 ++ ~Interesting, to have my own acts recorded.~ + RecP.BeforeInterest
-++ ~You should have added a bit more grandeur to it. I could tell you a tale or two you could include.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)~ + RecP.BeforeLossF
+++ ~You should have added a bit more grandeur to it. I could tell you a tale or two you could include.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + RecP.BeforeLossF
 END 
 
 IF ~~ RecP.BeforeAccurate 
@@ -2400,10 +2400,10 @@ SAY ~Hrm.~ [X3RCom5]
 + ~RandomNum(3,1)~ + ~(Tickle her)~ + Interact.L1
 + ~RandomNum(3,2)~ + ~(Tickle her)~ + Interact.L2
 + ~RandomNum(3,3)~ + ~(Tickle her)~ + Interact.L3
-+~Global("X3RecTalk","GLOBAL",6)RandomNum(3,1)~+ ~Care for a dance?~ + Interact.D1
-+~Global("X3RecTalk","GLOBAL",6)RandomNum(3,2)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ ~Care for a dance?~ + Interact.D2A
-+~Global("X3RecTalk","GLOBAL",6)RandomNum(3,2)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ ~Care for a dance?~ + Interact.D2B
-+~Global("X3RecTalk","GLOBAL",6)RandomNum(3,3)~+ ~Care for a dance?~ + Interact.D3
++~Global("X32RecTalk","GLOBAL",6)RandomNum(3,1)~+ ~Care for a dance?~ + Interact.D1
++~Global("X32RecTalk","GLOBAL",6)RandomNum(3,2)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ ~Care for a dance?~ + Interact.D2A
++~Global("X32RecTalk","GLOBAL",6)RandomNum(3,2)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ ~Care for a dance?~ + Interact.D2B
++~Global("X32RecTalk","GLOBAL",6)RandomNum(3,3)~+ ~Care for a dance?~ + Interact.D3
 +~RandomNum(3,1)~+ ~(Kiss her Forehead)~ + Interact.K1
 +~RandomNum(3,2)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ ~(Kiss her Forehead)~ + Interact.K2A
 +~RandomNum(3,2)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ ~(Kiss her Forehead)~ + Interact.K2B
