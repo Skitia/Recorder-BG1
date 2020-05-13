@@ -3,7 +3,7 @@
 IF 
 PartyRested()
 InParty("X3Rec") 
-RealGlobalTimerExpired("X3RecTalkTimer","GLOBAL")
+GlobalTimerExpired("X3RecTalkTimer","GLOBAL")
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
 !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -12,153 +12,48 @@ CombatCounter(0)
 OR(2)
 Global("X3RecTalk","GLOBAL",1)
 Global("X3RecTalk","GLOBAL",5)
-THEN RESPONSE #100
+THEN RESPONSE #100 
 IncrementGlobal("X3RecTalk","GLOBAL",1) 
 StartDialogueNoSet(Player1) 
 END
 
-//Experience 
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPLT(Player1,1251)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",1000) 
-
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,1250)
-XPLT(Player1,2501)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",1250)
-AddSpecialAbility("SPWI102")// Mage Armor 
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,2500)
-XPLT(Player1,5001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",2500)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,5000)
-XPLT(Player1,10001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",5000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,10000)
-XPLT(Player1,20001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",10000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-AddSpecialAbility("SPWI106")//Blindness
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,20000)
-XPLT(Player1,40001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",20000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-AddSpecialAbility("SPWI106")//Blindness
-AddSpecialAbility("SPWI203")//Detect Invisibility
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,40000)
-XPLT(Player1,70001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",40000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-AddSpecialAbility("SPWI106")//Blindness
-AddSpecialAbility("SPWI203")//Detect Invisibility
-AddSpecialAbility("SPWI304")//Fireball 
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,70000)
-XPLT(Player1,110001)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",70000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-AddSpecialAbility("SPWI106")//Blindness
-AddSpecialAbility("SPWI203")//Detect Invisibility
-AddSpecialAbility("SPWI304")//Fireball  
-AddSpecialAbility("SPWI211")//Melf's Acid Arrow
-END
-
-IF
-InParty("X3Rec")
-Global("X3RecExperienceSet","GLOBAL",0)
-XPGT(Player1,110000)
-THEN
-RESPONSE #100
-SetGlobal("X3RecExperienceSet","GLOBAL",1)
-AddXPObject("X3Rec",110000)
-AddSpecialAbility("SPWI102")// Mage Armor 
-AddSpecialAbility("SPWI114") // Shield 
-AddSpecialAbility("SPWI206")//Invisibility
-AddSpecialAbility("SPWI106")//Blindness
-AddSpecialAbility("SPWI203")//Detect Invisibility
-AddSpecialAbility("SPWI304")//Fireball  
-AddSpecialAbility("SPWI211")//Melf's Acid Arrow
-AddSpecialAbility("SPWI305")//Haste
-END
-
+// Will trigger an approval changed if fired from a dialogue from a non-interject line. 
+// Triggered while in party 
 IF 
-Global("X3PauseTimer","GLOBAL",0)
 InParty(Myself)
+Switch("X3RecApprovalChange","GLOBAL")
+THEN RESPONSE #1
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-3)
+DisplayStringNoNameDlg(Player1,@37)
+RESPONSE #2
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
+DisplayStringNoNameDlg(Player1,@38)
+RESPONSE #3
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
+DisplayStringNoNameDlg(Player1,@39)
+RESPONSE #4
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",3)
+DisplayStringNoNameDlg(Player1,@40)
+RESPONSE #5
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",6)
+DisplayStringNoNameDlg(Player1,@41)
+RESPONSE #6
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",9)
+DisplayStringNoNameDlg(Player1,@42)
+END 
+// If not in party, it should be reset with no approval changes. 
+IF 
+!InParty(Myself) 
+GlobalGT("X3RecApprovalChange","GLOBAL",0)
 THEN RESPONSE #100 
-SetGlobal("X3PauseTimer","GLOBAL",1)
-RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
-END 	
+SetGlobal("X3RecApprovalChange","GLOBAL",0) 
+END 
 // First Talk 
 IF 
    See([PC])
@@ -241,13 +136,13 @@ InParty("X3Rec")
 PartyHasItem("X3RSWORD")
 Global("X3RecSecQuest","GLOBAL",0)
 THEN RESPONSE #100 
+SetGlobalTimer("X3RecQuestTimer2","GLOBAL",ONE_DAY)
 SetGlobal("X3RecSecQuest","GLOBAL",1)
-SetGlobalTimer("X3RecTalkTimer","GLOBAL",ONE_DAY)
 END 
 
 IF 
-GlobalTimerExpired("X3RecTalkTimer","GLOBAL")
-Global("X3RecSecQuest","GLOBAL",2)
+GlobalTimerExpired("X3RecQuestTimer2","GLOBAL")
+Global("X3RecSecQuest","GLOBAL",1)
 InParty("X3Rec") 
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
@@ -347,7 +242,7 @@ THEN
   RESPONSE #10
 	DisplayStringHead(Myself,~Gustav! Leave the nice Muffy alone!~ [X3RF1])
   RESPONSE #10
-	DisplayStringHead(Myself,~Play with your friends later, it's time for our march.~ [X3RF3])
+	DisplayStringHead(Myself,~Play with your friends later, Gustav, it's time for our march.~ [X3RF3])
   RESPONSE #10
 	DisplayStringHead(Myself,~Come on, Gustav. We can all play together later. ~ [X3RF2])
   RESPONSE #70
@@ -405,7 +300,6 @@ IncrementGlobal("X3RecTalk","GLOBAL",1)
 END
 
 IF
-RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
 InParty(Myself)
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
@@ -420,9 +314,8 @@ Global("X3RecTalk","GLOBAL",10)
 Global("X3RecTalk","GLOBAL",12)
 THEN
 RESPONSE #100
-RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
 PlaySong(0)
-PlaySound("X3RSong") 
+//PlaySound("X3RSong") 
 StartDialogueNoSet(Player1)
 END
 // Talk 7 Trigger
@@ -508,6 +401,7 @@ Global("X3RecGoodBoost","GLOBAL",0)
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",3)
+DisplayStringNoNameDlg(Player1,@40)
 END
 IF
 ReputationGT(Player1,16)
@@ -515,6 +409,7 @@ Global("X3RecGoodBoost","GLOBAL",0)
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",6)
+DisplayStringNoNameDlg(Player1,@41)
 END
 IF
 ReputationGT(Player1,20)
@@ -522,6 +417,7 @@ Global("X3RecGoodBoost","GLOBAL",0)
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",9)
+DisplayStringNoNameDlg(Player1,@42)
 END
 IF
 ReputationLT(Player1,9)
@@ -529,6 +425,7 @@ Global("X3RecBadLoss","GLOBAL",0)
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
+DisplayStringNoNameDlg(Player1,@38)
 END
 IF
 ReputationLT(Player1,6)
@@ -536,6 +433,7 @@ Global("X3RecBadLoss","GLOBAL",1)
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
+DisplayStringNoNameDlg(Player1,@39)
 END
 IF
 ReputationLT(Player1,4)
@@ -543,6 +441,7 @@ Global("X3RecBadLoss","GLOBAL",2)
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",3)
 SetGlobal("X3RecorderApproval","GLOBAL",-90)
+DisplayStringNoNameDlg(Player1,@39)
 END
 
 
@@ -574,3 +473,150 @@ THEN RESPONSE #100
 SetGlobal("X3RCarsaTalk","LOCALS",2)
 StartDialogueNoSet(Player1)
 END 
+
+
+//Experience 
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPLT(Player1,1251)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",1000) 
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,1250)
+XPLT(Player1,2501)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",1250)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,2500)
+XPLT(Player1,5001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",2500)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,5000)
+XPLT(Player1,10001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",5000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,10000)
+XPLT(Player1,20001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",10000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,20000)
+XPLT(Player1,40001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",20000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,40000)
+XPLT(Player1,70001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",40000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball 
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,70000)
+XPLT(Player1,110001)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",70000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball  
+AddSpecialAbility("SPWI211")//Melf's Acid Arrow
+AddSpecialAbility("SPWI112")// Mage Missile
+END
+
+IF
+InParty("X3Rec")
+Global("X3RecExperienceSet","GLOBAL",0)
+XPGT(Player1,110000)
+THEN
+RESPONSE #100
+SetGlobal("X3RecExperienceSet","GLOBAL",1)
+AddXPObject("X3Rec",110000)
+AddSpecialAbility("SPWI102")// Mage Armor 
+AddSpecialAbility("SPWI114") // Shield 
+AddSpecialAbility("SPWI206")//Invisibility
+AddSpecialAbility("SPWI106")//Blindness
+AddSpecialAbility("SPWI203")//Detect Invisibility
+AddSpecialAbility("SPWI304")//Fireball  
+AddSpecialAbility("SPWI211")//Melf's Acid Arrow
+AddSpecialAbility("SPWI305")//Haste
+AddSpecialAbility("SPWI112")// Mage Missile
+END

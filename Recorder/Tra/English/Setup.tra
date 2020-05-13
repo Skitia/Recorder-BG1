@@ -122,5 +122,11 @@ The runner is dead. No one will be able to deliver Recorder's letter now.~
 @36 = ~The Runner 
 
 We've recovered the lost correspondence, and should deliver them back to the runner.~
-
+//Use the below with DisplayStringNoNameDlg(Player1,@##)
+@37 = ~^RRecorder's approval of you has slightly decreased.^-~
+@38 = ~^RRecorder's approval of you has decreased.^-~
+@39 = ~^RRecorder's approval of you has greatly decreased.^-~
+@40 = ~^GRecorder's approval of you has slightly increased.^-~
+@41 = ~^GRecorder's approval of you has increased.^-~
+@42 = ~^GRecorder's approval of you has greatly increased.^-~
 

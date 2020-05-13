@@ -1,26 +1,40 @@
-
-
+// Will trigger an approval changed if fired from a dialogue from a non-interject line. 
+// Triggered while in party 
 IF 
-Global("X32PauseTimer","GLOBAL",0)
 InParty(Myself)
+Switch("X3RecApprovalChange","GLOBAL")
+THEN RESPONSE #1
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-3)
+DisplayStringNoNameDlg(Player1,@37)
+RESPONSE #2
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
+DisplayStringNoNameDlg(Player1,@38)
+RESPONSE #3
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
+DisplayStringNoNameDlg(Player1,@39)
+RESPONSE #4
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",3)
+DisplayStringNoNameDlg(Player1,@40)
+RESPONSE #5
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",6)
+DisplayStringNoNameDlg(Player1,@41)
+RESPONSE #6
+SetGlobal("X3RecApprovalChange","GLOBAL",0)
+IncrementGlobal("X3RecorderApproval","GLOBAL",9)
+DisplayStringNoNameDlg(Player1,@42)
+END 
+// If not in party, it should be reset with no approval changes. 
+IF 
+!InParty(Myself) 
+GlobalGT("X3RecApprovalChange","GLOBAL",0)
 THEN RESPONSE #100 
-SetGlobal("X32PauseTimer","GLOBAL",1)
-RealSetGlobalTimer("X32PauseTalkTimer","GLOBAL",ONE_MINUTE)
+SetGlobal("X3RecApprovalChange","GLOBAL",0) 
 END 
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  !AreaCheck("BD0120")
-  !AreaCheck("BD0130")
-  !AreaCheck("BD0103")
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,161000,SET)//Adjust value as needed to match other NPCs.
-END 
-
 
 // Quest Interection - Runner is dead
 IF 
@@ -126,7 +140,6 @@ END
 // Romance Start 
 IF
 	InParty(Myself)
-	Gender(Player1,MALE)
 	GlobalGT("X3RecorderApproval","GLOBAL",29)
 	Global("X32RecMatch","GLOBAL",0)
 THEN
@@ -182,7 +195,6 @@ END
 
 
 IF
-RealGlobalTimerExpired("X32PauseTalkTimer","GLOBAL")
 InParty("X3Rec")
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID)
@@ -197,9 +209,8 @@ Global("X32RecTalk","GLOBAL",8)
 Global("X32RecTalk","GLOBAL",10)
 Global("X32RecTalk","GLOBAL",12)
 THEN RESPONSE #100 
-RealSetGlobalTimer("X32PauseTalkTimer","GLOBAL",60) // This prevents simultaneous music plays.
 PlaySong(0)
-PlaySound("X3RSong") 
+StartDialogueNoSet(Player1)
 StartDialogueNoSet(Player1)
 END 
 
@@ -278,6 +289,7 @@ Global("X3RecGoodBoost","GLOBAL",0)
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",3)
+DisplayStringNoNameDlg(Player1,@40)
 END 
 
 IF 
@@ -286,6 +298,7 @@ Global("X3RecGoodBoost","GLOBAL",1)
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",6)
+DisplayStringNoNameDlg(Player1,@41)
 END 
 
 IF 
@@ -294,6 +307,7 @@ Global("X3RecGoodBoost","GLOBAL",2)
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",9)
+DisplayStringNoNameDlg(Player1,@42)
 END 
 
 IF 
@@ -302,6 +316,7 @@ Global("X3RecBadLoss","GLOBAL",0)
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
+DisplayStringNoNameDlg(Player1,@38)
 END 
 
 IF 
@@ -310,6 +325,7 @@ Global("X3RecBadLoss","GLOBAL",1)
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
+DisplayStringNoNameDlg(Player1,@39)
 END 
 
 IF 
@@ -318,6 +334,7 @@ Global("X3RecBadLoss","GLOBAL",2)
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-90)
+DisplayStringNoNameDlg(Player1,@39)
 END 
 
 // Instrument Comments, Must be in Recorder's Inventory, NOT party inventory.
@@ -368,6 +385,20 @@ Global("X3RecMusicComment3","GLOBAL",1)
 Global("X3RecMusicComment4","GLOBAL",1)
 THEN RESPONSE #100 
 StartDialogueNoSet(Player1)
+END 
+
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  !AreaCheck("BD0120")
+  !AreaCheck("BD0130")
+  !AreaCheck("BD0103")
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobal("BD_JOINXP","LOCALS",1)
+    ChangeStat(Myself,XP,161000,SET)//Adjust value as needed to match other NPCs.
 END 
 
 // Auto-kill romance if another reaches 2

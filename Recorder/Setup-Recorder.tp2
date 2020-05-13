@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.29~
+VERSION ~1.32~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
@@ -427,7 +427,6 @@ COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RNec.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Bryce.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RPal.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Ruby.baf~
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/Scripts/baldur.baf~ 
 // Dialgoue Files 
 COMPILE EVALUATE_BUFFER ~Recorder/dialogue/X3Rec.d~
 COMPILE EVALUATE_BUFFER ~Recorder/dialogue/X3RecJ.d~
@@ -550,3 +549,118 @@ LAF HANDLE_AUDIO
     oggdec_path = ~Recorder/music~
     sox_path = ~Recorder/music~
 END
+
+//All Optional Additions 
+
+BEGIN ~Recorder Plain Bard~
+SUBCOMPONENT ~Choose to have Recorder as a plain bard (Only recommended if using a mod that alters the bard class)~
+
+COPY ~Recorder/cre/X3RecB.cre~ ~override/X3Rec.cre~
+  SAY NAME1 ~Recorder~
+  SAY NAME2 ~Recorder~
+  WRITE_ASCII 0x248 ~X3Rec~ #8  //override script
+  WRITE_ASCII 0x280 ~X3Rec~ #32  //DV
+  WRITE_ASCII 0x2cc ~X3Rec~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~X3RecM~ #8   
+  WRITE_ASCII 0x3c ~X3RecL~ #8  
+  SAY BIO ~When asked about her past, Recorder grows quiet for a moment. She recounts a childhood spent amongst books in her father's bookbinding shop, where she delved into magic tomes, religious texts, history, and musical compositions. After learning the bard's trade, she moved to Amn with her mother, a priest of Oghma, for her work in the temple. She says little of what brought her north, only that where history is being made, it must be observed before it is lost.
+  
+  When asked about her real name, she merely calls it a decision of personal security before changing the subject.~
+  SAY INITIAL_MEETING ~Wait.~ [X3RInn]
+  SAY MORALE ~It's...all over.~ [X3RFear] 
+  SAY HAPPY  ~That was impressive.~ [X3RHap]
+  SAY UNHAPPY_ANNOYED ~Unbelievable.~ [X3RAnn]
+  SAY UNHAPPY_SERIOUS ~What were you thinking?~ [X3RSer]
+  SAY UNHAPPY_BREAKING_POINT ~~ [] 
+  SAY LEADER ~We walk together.~ [X3RLead]
+  SAY TIRED ~I must rest.~ [X3RRest]
+  SAY BORED ~*Plays flute.*~ [X3RBored]
+  SAY BATTLE_CRY1 ~Time for your final bow!~ [X3RCry1]
+  SAY BATTLE_CRY2 ~Care for an encore?~ [X3RCry2]
+  SAY BATTLE_CRY3 ~Don't be reckless!~ [X3RCry3]
+  SAY BATTLE_CRY4 ~We won't lose!~ [X3RCry4]
+  SAY BATTLE_CRY5 ~Rest in peace.~ [X3RCry5]
+  SAY DAMAGE ~~ [X3RDam]
+  SAY DYING ~~ [X3RDead]
+  SAY HURT ~So this...is how it ends...~ [X3RHurt]
+  SAY AREA_FOREST ~My heart is singing.~ [X3RFor]
+  SAY AREA_CITY ~The songs you hear in cities are always so wonderful.~ []
+  SAY AREA_DUNGEON ~We can do this.~ [X3RDun]
+  SAY AREA_DAY ~Daybreak always brings new hope. And if you have long hair, more tangles.~ [X3RDay]
+  SAY AREA_NIGHT ~Be careful.~ [X3RNight]
+  SAY SELECT_COMMON1 ~Choose your path.~ [X3RCom1]
+  SAY SELECT_COMMON2 ~I'm with you.~ [X3RCom2]
+  SAY SELECT_COMMON3 ~Please, take your time.~ [X3RCom3]
+  SAY SELECT_COMMON4 ~Go on.~ [X3RCom4]
+  SAY SELECT_COMMON5 ~Hrm.~ [X3RCom5]
+  SAY SELECT_COMMON6 ~Um...~ [X3RCom6]
+  SAY SELECT_ACTION1 ~Ah, I see.~ [X3RAct1]
+  SAY SELECT_ACTION2 ~Oh.~ [X3RAct2]
+  SAY SELECT_ACTION3 ~We can see this through.~ [X3RAct3]
+  SAY SELECT_ACTION4 ~I have faith in you.~ [X3RAct4]
+  SAY SELECT_ACTION5 ~The path is yours to climb, but I'll help you on your way.~ [X3RAct5]
+  SAY SELECT_ACTION6 ~I vow to bear you up, like a ship upon the waves, no matter what may come.~ [X3RAct6]
+  SAY SELECT_ACTION7 ~If you'd like me to teach you a dance, you need simply ask.~ [X3RAct7]
+  SAY CRITICAL_HIT ~It's over!~ [X3RCrit]
+  SAY CRITICAL_MISS ~Goodness gracious!~ [X3RMiss]
+  SAY TARGET_IMMUNE ~Oh my.~ [X3RImm]
+  SAY INVENTORY_FULL ~I think not.~ [X3RInv]
+  SAY SPELL_DISRUPTED ~My apologies.~ [X3RSpell]
+  SAY SET_A_TRAP ~~ []
+  SAY HIDDEN_IN_SHADOWS ~~ []
+  SAY PICKED_POCKET ~~ []
+
+COPY ~Recorder/cre/X32RecB.cre~ ~override/X32RecB.cre~
+  SAY NAME1 ~Recorder~
+  SAY NAME2 ~Recorder~
+  WRITE_ASCII 0x248 ~X3Rec~ #8  //override script
+  WRITE_ASCII 0x280 ~X3Rec~ #32  //DV
+  WRITE_ASCII 0x2cc ~X3Rec~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~X3RecM~ #8   
+  WRITE_ASCII 0x3c ~X3RecL~ #8  
+  SAY BIO ~When asked about her past, Recorder grows quiet for a moment. She recounts a childhood spent amongst books in her father's bookbinding shop, where she delved into magic tomes, religious texts, history, and musical compositions. After learning the bard's trade, she moved to Amn with her mother, a priest of Oghma, for her work in the temple. She says little of what brought her north, only that where history is being made, it must be observed before it is lost.
+  
+  When asked about her real name, she merely calls it a decision of personal security before changing the subject.~
+  SAY INITIAL_MEETING ~Wait.~ [X3RInn]
+  SAY MORALE ~It's...all over.~ [X3RFear] 
+  SAY HAPPY  ~That was impressive.~ [X3RHap]
+  SAY UNHAPPY_ANNOYED ~Unbelievable.~ [X3RAnn]
+  SAY UNHAPPY_SERIOUS ~What were you thinking?~ [X3RSer]
+  SAY UNHAPPY_BREAKING_POINT ~~ [] 
+  SAY LEADER ~We walk together.~ [X3RLead]
+  SAY TIRED ~I must rest.~ [X3RRest]
+  SAY BORED ~*Plays flute.*~ [X3RBored]
+  SAY BATTLE_CRY1 ~Time for your final bow!~ [X3RCry1]
+  SAY BATTLE_CRY2 ~Care for an encore?~ [X3RCry2]
+  SAY BATTLE_CRY3 ~Don't be reckless!~ [X3RCry3]
+  SAY BATTLE_CRY4 ~We won't lose!~ [X3RCry4]
+  SAY BATTLE_CRY5 ~Rest in peace.~ [X3RCry5]
+  SAY DAMAGE ~~ [X3RDam]
+  SAY DYING ~~ [X3RDead]
+  SAY HURT ~So this...is how it ends...~ [X3RHurt]
+  SAY AREA_FOREST ~My heart is singing.~ [X3RFor]
+  SAY AREA_CITY ~The songs you hear in cities are always so wonderful.~ []
+  SAY AREA_DUNGEON ~We can do this.~ [X3RDun]
+  SAY AREA_DAY ~Daybreak always brings new hope. And if you have long hair, more tangles.~ [X3RDay]
+  SAY AREA_NIGHT ~Be careful.~ [X3RNight]
+  SAY SELECT_COMMON1 ~Choose your path.~ [X3RCom1]
+  SAY SELECT_COMMON2 ~I'm with you.~ [X3RCom2]
+  SAY SELECT_COMMON3 ~Please, take your time.~ [X3RCom3]
+  SAY SELECT_COMMON4 ~Go on.~ [X3RCom4]
+  SAY SELECT_COMMON5 ~Hrm.~ [X3RCom5]
+  SAY SELECT_COMMON6 ~Um...~ [X3RCom6]
+  SAY SELECT_ACTION1 ~Ah, I see.~ [X3RAct1]
+  SAY SELECT_ACTION2 ~Oh.~ [X3RAct2]
+  SAY SELECT_ACTION3 ~We can see this through.~ [X3RAct3]
+  SAY SELECT_ACTION4 ~I have faith in you.~ [X3RAct4]
+  SAY SELECT_ACTION5 ~The path is yours to climb, but I'll help you on your way.~ [X3RAct5]
+  SAY SELECT_ACTION6 ~I vow to bear you up, like a ship upon the waves, no matter what may come.~ [X3RAct6]
+  SAY SELECT_ACTION7 ~If you'd like me to teach you a dance, you need simply ask.~ [X3RAct7]
+  SAY CRITICAL_HIT ~It's over!~ [X3RCrit]
+  SAY CRITICAL_MISS ~Goodness gracious!~ [X3RMiss]
+  SAY TARGET_IMMUNE ~Oh my.~ [X3RImm]
+  SAY INVENTORY_FULL ~I think not.~ [X3RInv]
+  SAY SPELL_DISRUPTED ~My apologies.~ [X3RSpell]
+  SAY SET_A_TRAP ~~ []
+  SAY HIDDEN_IN_SHADOWS ~~ []
+  SAY PICKED_POCKET ~~ []

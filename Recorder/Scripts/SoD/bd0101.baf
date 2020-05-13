@@ -18,7 +18,7 @@ THEN
     ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
     ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
     ActionOverride("X3Rec",ChangeAIScript("BDBARD01",GENERAL))
-	ActionOverride("X3Rec",Polymorph("MAGE_FEMALE_GNOME"))
+	ActionOverride("X3Rec",Polymorph("CLERIC_FEMALE_GNOME"))
     Continue()
 END
 
@@ -41,7 +41,7 @@ THEN
     ActionOverride("X3Rec",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
     ActionOverride("X3Rec",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
     ActionOverride("X3Rec",ChangeAIScript("BDTHIE01",GENERAL))
-	ActionOverride("X3Rec",Polymorph("MAGE_FEMALE_GNOME"))
+	ActionOverride("X3Rec",Polymorph("CLERIC_FEMALE_GNOME"))
     Continue()
 END	
 
