@@ -11,7 +11,7 @@ EXIT
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",2)~ THEN X3Rec CandleTalk1 
 ~Thank you! We might just catch up to the others in the Ulcaster expedition. Please, take this. It can help you learn the secrets of magical objects you may find. It'd be terrible if you accidentally used something that was cursed. It's the least I could do.~ [X3RTY]
-DO ~GiveItem("X3RPOT1",Player1)ActionOverride("X3RPal",EscapeArea())EscapeArea()AddJournalEntry(@3,QUEST_DONE)AddexperienceParty(50)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@42)~
+DO ~AddJournalEntry(@3,QUEST_DONE)AddexperienceParty(50)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@42)GiveItem("X3RPOT1",Player1)ActionOverride("X3RPal",EscapeArea())EscapeArea()~
 EXIT 
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",1)~ THEN X3Rec CandleTalk2 
