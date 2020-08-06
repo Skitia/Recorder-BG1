@@ -18,7 +18,7 @@ AddexperienceParty(1200)
 // Recorder and Ruby were killed (On purpose).	
 Kill("X3RPal") 
 SetGlobal("X3RecPalQuest","GLOBAL",3) // End 
-AddJournalEntry(@41,QUEST_DONE)
+AddJournalEntry(@410,QUEST_DONE)
 AddexperienceParty(1200)
 	RESPONSE #5
 // Recorder alive and in party, Ruby dead, conclude quest, fire Recorder's final quest dialogue. 

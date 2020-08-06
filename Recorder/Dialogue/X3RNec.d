@@ -117,12 +117,12 @@ EXIT
 
 CHAIN IF ~Dead("X3Ruby")Global("X3RNecAttack","GLOBAL",1)Global("X3RNecDeal","GLOBAL",1)~ THEN X3RNec t3 
 ~As promised for your help, a scroll. Good riddance to them all. I will be leaving with the too little I have found here. A new great wizard will come to this realm, and that is I.~
-DO ~EscapeArea()AddJournalEntry(@40, QUEST) GiveItem("SCRL25",Player1)~
+DO ~EscapeArea()AddJournalEntry(@400, QUEST) GiveItem("SCRL25",Player1)~
 EXIT  
 
 CHAIN IF ~Dead("X3Ruby")Global("X3RNecAttack","GLOBAL",1)Global("X3RNecDeal","GLOBAL",0)~ THEN X3RNec t5 
 ~Dead, all of them now. A new great wizard shall rise from this moment and that is I. No one else will get in my way of my pursuit again.~
-DO ~EscapeArea()AddJournalEntry(@42, QUEST)~
+DO ~EscapeArea()AddJournalEntry(@420, QUEST)~
 EXIT  
 
 

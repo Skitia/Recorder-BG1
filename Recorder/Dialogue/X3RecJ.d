@@ -957,6 +957,11 @@ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",10)DisplayStringNoNameDlg(Play
 == SLAVFREE ~Bless you all!~
 END
 
+I_C_T BREVLI 17 X3RebBrevLI17
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~I don't like the idea of stealing that telescope. I hope you change your mind.~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@37)~
+END
+
 I_C_T SLAVFREE 1 X3RecSLAVFREE1 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN ~That I have to record this...horrible event. How could you, <CHARNAME>?~
 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-10)DisplayStringNoNameDlg(Player1,@39)~
@@ -2015,8 +2020,6 @@ SAY ~Um...I'm going to assume you mean for company and not...but, no, no for eit
 ++ ~Let's keep moving.~   EXIT 
 END 
 
-
-
 IF ~~ RecP.Interact 
 SAY ~Hrm.~ [X3RCom5]
 +~RandomNum(5,1)~+ ~Can you play your flute for me?~ + Interact.F1 
@@ -2027,9 +2030,9 @@ SAY ~Hrm.~ [X3RCom5]
 +~RandomNum(3,1)~+ ~(Watch Recorder)~ + Interact.W1
 +~RandomNum(3,2)~+ ~(Watch Recorder)~ + Interact.W2 
 +~RandomNum(3,3)~+ ~(Watch Recorder)~ + Interact.W3 
-+~RandomNum(3,1)~+ ~How are today's scrawls coming along~ + Interact.S1
-+~RandomNum(3,2)~+ ~How are today's scrawls coming along~ + Interact.S2
-+~RandomNum(3,3)~+ ~How are today's scrawls coming along~ + Interact.S3
++~RandomNum(3,1)~+ ~How are today's scrawls coming along?~ + Interact.S1
++~RandomNum(3,2)~+ ~How are today's scrawls coming along?~ + Interact.S2
++~RandomNum(3,3)~+ ~How are today's scrawls coming along?~ + Interact.S3
 +~RandomNum(3,1)~+ ~(Tell a Joke)~ + Interact.J1 
 +~RandomNum(3,2)~+ ~(Tell a Joke)~ + Interact.J2 
 +~RandomNum(3,3)~+ ~(Tell a Joke)~ + Interact.J3 
@@ -2057,6 +2060,9 @@ SAY ~Hrm.~ [X3RCom5]
 + ~RandomNum(3,2)~ + ~(Tickle her)~ + Interact.L2
 + ~RandomNum(3,3)~ + ~(Tickle her)~ + Interact.L3
 END
+
+
+
 
 IF ~~ Interact.F1 
 SAY ~(She takes a breath, and plays for you.)~ [X3RFL1] 

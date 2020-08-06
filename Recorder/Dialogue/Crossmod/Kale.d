@@ -67,7 +67,7 @@ Global("X3KaleAlora","GLOBAL",4)
 Global("CrossKaleRec","LOCALS",1)~ THEN X3RecB KaRecBanter4
 ~Kale. What's your intention? With Alora?~
 DO ~SetGlobal("CrossKaleRec","LOCALS",2)~
-==  X3KaleB ~Not sure if I like the tone that's in that voice there...~
+== X3KaleB ~Not sure if I like the tone that's in that voice there...~
 == X3RecB ~Sir Mark Harmon was at least honorable, and let his intentions of it only being a temporary pursuit to the people he pursued.~
 == X3KaleB ~You sure you ain't just jealous?~
 == X3RecB ~She's my friend Kale. Just tell me what you intend?~
