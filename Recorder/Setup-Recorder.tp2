@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.36~
+VERSION ~1.38~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -442,8 +442,8 @@ COMPILE EVALUATE_BUFFER ~Recorder/dialogue/X3RNec.d~
 COMPILE EVALUATE_BUFFER ~Recorder/dialogue/X3RFer.d~
 // Other Creatures 
 COPY ~%MOD_FOLDER%/cre/X3RPAL.cre~ ~override/X3RPAL.cre~
-  SAY NAME1 ~Sir Harmon~
-  SAY NAME2 ~Sir Harmon~
+  SAY NAME1 ~Sir Mark Harmon~
+  SAY NAME2 ~Sir Mark Harmon~
   WRITE_ASCII 0x248 ~X3RPAL~ #8  //override script
   WRITE_ASCII 0x280 ~X3RPAL~ #32  //DV
   WRITE_ASCII 0x2cc ~X3RPAL~ #8 
