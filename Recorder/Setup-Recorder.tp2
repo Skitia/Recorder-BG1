@@ -146,7 +146,7 @@ The Greater Deafness spell causes the recipient to become totally unable to hear
 COPY "Recorder/Spells/X3RSum.SPL" override 
 SAY NAME1 ~Send Gustav~
 SAY NAME2 ~Send Gustav~
-SAY DESC ~Send Gustav
+SAY 0x50 ~Send Gustav
 
 Range: 30 ft.
 Duration: 2 Turns
