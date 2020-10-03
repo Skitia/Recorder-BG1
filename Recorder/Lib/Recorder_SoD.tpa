@@ -36,7 +36,7 @@ COPY ~Recorder/cre/X32Rec.cre~ ~override/X32Rec.cre~
   SAY AREA_FOREST ~My heart is singing.~ [X3RFor]
   SAY AREA_CITY ~The songs you hear in cities are always so wonderful.~ []
   SAY AREA_DUNGEON ~We can do this.~ [X3RDun]
-  SAY AREA_DAY ~Daybreak always brings new hope. And if you have long hair, more tangles.~ [X3RDay]
+  SAY AREA_DAY ~Daybreak always brings new hope.~ [X3RDay]
   SAY AREA_NIGHT ~Be careful.~ [X3RNight]
   SAY SELECT_COMMON1 ~Choose your path.~ [X3RCom1]
   SAY SELECT_COMMON2 ~I'm with you.~ [X3RCom2]
