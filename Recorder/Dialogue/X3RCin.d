@@ -53,9 +53,10 @@ EXTERN X3RCin CinGive
 
 CHAIN X3RCin CinGive 
 ~Do you at least have something for me to remember? His ashes, anything?~
+== X3RecJ ~Well...~
 END 
 IF ~Global("X3RecSecQuest","GLOBAL",3)PartyHasItem("X3RSword")~ EXTERN X3RecJ GiveSword 
-IF ~OR(2)!Global("X3RecSecQuest","GLOBAL",4)!PartyHasItem("X3RSword")~ EXTERN X3RecJ KeepSword 
+IF ~OR(2)Global("X3RecSecQuest","GLOBAL",4)!PartyHasItem("X3RSword")~ EXTERN X3RCin KeepSword 
 
 CHAIN X3RecJ GiveSword 
 ~I have his sword, miss Cindy. I think it is best kept for your memory.~
@@ -67,7 +68,7 @@ END
 ++ ~I am sorry we cannot do more.~ EXTERN X3RecJ GetOutGood // Good 
 ++ ~Perhaps a bit of gold for this?~ EXTERN X3RCin GetOutGreedy // BAD END 
 
-CHAIN X3RecJ KeepSword 
+CHAIN X3RCin KeepSword 
 ~You have nothing, then. Useless strumpet. Get out of my home!~
 END 
 ++ ~Let us leave, Recorder. There is nothing more we can say.~ EXTERN X3RecJ GetOutRecorder // Bad 
