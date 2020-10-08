@@ -136,7 +136,7 @@ InParty("X3Rec")
 PartyHasItem("X3RSWORD")
 Global("X3RecSecQuest","GLOBAL",0)
 THEN RESPONSE #100 
-SetGlobalTimer("X3RecQuestTimer2","GLOBAL",ONE_DAY)
+SetGlobalTimer("X3RecQuestTimer2","GLOBAL",ONE_TURN)
 SetGlobal("X3RecSecQuest","GLOBAL",1)
 END 
 
@@ -395,9 +395,11 @@ Global("X3RecBreak","GLOBAL",4)
 THEN RESPONSE #100
 StartDialogueNoSet(Player1)
 END
+//Reputation Shifts 
 IF
 ReputationGT(Player1,12)
 Global("X3RecGoodBoost","GLOBAL",0)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",3)
@@ -406,6 +408,7 @@ END
 IF
 ReputationGT(Player1,16)
 Global("X3RecGoodBoost","GLOBAL",0)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",6)
@@ -414,6 +417,7 @@ END
 IF
 ReputationGT(Player1,20)
 Global("X3RecGoodBoost","GLOBAL",0)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecGoodBoost","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",9)
@@ -422,6 +426,7 @@ END
 IF
 ReputationLT(Player1,9)
 Global("X3RecBadLoss","GLOBAL",0)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
@@ -430,6 +435,7 @@ END
 IF
 ReputationLT(Player1,6)
 Global("X3RecBadLoss","GLOBAL",1)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
@@ -438,6 +444,7 @@ END
 IF
 ReputationLT(Player1,4)
 Global("X3RecBadLoss","GLOBAL",2)
+InParty("X3Rec")
 THEN RESPONSE #100
 SetGlobal("X3RecBadLoss","GLOBAL",3)
 SetGlobal("X3RecorderApproval","GLOBAL",-90)
