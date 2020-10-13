@@ -8,6 +8,7 @@ THEN
   RESPONSE #100
     SetGlobal("X3RecMarch","BD0101",1)
 	SetGlobal("X3RecSpawn","GLOBAL",1) 
+	SetGlobal("X3Debug","GLOBAL",1)
 	MoveGlobal("BD0101","X3Rec",[612.528])
 	ActionOverride("X3Rec",Face(SE))
     ReallyForceSpellDeadRES("BDREJUVE","X3Rec") // In case Rec died and was never raised. 	
@@ -33,6 +34,7 @@ THEN
   RESPONSE #100
     SetGlobal("X3RecMarch","BD0101",1)
 	SetGlobal("X3RecSpawn","GLOBAL",1) 
+	SetGlobal("X3Debug","GLOBAL",2)
 	CreateCreature("X32Rec",[612.528],SE)
 	ActionOverride("X3Rec",MakeGlobal())
     ChangeEnemyAlly("X3Rec",NEUTRAL)
