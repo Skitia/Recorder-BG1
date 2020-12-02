@@ -26,7 +26,7 @@ DO ~EscapeArea()SetGlobal("X3RecBryce","GLOBAL",2)~ // AddJournalEntry()
 EXIT 
 
 
-CHAIN IF ~IsValidForPartyDialogue("X3Rec")Global("X3RecBryce","GLOBAL",1)~ THEN X3Bryce BryceAlone
+CHAIN IF ~!IsValidForPartyDialogue("X3Rec")Global("X3RecBryce","GLOBAL",1)~ THEN X3Bryce BryceAlone
 ~Fools, depart! Only danger and death lie ahead, and I am getting far from it!~
 END 
 ++ ~Calm down, and tell me exactly what is going on.~ + 2.A 
