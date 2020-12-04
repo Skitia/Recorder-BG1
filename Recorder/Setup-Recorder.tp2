@@ -526,6 +526,12 @@ THEN BEGIN
 COMPILE ~Recorder/dialogue/CrossMod/Aura.d~
 END 
 
+ACTION_IF FILE_EXISTS_IN_GAME ~BC0Drake.dlg~
+THEN BEGIN
+  PRINT ~Adding crossmod content between Drake and Recorder~
+COMPILE ~Recorder/dialogue/CrossMod/Drake.d~
+END 
+
 BEGIN ~Recorder's Music~
 SUBCOMPONENT ~Choose whether or not to have Recorder's custom soundtrack play during timed talks.~
 
