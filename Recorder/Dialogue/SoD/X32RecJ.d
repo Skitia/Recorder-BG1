@@ -144,8 +144,8 @@ IF ~~ Talk3.Theory
 SAY ~Oh, I could go on all day about this. Music has its own magic, it's own systems and rules and art to it.~
 = ~And then there is beautiful ways to break that entire system of order and form something shocking, yet beautiful.~
 = ~Some bards dedicate their entire life just studying and forming concepts. Just thinking about it made me feel awe and happiness.~
-++ ~It was enchanting. Your dance is beautiful~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.2 
-++ ~It seems odd. But your dancing was entertaining~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.3
+++ ~It was enchanting. Your dance is beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.2 
+++ ~It seems odd. But your dancing was entertaining.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk3.3
 ++ ~It sounds like nonsense to me, just don't be so noisy next time.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk3.4
 ++ ~Yeah, you are rambling. We have a march to get to.~ + Talk3.4
 END 
