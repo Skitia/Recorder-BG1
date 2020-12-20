@@ -3,7 +3,7 @@ BEGIN X3RARN
 // Arnold should have three: 
 
 CHAIN IF ~IsValidForPartyDialogue("X3Rec")Global("X3ReBaldurQuest","GLOBAL",2)~ THEN X3RArn ArnoldRecorder
-~It is good to see you Recorder, though Cindy will wish to speak to you. Come speak to me afterwards..~
+~It is good to see you Recorder, though Cindy will wish to speak to you. Come speak to me afterwards.~
 == X3RecJ ~I will, Arnold.~
 EXIT 
 
