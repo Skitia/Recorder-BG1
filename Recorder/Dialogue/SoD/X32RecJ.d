@@ -1698,8 +1698,8 @@ SAY ~Go on.~ [X3RCom4]
 +~GlobalGT("X3RecorderApproval","GLOBAL",44)~+ ~What do you think of me?~ + Em.Me1 // ~What do you think of me?~
 +~GlobalGT("X3RecorderApproval","GLOBAL",-15)GlobalLT("X3RecorderApproval","GLOBAL",15)~+ ~What do you think of me?~ + Em.Me2 // ~What do you think of me?~
 +~GlobalLT("X3RecorderApproval","GLOBAL",-14)~+ ~What do you think of me?~  + Em.Me3 // ~What do you think of me?~
-+~Global("X32RecInBG1","GLOBAL",1)Global("RecPBefore","GLOBAL",0)~+ ~What were you doing before you signed up for the expedition?, after we split?~ DO ~SetGlobal("RecPBefore","GLOBAL",1)~ + RecP.Before 
-+~Global("X32RecInBG1","GLOBAL",0)Global("RecPBefore","GLOBAL",0)~+ ~What's your history? What did you do before signing up for the expedition?~ DO ~SetGlobal("RecPBefore","GLOBAL",1)~ + RecP.Before1 
++~GlobalGT("Chapter","GLOBAL",7)Global("X32RecInBG1","GLOBAL",1)Global("RecPBefore","GLOBAL",0)~+ ~What were you doing before you signed up for the expedition?, after we split?~ DO ~SetGlobal("RecPBefore","GLOBAL",1)~ + RecP.Before 
++~GlobalGT("Chapter","GLOBAL",7)Global("X32RecInBG1","GLOBAL",0)Global("RecPBefore","GLOBAL",0)~+ ~What's your history? What did you do before signing up for the expedition?~ DO ~SetGlobal("RecPBefore","GLOBAL",1)~ + RecP.Before1 
 +~Global("X3RecRealName","GLOBAL",0)~+ ~Is Recorder really your real name?~ DO ~IncrementGlobal("X3RecRealName","GLOBAL",1)~ + RecP.RealName // Also in SoD, Approval Based. 
 +~GlobalGT("X3RecorderApproval","GLOBAL",69)Global("X3RecSpecial","GLOBAL",0)~+ ~Is there anyone special in your life?~ DO ~SetGlobal("X3RecRealName","GLOBAL",1)~ + RecP.Special // Also in SoD, Approval Based.  
 +~GlobalGT("X32RecTalk","GLOBAL",10)Global("X3RecTravel","GLOBAL",0)~+ ~Can you tell me of other places you've traveled?~ DO ~SetGlobal("X3RecTravel","GLOBAL",1)~ + RecP.Candlekeep 
