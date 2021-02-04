@@ -1907,7 +1907,7 @@ END
 
 IF ~~ RecP.Special 
 SAY ~Um, well...~
-= ~No. There was once, someone that I cared for, if that is what you mean. But not presently.~
+= ~No. There was... once. It feels like in another life. But that is the past.~
 ++ ~So you are "available", as it were?~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.1 
 ++ ~What happened with him, or her?~ + SpecialP.2 
 ++ ~Let's talk about something else.~  + RecP.Talk 
@@ -1930,9 +1930,9 @@ SAY ~That is...very personal.~
 END 
 
 IF ~~ SpecialP.3 
-SAY ~My previous lover got...attached, and a little possessive. Not in the innocent, jealous way when you're having a banter with another man.~
-= ~It resulted in these flare ups in anger. A shift from a calm like a gentle spring shower to the fury of a rainstorm. Sometimes in hurtful words, sometimes painfully physical~
-= ~I wish there was a way to help him, or us, but it was too much pain for me. I gave up, left, and never looked back.~
+SAY ~My previous... lover got attached and a little possessive. Not in the innocent, jealous way when you're having a banter with another man.~
+= ~It resulted in these flare ups in anger. A shift from a calm like a gentle spring shower to the fury of a rainstorm. Sometimes in hurtful words, sometimes a phsyical strike, but always painful.~
+= ~I was his possession to him, and I couldn't live like that anymore. I gave up, left, and never looked back.~
 ++ ~Is there a chance he would pursue you here?~ + SpecialP.4 
 ++ ~I am sorry. I wouldn't have asked if I had known.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.5 
 ++ ~I would kill someone who treated me that way.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.6 
@@ -1958,8 +1958,8 @@ SAY ~You can't know what comes next, or what you will discover when you first op
 END 
 
 IF ~~ SpecialP.6 
-SAY ~Maybe you think you would. But when you love someone that much...you don't want to hurt them. You want the best for them, and for your relationship.~
-= ~And sometimes, running is best for all. I've done everything to ensure I'm not found. My name...my location...my appearance. And I hope it always remains that way.~
+SAY ~Maybe you think you would. But it's not that simple. Blood just...it just invites more blood.~
+= ~Sometimes, running is best for all. I've done everything to ensure I'm not found. My name...my location...my appearance. And I hope it always remains that way.~
 +~Global("X3RecRealName","GLOBAL",1)~+ ~Is this why you call yourself Recorder?~ + SpecialP.7 
 ++ ~He was foolish to do that to you. You are beautiful.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
 ++ ~If I ever meet him, I will take his life for you.~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
@@ -1973,12 +1973,12 @@ IF ~~ + SpecialP.10
 END 
 
 IF ~~ SpecialP.8 
-SAY ~Beautiful? That is kind of you to say, <CHARNAME>. But he didn't mean to do it in malice. He just...struggled.~
+SAY ~He didn't mean to do it in malice. Or maybe he did. It was a foolish choice, in a situation where I had little of a choice.~
 IF ~~ + SpecialP.10 
 END 
 
 IF ~~ SpecialP.9 
-SAY ~That will not help, <CHARNAME>, nor would I ever want you to murder someone like that.~
+SAY ~That will not help, <CHARNAME>. I would rather just not think about it at all.~
 IF ~~ + SpecialP.10 
 END
 
@@ -1987,6 +1987,7 @@ SAY ~I'm sorry, I don't want to talk more on this. It's...still deeply personal 
 ++ ~Let's talk about something else.~  + RecP.Talk 
 ++ ~Let's keep moving.~ EXIT 
 END 
+
 
 IF ~~ RecP.Harmon 
 SAY ~I was performing in the Three Old Keg's, and Sir Harmon was trying to woo one of the maids.~
