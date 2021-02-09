@@ -3,7 +3,9 @@ The first is if Rec never spawned, was in party. The second is if Rec never spaw
 IF
   Global("X3RecMarch","BD0101",0)
   Global("X3RecSpawn","GLOBAL",0)
+  OR(2)
   BeenInParty("X3Rec")
+  Global("X3RecDebug","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("X3RecMarch","BD0101",1)
@@ -30,6 +32,7 @@ IF
   Global("X3RecMarch","BD0101",0)
   Global("X3RecSpawn","GLOBAL",0)
   !BeenInParty("X3Rec")
+  !Global("X3RecDebug","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("X3RecMarch","BD0101",1)

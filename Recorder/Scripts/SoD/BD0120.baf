@@ -8,9 +8,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32RecCryptComment1","GLOBAL",1)
-	ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
 	ActionOverride("X3Rec",Polymorph("MAGE_FEMALE_GNOME"))
-	ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
     RealSetGlobalTimer("X32RecCryptCommentTimer1","GLOBAL",60)
 END
 
