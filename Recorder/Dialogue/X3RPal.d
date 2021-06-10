@@ -33,7 +33,7 @@ DO ~SetGlobal("X3RKillPal","GLOBAL",4)~ EXIT
 
 CHAIN IF ~Dead("X3Ruby")!InPartyAllowDead("X3Rec")!Dead("X3Rec")~ THEN X3RPal Ruins2D
 ~My last sight is cursed to see this evil that has been done...Milil forgive me...~
-DO ~SetGlobal("X3RKillPal","GLOBAL",4)~ EXIT 
+DO ~SetGlobal("X3RKillPal","GLOBAL",2)~ EXIT 
 
 CHAIN IF ~Dead("X3RNec")InParty("X3Rec")Dead("X3Ruby")~ THEN X3RPal Ruins3B 
 ~You did what I could not, maiden bard. A pity I will not live to see the record you make of your own tale.~

@@ -14,8 +14,8 @@ RESPONSE #100
 	CreateCreature("X3RLead",[1136.298],S) // David
 	CreateCreature("X3RHawk",[1194.244],S)
 	CreateCreature("X3Bryce",[1344.363],E)
-	CreateCreature("SKELET_A",[1568.1328],SW)
-	CreateCreature("SKELET_A",[1568.1328],SW)
+	CreateCreature("X3RSKEL1",[1568.1328],SW)
+	CreateCreature("X3RSKEL2",[1568.1328],SW)
 	Wait(1)
    ActionOverride("X3RPal",Polymorph("SLEEPING_MAN_HUMAN"))
    Kill("X3RHawk")

@@ -2,7 +2,7 @@ BEGIN X3RNec
 
 // Needs two versions, one with Recorder, one without.
 
-CHAIN IF ~IsValidForPartyDialogue("X3Rec")~ THEN X3RNec t1R 
+CHAIN IF ~IsValidForPartyDialogue("X3Rec")!Global("X3RNecAttack","GLOBAL",1)~ THEN X3RNec t1R 
 ~And what have we here? The little gnome returns with helpers, it seems. Your needless banter with me proves to be fruitful, Ruby.~
 == X3Ruby ~Recorder! Your timing is perfect.~
 == X3RecJ ~We're here! Mark, hang in there!~
@@ -35,7 +35,7 @@ CHAIN X3Ruby t1.Turn
 ~Or else, then. He dies today, and anyone in my way!~
 == X3RecJ ~I am sorry, but I stand with her. I can't tolerate this!~
 == X3RNec ~Let's kill them all.~
-DO ~ActionOverride("X3Ruby",Enemy())ActionOverride("X3Rec",LeaveParty())ActionOverride("X3Rec",Enemy())ActionOverride("X3Rec",Attack("X3RNec"))ActionOverride("X3Ruby",Attack("X3RNec"))~
+DO ~ChangeEnemyAlly("X3RSKEL1",NEUTRAL)ActionOverride("X3RSKEL1",Attack("X3Ruby")ChangeEnemyAlly("X3RSKEL2",NEUTRAL)ActionOverride("X3RSKEL2",Attack("X3Ruby")ActionOverride("X3Ruby",Enemy())ActionOverride("X3Rec",LeaveParty())ActionOverride("X3Rec",Enemy())ActionOverride("X3Rec",Attack("X3RNec"))ActionOverride("X3Ruby",Attack("X3RNec"))~
 EXIT
 
 CHAIN X3Ruby t1.E 
@@ -56,7 +56,7 @@ CHAIN X3RNec t4
 DO ~Enemy()ActionOverride("X3Ruby",Attack("X3RNec"))~ 
 EXIT 
 
-CHAIN IF ~!IsValidForPartyDialogue("X3Rec")~ THEN X3RNec t2
+CHAIN IF ~!IsValidForPartyDialogue("X3Rec")!Global("X3RNecAttack","GLOBAL",1)~ THEN X3RNec t2
 ~It seems we are interrupted, Ruby. They were not part of our expedition.~
 END 
 ++ ~I will stop you, necromancer.~ EXTERN X3RNec t2.A
@@ -112,17 +112,17 @@ EXIT
 
 CHAIN X3Ruby T2.H 
 ~Monster! Burn in the hells!~
-DO ~SetGlobal("X3RNecAttack","GLOBAL",1)Enemy()SetGlobal("X3RNecDeal","GLOBAL",1)~ 
+DO ~SetGlobal("X3RNecDeal","GLOBAL",1)SetGlobal("X3RNecAttack","GLOBAL",1)ChangeEnemyAlly("X3RSKEL1",NEUTRAL)ActionOverride("X3RSKEL1",Attack("X3Ruby")ChangeEnemyAlly("X3RSKEL2",NEUTRAL)ActionOverride("X3RSKEL2",Attack("X3Ruby")Enemy()~ 
 EXIT 
 
 CHAIN IF ~Dead("X3Ruby")Global("X3RNecAttack","GLOBAL",1)Global("X3RNecDeal","GLOBAL",1)~ THEN X3RNec t3 
 ~As promised for your help, a scroll. Good riddance to them all. I will be leaving with the too little I have found here. A new great wizard will come to this realm, and that is I.~
-DO ~EscapeArea()AddJournalEntry(@400, QUEST) GiveItem("SCRL25",Player1)~
+DO ~ActionOverride("X3RSKEL1",EscapeArea())ActionOverride("X3RSKEL2",EscapeArea())AddJournalEntry(@400, QUEST) GiveItem("SCRL25",Player1)EscapeArea()~
 EXIT  
 
 CHAIN IF ~Dead("X3Ruby")Global("X3RNecAttack","GLOBAL",1)Global("X3RNecDeal","GLOBAL",0)~ THEN X3RNec t5 
 ~Dead, all of them now. A new great wizard shall rise from this moment and that is I. No one else will get in my way of my pursuit again.~
-DO ~EscapeArea()AddJournalEntry(@420, QUEST)~
+DO ~ActionOverride("X3RSKEL1",EscapeArea())ActionOverride("X3RSKEL2",EscapeArea())AddJournalEntry(@420, QUEST)EscapeArea()~
 EXIT  
 
 

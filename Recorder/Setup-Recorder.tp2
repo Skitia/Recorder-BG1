@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.45~
+VERSION ~1.46~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -454,7 +454,11 @@ COPY ~Recorder/cre/X3RNec.cre~ ~override/X3RNec.cre~
   WRITE_ASCII 0x280 ~X3RNec~ #32  //DV
   WRITE_ASCII 0x2cc ~X3RNec~ #8   //pre-joining dialogue file
 COPY ~%MOD_FOLDER%/cre/X3RLead.cre~ ~override/X3RLead.cre~ 
+  SAY NAME1 ~Expedition Leader~
+  SAY NAME2 ~Expedition Leader~
 COPY ~%MOD_FOLDER%/cre/X3RHawk.cre~ ~override/X3RHawk.cre~
+  SAY NAME1 ~Hawk~
+  SAY NAME2 ~Hawk~
 COPY ~%MOD_FOLDER%/cre/X3Bryce.cre~ ~override/X3Bryce.cre~
   SAY NAME1 ~Bryce~
   SAY NAME2 ~Bryce~
@@ -490,6 +494,18 @@ COPY ~%MOD_FOLDER%/cre/X3RFER.cre~ ~override/X3RFER.cre~
   SAY BATTLE_CRY1 ~~ [X3RFER1]
   SAY SELECT_COMMON1 ~~ [X3RFER2]
   SAY SELECT_ACTION1 ~~ [X3RFER3]
+COPY ~%MOD_FOLDER%/cre/X3RSKEL1.cre~ ~override/X3RSKEL1.cre~
+  SAY NAME1 ~Skeleton~
+  SAY NAME2 ~Skeleton~
+  WRITE_ASCII 0x248 ~X3RSKEL1~ #8  //override script
+  WRITE_ASCII 0x280 ~X3RSKEL1~ #32  //DV
+  WRITE_ASCII 0x2cc ~X3RSKEL1~ #8 
+COPY ~%MOD_FOLDER%/cre/X3RSKEL2.cre~ ~override/X3RSKEL2.cre~
+  SAY NAME1 ~Skeleton~
+  SAY NAME2 ~Skeleton~
+  WRITE_ASCII 0x248 ~X3RSKEL2~ #8  //override script
+  WRITE_ASCII 0x280 ~X3RSKEL2~ #32  //DV
+  WRITE_ASCII 0x2cc ~X3RSKEL2~ #8   
 
    
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN

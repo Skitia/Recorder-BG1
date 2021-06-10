@@ -127,7 +127,7 @@ EXIT
 
 // Recorder NOT In Party, has never joined, Sir Mark Harmon Not Dead
 
-CHAIN IF ~!Dead("X3RPal")!Global("X3RecPalRejQuest","GLOBAL",1)!Global("X3RecPalRejQuest","GLOBAL",1)~ THEN X3Rec Q1 
+CHAIN IF ~!Dead("X3RPal")!Global("X3RecPalRejQuest","GLOBAL",1)~ THEN X3Rec Q1 
 ~If you find him, please bring him to me right away.~
 END
 ++ ~I'll return with what I can.~ EXIT 
