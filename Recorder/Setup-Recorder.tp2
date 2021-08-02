@@ -423,6 +423,7 @@ ADD_JOURNAL TITLE (@29) @30 @31 @34 @35 @36 USING ~Recorder/Tra/English/Setup.tr
 //Other Scripts 
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Rec.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RecD.baf~
+COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RReset.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RFER.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3RNec.baf~
 COMPILE EVALUATE_BUFFER ~Recorder/Scripts/X3Bryce.baf~

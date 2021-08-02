@@ -1623,6 +1623,7 @@ SAY  ~Hey.~ [X3RCon1]
 +~GlobalLT("X3RecorderApproval","GLOBAL",-44)~+ ~Let's stop and chat for a bit.~  + RecP.TalkNo
 +~GlobalGT("X3RecorderApproval","GLOBAL",-45)~+ ~(Socialize)~ + RecP.Interact 
 +~GlobalLT("X3RecorderApproval","GLOBAL",-44)~+ ~(Socialize)~ + RecP.TalkNo
+++ ~Your voice seems off.~ + FixString
 ++ ~Let's keep moving.~ EXIT 
 END 
 
@@ -1638,6 +1639,7 @@ SAY  ~I'm with you.~ [X3RCom2]
 +~HPPercentLT(Myself,50)~+ ~How are you doing?~ + RecP.HowAreYouHurt // ~How are you doing?~ //(Under 50%)
 ++ ~Can I ask you a question?~  + RecP.Talk
 ++ ~(Socialize)~ + RecP.Interact
+++ ~Your voice seems off.~ + FixString
 ++ ~Let's keep moving.~ EXIT 
 END  
 
@@ -2650,6 +2652,13 @@ END
 IF ~~ Interact.K3 
 SAY ~(She closes her eyes at your affection, fingers quivering against her side.)~
 IF ~~ EXIT 
+END 
+
+IF ~~ FixString 
+SAY ~I'm sorry, I must be out of tune. Let me retune myself.~
+IF ~~ DO ~ClearAllActions() 
+      StartCutSceneMode() 
+      StartCutScene("X3RReset")~ EXIT 
 END 
 
 END 
