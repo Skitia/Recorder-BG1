@@ -1,0 +1,45 @@
+@0    = ~Recorder~
+@1    = ~Recorder tells you about playing a flute in the streets gifted to her by a wandering troupe. The gold sums she raised she shared with her fellow orphans, until
+  she saved enough to go to a proper college, with the help of the sponsorship of a priest of oghma who was moved by her dedication for knowledge. Recorder is not her true name, and she only smiles when you try to press for a real name.~
+@2    = ~Wait.~ [X3RInn]
+@3    = ~It's...all over.~ [X3RFear]
+@4    = ~That was impressive.~ [X3RHap]
+@5    = ~Unbelievable.~ [X3RAnn]
+@6    = ~What were you thinking?~ [X3RSer]
+
+@8    = ~We walk together.~ [X3RLead]
+@9    = ~I must rest.~ [X3RRest]
+@10   = ~*Plays flute.*~ [X3RBored]
+@11   = ~Time for your final bow!~ [X3RCry1]
+@12   = ~Care for an encore?~ [X3RCry2]
+@13   = ~Don't be reckless!~ [X3RCry3]
+@14   = ~We won't lose!~ [X3RCry4]
+@15   = ~Rest in peace.~ [X3RCry5]
+
+
+@18   = ~So this...is how it ends...~ [X3RHurt]
+@19   = ~My heart is singing.~ [X3RFor]
+@20   = ~The songs you hear in cities are always so wonderful.~
+@21   = ~We can do this.~ [X3RDun]
+@22   = ~Daybreak always brings new hope.~ [X3RDay]
+@23   = ~Be careful.~ [X3RNight]
+@24   = ~Choose your path.~ [X3RCom1]
+@25   = ~I'm with you.~ [X3RCom2]
+@26   = ~Please, take your time.~ [X3RCom3]
+@27   = ~Go on.~ [X3RCom4]
+@28   = ~Hrm.~ [X3RCom5]
+@29   = ~Um...~ [X3RCom6]
+@30   = ~Ah, I see.~ [X3RAct1]
+@31   = ~Oh.~ [X3RAct2]
+@32   = ~We can see this through.~ [X3RAct3]
+@33   = ~I have faith in you.~ [X3RAct4]
+@34   = ~The path is yours to climb, but I'll help you on your way.~ [X3RAct5]
+@35   = ~I vow to bear you up, like a ship upon the waves, no matter what may come.~ [X3RAct6]
+@36   = ~If you'd like me to teach you a dance, you need simply ask.~ [X3RAct7]
+@37   = ~It's over!~ [X3RCrit]
+@38   = ~Goodness gracious!~ [X3RMiss]
+@39   = ~Oh my.~ [X3RImm]
+@40   = ~I think not.~ [X3RInv]
+@41   = ~My apologies.~ [X3RSpell]
+@42   = ~Cindy~
+@43   = ~Bandit~

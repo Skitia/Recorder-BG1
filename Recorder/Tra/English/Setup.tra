@@ -1,132 +1,354 @@
-@0 = ~The Paladin of Milil~
-@1 = ~The Paladin of Milil
+@0    = ~1.47~
+@1    = ~Recorder NPC MoD~
+@2    = ~AR~
+@3    = ~BG~
+@4    = ~lorekeeper~
+@5    = ~Lorekeeper~
+@6    = ~LOREKEEPER: Lorekeepers are bards that focus less on a generalist skill set and lean more towards spell casting, where their prodigious memory and knowledge makes them better casters than most other bards. They make excellent librarians, historians, and advisors with their large capacity for learning and recalling, and their innate skills ensure information is not lost.
+
+Advantages:
+- +20 bonus to lore.
+- +2 Spell Slots for every spell level. 
+- May use SONATA in place of the regular Bard Song.
+
+SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
+
+Level 1: +1 Int, +1 Saves vs Spells, Immunity to Charm and Sleep. 
+Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion
+
+Disadvantages:
+- No Pickpocketing Skill.
+- Can only be proficient in club, dagger, crossbow, and quarterstaff.~
+@7    = ~Symphony of Scholars~
+@8    = ~Symphony of Scholars: A powerful song unique to lorekeepers, the song gives the bard a 6 point bonus to their AC, and 10% magic resistance due to the magic of the song. As well, the bard’s party receives +4 Intelligence, +2 to all saves, +5% MR, +15% chance of a critical hit, and immunity to charm, domination, sleep, rigid/feeblemind, confusion, and fear. 
+This ability replaces the current bard song. It does not stack with Sonata, Enhanced Bard Song or other song sources, and cannot be learned if Enhanced Bard Song is known.
+~
+@9    = ~Sonata~
+@10   = ~SONATA: This song provides varying levels of intelligence, save bonuses, and mind protection depending on the level of the bard:
+
+Level 1: +1 Int, +1 Saves vs Spells, Immunity to Charm and Sleep. 
+Level 15: +2 Int, +2 Saves vs Spells, Immunity to Charm, Sleep, and Rigid/Feeblemind.
+Level 20: +3 Int, +3 Saves vs Spells, Immunity to Charm, Sleep, Rigid/Feeblemind and Confusion~
+@11   = ~Greater Deafness~
+@12   = ~Greater Deafness
+(Illusion/Phantasm)
+
+Level: 3
+Range: 40 ft.
+Duration: Special
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+Damage: 4d6 (Save vs Spell for Half)
+
+The Greater Deafness spell causes the recipient to become totally unable to hear any sounds. The victim is allowed a Saving Throw vs. Spell to negate the effect. Deafened spellcasters have a 50% chance to miscast any spells. This deafness can be done away with by means of a Dispel Magic spell or a Cure Disease spell. On top of this, 4d6 damage is inflicted on the target. A Successful Save vs. Spell will inflict half damage.~
+@13   = ~Send Gustav~
+@14   = ~Send Gustav
+
+Range: 30 ft.
+Duration: 2 Turns
+Casting Time: 0
+Area of Effect: Any point in range
+Saving Throw: None
+
+Sends out Gustav the ferret to scout, once a day. For two turns, Gustav will perform any action of the equivalent ferret familiar. If hit below 25% hitpoints, he will flee.~
+@15   = ~Greater Deafness
+(Illusion/Phantasm)
+
+Level: 3
+Range: 40 ft.
+Duration: Special
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+Damage: 4d6 (Save vs Spell for Half)
+
+The Deafness spell causes the recipient to become totally unable to hear any sounds. The victim is allowed a Saving Throw vs. Spell to negate the effect. Deafened spellcasters have a 50% chance to miscast any spells. This deafness can be done away with by means of a Dispel Magic spell or a Cure Disease spell. On top of this, 4d6 damage is inflicted on the target. A Successful Save vs. Spell will inflict half damage.~
+@16   = ~*Recorder plays her flute.*~
+@17   = ~Recorder's Flute~
+@18   = ~This flute is a masterpiece, adorned in precious metal and crafted with love. It appears very expensive, and Recorder clearly treasures the item.
+
+Abilities: Once per day may cast the spell Friends, lasting 24 rounds.~
+@19   = ~Recorder will not give up her flute, but she does give you a brief performance.~ [X3RBored]
+@20   = ~Cindy's Letter~
+@21   = ~Recorder,
+
+I know you are planning to march out with the Dragonspear Expedition. I worry that the battles to come may take you away from this world as it did my brother.
+I've not even permitted my husband to take arms, as much as he desired. Please take care of yourself, and write back if you can, so we know you are all right.
+
+Cindy Harmon.~
+@22   = ~Recorder,
+
+I know you are planning to march out with the Dragonspear Expedition. I just wish to say I am sorry for the things I said when you visited us and told us what happened with Mark.
+I should have never said those things, and now I worry that the battles to come may take away his friend from this world as well. Please accept my forgiveness, and take care of yourself. 
+Write back if you can
+
+Cindy Harmon.~
+@23   = ~Recorder's Letter~
+@24   = ~Cindy,
+
+Thank you for your letter. I have been well so far and seen so much. I can't wait to bring back stories of all I have been through. 
+I am even traveling with the Hero of Baldur's Gate, who I have wrote so much about. I truly think that the history that is forged here will really impact the region for years to come.
+I promise I'll do all I can to make it through this, and stop by and say hi again.
+
+Recorder.~
+@25   = ~Cindy,
+
+Your apology means so much to me. I was truly stricken when you said those things, your brother was a dear friend and losing him was one of the hardest things that happened to me.
+I think he would be happy for me, I'm trying to make a difference, and am even traveling with the great Hero of Baldur's Gate.
+I hope we can talk when I return from this, for I do not want our last meeting to be one of tension and anger.
+
+Recorder.~
+@26   = ~Tactical Correspondence~
+@27   = ~This sealed book contains valuable intelligence sent from Baldur's Gate. In the wrong hands it could reveal and threaten military plans and strategy.~
+@28   = ~Potion of Knowledge~
+@29   = ~This potion enhances the inhibitor's lore and understanding around them, making them better able to identify magical items. This lasts for one hour.
+
+SPECIAL 
+Statistics: Increases Lore by 50 for five turns.
+
+Weight: 1~
+@30   = ~Sir Mark Harmon's Blade~
+@31   = ~This blade is flashy, and you can't help but feel a bit of confidence when you grip it. It's luck may have run out for Sir Mark, but a new wielder may make use of its unique enchantment.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 2d4+2 (slashing)
+Speed Factor: 8
+Proficiency Type: Bastard Sword
+Type: One-handed
+Special: Grants +2 Luck to the wielder.
+Requires:
+ 11 Strength
+
+Weight: 10~
+@32   = ~Gustav~
+@33   = ~This ferret appears quite well fed and occasionally pokes its head out of Recorder's pack. When asked how she came upon it, she tells how her mother purchased it for her in the grand markets of Amn, seeing the animal starved in a merchant's cage. The purchase gave Recorder a dear companion, and Gustav all the food he could want, and the pair have been inseparable ever since.
+
+Weight: 1~
+@34   = ~The Ferret growls when you try to remove it from its comfortable spot in Recorder's pack.~ [X3RF3]
+@35   = ~Sonneter's Leather~
+@36   = ~This leather armor of Recorder's is enchanted to not encumber spell-casting. It can fit any gnome, dwarf, or halfling, though it's armor has no more additional protections than standard leather.
+
+
+STATISTICS:
+
+Armor Class: 8 (10 vs. piercing and missile)
+Special: Can cast arcane spells while worn.
+Requires:
+ 4 Strength
+ Dwarf, Halfling, or Gnome
+
+Weight: 10~
+@37   = ~Expedition Leader's Journal~
+@38   = ~Damn Milil Paladins. Mark and the bard accompanying him, Recorder were an hour behind. Knowing Mark, he probably found some beautiful woman he just had to help. Hopefully he wasn't badly conned like before.
+
+I've assembled a small group of mercenaries, a mage named Rick, my beloved Ruby, and Bryce and Hawk. Bryce and Hawk seem all right, but Ruby insists there's something not right with Rick. She keeps complaining of him going off when we rest on his own, not contributing to battles. I get he is shady, but he is the only real mage we have, excluding the bard with Mark, he is our best scholar. What can he do with five others anyway?
+
+She'll calm down once this is over. The Temple will definitely appreciate some new lost tomes from this place, if they are there like that adventurer muttered about.~
+@39   = ~Rick's Journal~
+@40   = ~This expedition has gathered outside the Ulcaster school and plans to set inside in the morning. I have no intention of waiting. This is my opportunity. I can slip in, set up some traps, and then all the lost spells and tomes will be mine to convene. I could even set up a few traps and return before they stir. 
+
+This was completely worth turning down the assassination offer on <CHARNAME>. I might even go back to them and take it up after playing with my new knowledge. It would be nice to practice obliterating new foes after I am done with this expedition.~
+@41   = ~Recorder~
+@42   = ~When asked about her past, Recorder grows quiet for a moment. She recounts a childhood spent amongst books in her father's bookbinding shop, where she delved into magic tomes, religious texts, history, and musical compositions. After learning the bard's trade, she moved to Amn with her mother, a priest of Oghma, for her work in the temple. She says little of what brought her north, only that where history is being made, it must be observed before it is lost.
+  
+  When asked about her real name, she merely calls it a decision of personal security before changing the subject.~
+@43   = ~Wait.~ [X3RInn]
+@44   = ~It's...all over.~ [X3RFear]
+@45   = ~That was impressive.~ [X3RHap]
+@46   = ~Unbelievable.~ [X3RAnn]
+@47   = ~What were you thinking?~ [X3RSer]
+
+@49   = ~We walk together.~ [X3RLead]
+@50   = ~I must rest.~ [X3RRest]
+@51   = ~*Plays flute.*~ [X3RBored]
+@52   = ~Time for your final bow!~ [X3RCry1]
+@53   = ~Care for an encore?~ [X3RCry2]
+@54   = ~Don't be reckless!~ [X3RCry3]
+@55   = ~We won't lose!~ [X3RCry4]
+@56   = ~Rest in peace.~ [X3RCry5]
+@57   = ~~ [X3RDam]
+@58   = ~~ [X3RDead]
+@59   = ~So this...is how it ends...~ [X3RHurt]
+@60   = ~My heart is singing.~ [X3RFor]
+@61   = ~The songs you hear in cities are always so wonderful.~
+@62   = ~We can do this.~ [X3RDun]
+@63   = ~Daybreak always brings new hope.~ [X3RDay]
+@64   = ~Be careful.~ [X3RNight]
+@65   = ~Choose your path.~ [X3RCom1]
+@66   = ~I'm with you.~ [X3RCom2]
+@67   = ~Please, take your time.~ [X3RCom3]
+@68   = ~Go on.~ [X3RCom4]
+@69   = ~Hrm.~ [X3RCom5]
+@70   = ~Um...~ [X3RCom6]
+@71   = ~Ah, I see.~ [X3RAct1]
+@72   = ~Oh.~ [X3RAct2]
+@73   = ~We can see this through.~ [X3RAct3]
+@74   = ~I have faith in you.~ [X3RAct4]
+@75   = ~The path is yours to climb, but I'll help you on your way.~ [X3RAct5]
+@76   = ~I vow to bear you up, like a ship upon the waves, no matter what may come.~ [X3RAct6]
+@77   = ~If you'd like me to teach you a dance, you need simply ask.~ [X3RAct7]
+@78   = ~It's over!~ [X3RCrit]
+@79   = ~Goodness gracious!~ [X3RMiss]
+@80   = ~Oh my.~ [X3RImm]
+@81   = ~I think not.~ [X3RInv]
+@82   = ~My apologies.~ [X3RSpell]
+@83   = ~Sir Mark Harmon~
+@84   = ~Rick~
+@85   = ~Expedition Leader~
+@86   = ~Hawk~
+@87   = ~Bryce~
+@88   = ~Ruby~
+@89   = ~Cindy Harmon~
+@90   = ~Arnold Harmon~
+@91   = ~~ [X3RF1]
+@92   = ~~ [X3RF2]
+@93   = ~~ [X3RF3]
+
+
+@94   = ~Skeleton~
+@95   = ~Adding crossmod content between Emily and Recorder~
+@96   = ~Adding crossmod content between Vienxay and Recorder~
+@97   = ~Adding crossmod content between Helga and Recorder~
+@98   = ~Adding crossmod content between Kale and Recorder~
+@99   = ~Adding crossmod content between Aura and Recorder~
+@100  = ~Adding crossmod content between Drake and Recorder~
+@101  = ~Recorder's Music~
+@102  = ~Choose whether or not to have Recorder's custom soundtrack play during timed talks.~
+@103  = ~Recorder Plain Bard~
+@104  = ~Choose to have Recorder as a plain bard (Not recommended, only use if using a mod that alters the bard class)~
+@105  = ~Daybreak always brings new hope. And if you have long hair, more tangles.~ [X3RDay]
+
+@10000 = ~The Paladin of Milil~
+@10001 = ~The Paladin of Milil
 
 A bard I met by the temple of Oghma sent me to fetch a paladin of Milil who is staying at the inn.~
 
-@2 = ~The Paladin of Milil
+@10002 = ~The Paladin of Milil
 
 I've let the paladin know a bard waits for him. I should see her for my reward before I leave.~
 
-@3 = ~The Paladin of Milil 
+@10003 = ~The Paladin of Milil 
 
 The bard showed her appreciation and gave me a potion that helps me understand items that I cannot identify, before departing for her journey elsewhere. Perhaps we'll cross paths again.~
 
-@4 = ~The Paladin of Milil
+@10004 = ~The Paladin of Milil
 
 A bard named Recorder asked for help for her companion, a paladin of Milil, who is still down in the Ulcaster ruins. We agreed to help her.~
 
-@400 = ~The Paladin of Milil
+@10400 = ~The Paladin of Milil
 
 We sided with the necromancer Harris, and took down Ruby.~
 
-@410 = ~The Paladin of Milil
+@10410 = ~The Paladin of Milil
 
 We sided with the necromancer Harris, and took down Ruby and Recorder.~
 
-@420 = ~The Paladin of Milil
+@10420 = ~The Paladin of Milil
 
 We decided to let Harris and Ruby fight it out for themselves, and Ruby fell.~
 
-@430 = ~The Paladin of Milil
+@10430 = ~The Paladin of Milil
 
 We decided to let Harris, Recorder and Ruby fight it out for themselves, and Recorder and Ruby fell.~
 
-@5 = ~The Paladin of Milil
+@10005 = ~The Paladin of Milil
 
 A bard named Recorder asked for help for her companion, a Paladin of Milil, who is still down in the Ulcaster ruins.~
 
-@6 = ~The Paladin of Milil
+@10006 = ~The Paladin of Milil
 
 A bard named Recorder asked for help for a Paladin of Milil. It was too late to save him, and he passed a sword to us.~
 
-@7 = ~The Paladin of Milil
+@10007 = ~The Paladin of Milil
 
 It was too late to save the Paladin of Milil. We should inform Recorder of his fate.~
 
-@8 = ~The Paladin of Milil 
+@10008 = ~The Paladin of Milil 
 
 The Paladin of Milil has passed on, leaving Recorder grieved for her lost companion.~
 
-@18 = ~The Paladin of Milil 
+@10018 = ~The Paladin of Milil 
 
 We delivered the grave news to Recorder about the Paladin of Milil and passed on the sword. Should we ever need her, she will be at the Temple of Wisdom in the Friendly Arm Inn.~
 
-@16 = ~The Paladin of Milil 
+@10016 = ~The Paladin of Milil 
 
 It was too late to save the Paladin of Milil. He asked us to pass his sword on to Recorder.~
 
-@17 = ~*quaffs a potion*~
-
-@9 = ~Recorder~
-@10 = ~Recorder 
+@20009 = ~Recorder~
+@20010 = ~Recorder 
 
 The bard named Recorder has joined my party. She calls herself a Lorekeeper, and seems righteous and prideful in nature. Perhaps I will learn more of her during my travels.~
 
-@100 = ~Recorder 
+@20100 = ~Recorder 
 
 The bard named Recorder has said she is indebted to us, and will follow us if we need her. She will stay at the Temple of Wisdom in the Friendly Arm Inn until that time.~
 
-@11 = ~Notifying of Kin~
-@12 = ~Notifying of Kin
+@30011 = ~Notifying of Kin~
+@30012 = ~Notifying of Kin
 
 Recorder wished to notify Sir Mark Harmon's sibling of her brother's death, whenever we get a chance. She lives in the north part of Baldur's Gate with her husband.~
  
-@13 = ~Notifying of Kin 
+@30013 = ~Notifying of Kin 
 
 Recorder wished to notify Sir Mark Harmon's sibling of her brother's death, and pass on his sword. She lives in the north part of Baldur's Gate with her husband.~
 
-@14 = ~Notifying of Kin 
+@30014 = ~Notifying of Kin 
 
 Recorder has notified Sir Mark Harmon's sister. She took it poorly at first, but seems to understand Recorder is not to blame. Perhaps the next time they meet the occasion will be happier.~ 
 
-@15 = ~Notifying of Kin 
+@30015 = ~Notifying of Kin 
 
 Recorder has notified Sir Mark Harmon's sister. She took it poorly, though I suppose that was to be expected.~ 
 
-@20 = ~Letter for Recorder.~
+@40020 = ~Letter for Recorder.~
 
-@21 = ~Letter for Recorder.
+@40021 = ~Letter for Recorder.
 
 A commoner named Cindy wished to pass on a letter to a bard named Recorder, who is traveling with the army that will stand against the Crusade. We may see her in camp or on the march.~
 
-@22 = ~Letter for Recorder.
+@40022 = ~Letter for Recorder.
 
 Recorder was grateful for the letter, giving us a potion of lore in thanks.~
 
-@29 = ~The Runner~ 
+@50029 = ~The Runner~ 
 
-@30 = ~The Runner
+@50030 = ~The Runner
 
 Recorder wished to hand a letter to a Runner. He should be somewhere around the Coalition camp.~
 
-@31 = ~The Runner
+@50031 = ~The Runner
 
 The Runner mentioned he lost some intelligence papers from Baldur's Gate en route somewhere in Dead Man's Pass. We've agreed to help him recover them in exchange for delivering his letters.~
 
-@32 = ~The Runner 
+@50032 = ~The Runner 
 
 We've delivered Recorder's letter to the runner. We should let her know.~
 
-@33 = ~The Runner 
+@50033 = ~The Runner 
 
 Recorder was grateful for the delivery of the letter. She's reaffirmed her desire to help us whenever we need a hand.~
 
-@34 = ~The Runner 
+@50034 = ~The Runner 
 
 The runner was grateful for the recovery of the lost papers, and will deliver Recorder's letter.~
 
-@35 = ~The Runner 
+@50035 = ~The Runner 
 
 The runner is dead. No one will be able to deliver Recorder's letter now.~
 
-@36 = ~The Runner 
+@50036 = ~The Runner 
 
 We've recovered the lost correspondence, and should deliver them back to the runner.~
 //Use the below with DisplayStringNoNameDlg(Player1,@##)
-@37 = ~^RRecorder's approval of you has slightly decreased.^-~
-@38 = ~^RRecorder's approval of you has decreased.^-~
-@39 = ~^RRecorder's approval of you has greatly decreased.^-~
-@40 = ~^GRecorder's approval of you has slightly increased.^-~
-@41 = ~^GRecorder's approval of you has increased.^-~
-@42 = ~^GRecorder's approval of you has greatly increased.^-~
+@60037 = ~^RRecorder's approval of you has slightly decreased.^-~
+@60038 = ~^RRecorder's approval of you has decreased.^-~
+@60039 = ~^RRecorder's approval of you has greatly decreased.^-~
+@60040 = ~^GRecorder's approval of you has slightly increased.^-~
+@60041 = ~^GRecorder's approval of you has increased.^-~
+@60042 = ~^GRecorder's approval of you has greatly increased.^-~
 
