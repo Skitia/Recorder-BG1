@@ -3,108 +3,108 @@ BEGIN X3RCin
 // Cindy needs Three Chains:
 
 CHAIN IF ~!IsValidForPartyDialogue("X3Rec")GlobalLT("X3RecSecQuest","GLOBAL",5)~ THEN X3RCin t1
-~I don't know you, and I didn't invite you into my home. Show yourself the door, please.~
+@0
 EXIT
 
 /*Note: She might only spawn if the Global is 2, otherwise there is no need for the player to even meet them. */ 
 CHAIN IF ~IsValidForPartyDialogue("X3Rec")Global("X3ReBaldurQuest","GLOBAL",2)~ THEN X3RCin t2
-~Recorder? It's been some time since you yanked Mark away from our family. Where is he?~
-== X3RecJ ~Um...well...~
+@1
+== X3RecJ @2
 DO ~SetGlobal("X3ReBaldurQuest","GLOBAL",3)~
 END 
-++ ~Go on, Recorder. You can do this.~ EXTERN X3RecJ RecorderInform
-++ ~Perhaps I can inform her?~ EXTERN X3RecJ PlayerInform
-++ ~Just spit it out already.~ EXTERN X3RecJ RecorderInform 
+++ @3 EXTERN X3RecJ RecorderInform
+++ @4 EXTERN X3RecJ PlayerInform
+++ @5 EXTERN X3RecJ RecorderInform 
 
 CHAIN X3RecJ RecorderInform 
-~Cindy...your brother, he...was killed during our journey. I'm so sorry.~
+@6
 EXTERN X3RCin CindyReact 
 
 CHAIN X3RCin CindyReact
-~Dead...you say he is dead? You let him die?~
-== X3RecJ ~One of our own betrayed us. Mark bought us time so we could stop him, but...~
-== X3RCin ~So you sacrificed him to the lambs so you could escape.~
-== X3RecJ ~That's not it, he-~
-== X3RCin ~He is *dead*. My brother is dead. And you aren't, you useless bard.~
+@7
+== X3RecJ @8
+== X3RCin @9
+== X3RecJ @10
+== X3RCin @11
 END 
-++ ~I beg to differ. Had she not went to find help, things could have been worse.~ EXTERN X3RCin Worse 
-++ ~Some credit to me is in order. If I wasn't there, Mark would have never been avenged.~ EXTERN X3RCin Credit 
-++ ~She is not wrong about that.~ EXTERN X3RCin Right 
+++ @12 EXTERN X3RCin Worse 
+++ @13 EXTERN X3RCin Credit 
+++ @14 EXTERN X3RCin Right 
 
 CHAIN X3RecJ PlayerInform 
-~If you think that is best.~
+@15
 END 
-++ ~My great condolences, miss Cindy. Your brother fell in battle.~ EXTERN X3RCin CindyReact 
-++ ~I hope you like heroes. Because your brother died like one.~ EXTERN X3RCin CindyReact 
-++ ~Your brother is dead. That is all.~ EXTERN X3RCin CindyReact 
+++ @16 EXTERN X3RCin CindyReact 
+++ @17 EXTERN X3RCin CindyReact 
+++ @18 EXTERN X3RCin CindyReact 
 
 CHAIN X3RCin Worse 
-~Worse for who? You? He is dead, there is nothing worse then that.~
+@19
 EXTERN X3RCin CinGive 
 
 CHAIN X3RCin Credit 
-~There is nothing to thank. He is dead.~
+@20
 EXTERN X3RCin CinGive 
 
 CHAIN X3RCin Right 
-~Even  your friend agrees.~
-== X3RecJ ~*Sigh*.~
+@21
+== X3RecJ @22
 EXTERN X3RCin CinGive 
 
 CHAIN X3RCin CinGive 
-~Do you at least have something for me to remember? His ashes, anything?~
-== X3RecJ ~Well...~
+@23
+== X3RecJ @24
 END 
 IF ~Global("X3RecSecQuest","GLOBAL",3)PartyHasItem("X3RSword")~ EXTERN X3RecJ GiveSword 
 IF ~OR(2)Global("X3RecSecQuest","GLOBAL",4)!PartyHasItem("X3RSword")~ EXTERN X3RCin KeepSword 
 
 CHAIN X3RecJ GiveSword 
-~I have his sword, miss Cindy. I think it is best kept for your memory.~
-== X3RCin ~His sword I...it just pains me that the passion for life and adventure he had was his undoing.~
+@25
+== X3RCin @26
 DO ~TakePartyItem("X3RSword")~
-== X3RCin ~Thank you for bringing this to me, for giving me something.~
+== X3RCin @27
 END 
-++ ~I know this is hard. We'll leave you be.~ EXTERN X3RecJ GetOutGood// Good 
-++ ~I am sorry we cannot do more.~ EXTERN X3RecJ GetOutGood // Good 
-++ ~Perhaps a bit of gold for this?~ EXTERN X3RCin GetOutGreedy // BAD END 
+++ @28 EXTERN X3RecJ GetOutGood// Good 
+++ @29 EXTERN X3RecJ GetOutGood // Good 
+++ @30 EXTERN X3RCin GetOutGreedy // BAD END 
 
 CHAIN X3RCin KeepSword 
-~You have nothing, then. Useless strumpet. Get out of my home!~
+@31
 END 
-++ ~Let us leave, Recorder. There is nothing more we can say.~ EXTERN X3RecJ GetOutRecorder // Bad 
-++ ~We came all the way here to let you know, and this is how you speak to her? You may be angry, but be angry at his killer.~ EXTERN X3RCin Defend // Good
-++ ~Talk to her like that again, and you will regret it.~ EXTERN X3RCin GetOutBad // Bad
+++ @32 EXTERN X3RecJ GetOutRecorder // Bad 
+++ @33 EXTERN X3RCin Defend // Good
+++ @34 EXTERN X3RCin GetOutBad // Bad
 
 CHAIN X3RCin GetOutBad 
-~Get out now, or I will find the guards! Out!~
+@35
 DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXIT 
 
 CHAIN X3RCin GetOutGreedy 
-~You greedy... Is this the kind of friends you honor my brother with, Recorder?~
-== X3RecJ ~<CHARNAME> didn't mean that, they-~
-== X3RCin ~Get out of my home, all of  you!~
+@36
+== X3RecJ @37
+== X3RCin @38
 DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
 
 CHAIN X3RecJ GetOutRecorder 
-~I guess you're right. Goodbye, Cindy.~ 
+@39 
 DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)~ EXIT 
 
 CHAIN X3RCin Defend 
-~What? Why you...you...~
-== X3RCin ~You... are right. I am sorry Recorder. I just need time.~
-== X3RecJ ~We understand. We will depart and give you space. I'm sorry for the pain this brings you.~
+@40
+== X3RCin @41
+== X3RecJ @42
 DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ EXIT 
 
 CHAIN X3RecJ GetOutGood 
-~I will try to come back and visit sometime, and we can talk of the good memories.~
-== X3RCin ~Perhaps but...for now, I need space. For Sir Mark's safe, be careful out there, Recorder.~
-== X3RecJ ~I'll do my best. I promise.~ 
+@43
+== X3RCin @44
+== X3RecJ @45 
 DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ EXIT 
 
 CHAIN IF ~Global("X3RecSecQuest","GLOBAL",5)~ THEN X3RCin GetOut 
-~Please, leave me alone.~
+@46
 EXIT 
 
 CHAIN IF ~Global("X3RecSecQuest","GLOBAL",6)~ THEN X3RCin GetOut 
-~Take care of yourselves.~
+@47
 EXIT 
