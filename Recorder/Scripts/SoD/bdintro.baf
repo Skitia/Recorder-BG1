@@ -6,6 +6,5 @@ THEN
 		ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
 		CutSceneId(Player1)
 		ActionOverride("X3Rec",SetDialogue("X32RecJ"))
-		ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))
-		
+		ActionOverride("X3Rec",ChangeAIScript("X32Rec",OVERRIDE))	
 END

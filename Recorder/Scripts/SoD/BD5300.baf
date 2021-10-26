@@ -9,6 +9,6 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_sdd350b_ot_timer","bd2000",THREE_MINUTES)
 		SetGlobal("bd_ot_X3Rec","bd5300",1)
-		DisplayStringHead("X3Rec",~Your story ends today!~) 
+		DisplayStringHead("X3Rec",@0) 
 END
 

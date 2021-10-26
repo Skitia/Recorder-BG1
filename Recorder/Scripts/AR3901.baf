@@ -32,7 +32,7 @@ RESPONSE #100
 GiveItemCreate("X3RSWORD","X3REC",0,0,0)
 SetGlobal("X3RecPalQuest","GLOBAL",2)
 SetGlobal("X3RPalDeadReact","GLOBAL",1)
-AddJournalEntry(@7,QUEST_DONE)
+AddJournalEntry(@10007,QUEST_DONE)
 END 
 
 IF 
@@ -44,7 +44,7 @@ RESPONSE #100
 GiveItemCreate("X3RSWORD","X3REC",0,0,0)
 SetGlobal("X3RecPalQuest","GLOBAL",2)
 SetGlobal("X3RPalDeadReact","GLOBAL",1)
-AddJournalEntry(@7,QUEST_DONE)
+AddJournalEntry(@10007,QUEST_DONE)
 END 
 
 IF 
@@ -55,5 +55,5 @@ THEN
 RESPONSE #100 
 GiveItemCreate("X3RSWORD",Player1,0,0,0)
 SetGlobal("X3RecPalQuest","GLOBAL",2)
-AddJournalEntry(@16,QUEST)
+AddJournalEntry(@10016,QUEST)
 END 

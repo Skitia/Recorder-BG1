@@ -9,7 +9,7 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
 		SetGlobal("bd_ot_X3Rec","bd2000",1)
-		DisplayStringHead("X3Rec",~Hold nothing back!~)  
+		DisplayStringHead("X3Rec",@0)  
 END
 
 IF
@@ -26,7 +26,7 @@ THEN
 		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
 		SetGlobal("bd_ot_X3Rec","bd2000",1)
 		SetGlobal("bd_ot_X3KaleX3Rec","bd2000",2)
-		DisplayStringHead("X3Rec",~Just shut up and swing, Kale!~)  
+		DisplayStringHead("X3Rec",@1)  
 END
 
 IF

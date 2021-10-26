@@ -6,6 +6,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("X3_NPC01","MYAREA",1)
-		DisplayStringHead("X3Rec",~Few magi can be fully trusted with the power of Mystra's gift. This is why.~)  
+		DisplayStringHead("X3Rec",@0)  
 END
 

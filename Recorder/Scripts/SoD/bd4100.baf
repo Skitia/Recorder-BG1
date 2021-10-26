@@ -8,7 +8,7 @@ THEN
   RESPONSE #100
     SetGlobal("bd_X3Rec_ot","bd4100",1)
     SetGlobalTimer("bd_mdd1352_ot_timer","bd4100",ONE_ROUND)
-    DisplayStringHead("X3Rec",~This is a dark twist of fate that. And yet it is sadly not beneath <CHARNAME> to do this.~)
+    DisplayStringHead("X3Rec",@0)
 END
 
 IF
@@ -21,5 +21,5 @@ THEN
   RESPONSE #100
     SetGlobal("bd_X3Rec_ot","bd4100",1)
     SetGlobalTimer("bd_mdd1352_ot_timer","bd4100",9)
-    DisplayStringHead("X3Rec",~I've been writing and observing <CHARNAME>'s journey for sometime. They could not have done this.~)
+    DisplayStringHead("X3Rec",@1)
 END

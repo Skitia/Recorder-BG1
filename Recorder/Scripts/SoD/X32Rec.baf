@@ -6,27 +6,27 @@ Switch("X3RecApprovalChange","GLOBAL")
 THEN RESPONSE #1
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-3)
-DisplayStringNoNameDlg(Player1,@37)
+DisplayStringNoNameDlg(Player1,@60037)
 RESPONSE #2
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
-DisplayStringNoNameDlg(Player1,@38)
+DisplayStringNoNameDlg(Player1,@60038)
 RESPONSE #3
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
-DisplayStringNoNameDlg(Player1,@39)
+DisplayStringNoNameDlg(Player1,@60039)
 RESPONSE #4
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",3)
-DisplayStringNoNameDlg(Player1,@40)
+DisplayStringNoNameDlg(Player1,@60040)
 RESPONSE #5
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",6)
-DisplayStringNoNameDlg(Player1,@41)
+DisplayStringNoNameDlg(Player1,@60041)
 RESPONSE #6
 SetGlobal("X3RecApprovalChange","GLOBAL",0)
 IncrementGlobal("X3RecorderApproval","GLOBAL",9)
-DisplayStringNoNameDlg(Player1,@42)
+DisplayStringNoNameDlg(Player1,@60042)
 END 
 // If not in party, it should be reset with no approval changes. 
 IF 
@@ -43,7 +43,7 @@ GlobalLT("RecorderQuestThree","GLOBAL",8)
 InParty("X3Rec")
 THEN Response #100 
 SetGlobal("RecorderQuestThree","GLOBAL",8)
-AddJournalEntry(@35,QUEST_DONE)
+AddJournalEntry(@50035,QUEST_DONE)
 StartDialogueNoSet(Player1)
 END 
 
@@ -67,25 +67,25 @@ IF
 	!AreaType(DUNGEON)
 THEN
   RESPONSE #10
-	DisplayStringHead(Myself,~I really should brush your fur, Gustav.~ [X3RF2])
+	DisplayStringHead(Myself,@140)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~Gustav! I need that unscratched.~ [X3RF2])
+	DisplayStringHead(Myself,@141)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~I promise, I'll let you run about soon, Gustav.~ [X3RF3])
+	DisplayStringHead(Myself,@142)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~I wonder if the crusaders have ferrets. Or even gnomes.~ [X3RF2])
+	DisplayStringHead(Myself,@143)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~You take up so much of my pack, Gustav. I can barely stuff anything in there.~ [X3RF3])
+	DisplayStringHead(Myself,@144)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~Gustav, you're tickling me! I'll play with you later, I promise. I love you too.~ [X3RF3])
+	DisplayStringHead(Myself,@145)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #10
-	DisplayStringHead(Myself,~I see you trying to poke into our rations. Sneaky ferret.~ [X3RF3])
+	DisplayStringHead(Myself,@146)
 	RealSetGlobalTimer("X3RecGustavHour","LOCALS",THREE_HOURS)
   RESPONSE #30 	
 	NoAction()
@@ -99,11 +99,11 @@ IF
 	PartyRested()
 THEN
   RESPONSE #10
-	DisplayStringHead(Myself,~Gustav! Leave the nice cat alone!~ [X3RF1])
+	DisplayStringHead(Myself,@147)
   RESPONSE #10
-	DisplayStringHead(Myself,~Play with your friends later, it's time for our march.~ [X3RF3])
+	DisplayStringHead(Myself,@148)
   RESPONSE #10
-	DisplayStringHead(Myself,~Why do you have cat fur all over you, Gustav?~ [X3RF2])
+	DisplayStringHead(Myself,@149)
   RESPONSE #70
 	NoAction()
 END
@@ -116,11 +116,11 @@ IF
 	!PartyHasItem("c02aucat")
 THEN
   RESPONSE #10
-	DisplayStringHead(Myself,~Eek! Why do you always jump on me like that, ferret?~ [X3RF1])
+	DisplayStringHead(Myself,@150)
   RESPONSE #10
-	DisplayStringHead(Myself,~Finish your meal quickly, Gustav, it's time to go.~ [X3RF3])
+	DisplayStringHead(Myself,@151)
   RESPONSE #10
-	DisplayStringHead(Myself,~Nap time's over, Gustav. Oh fine, you can continue napping in my pack.~ [X3RF2])
+	DisplayStringHead(Myself,@152)
   RESPONSE #70
 	NoAction()
 END
@@ -290,7 +290,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",3)
-DisplayStringNoNameDlg(Player1,@40)
+DisplayStringNoNameDlg(Player1,@60040)
 END 
 
 IF 
@@ -300,7 +300,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",6)
-DisplayStringNoNameDlg(Player1,@41)
+DisplayStringNoNameDlg(Player1,@60041)
 END 
 
 IF 
@@ -310,7 +310,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecGoodBoost","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",9)
-DisplayStringNoNameDlg(Player1,@42)
+DisplayStringNoNameDlg(Player1,@60042)
 END 
 
 IF 
@@ -320,7 +320,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",1)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-6)
-DisplayStringNoNameDlg(Player1,@38)
+DisplayStringNoNameDlg(Player1,@60038)
 END 
 
 IF 
@@ -330,7 +330,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",2)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-9)
-DisplayStringNoNameDlg(Player1,@39)
+DisplayStringNoNameDlg(Player1,@60039)
 END 
 
 IF 
@@ -340,7 +340,7 @@ InParty("X3Rec")
 THEN RESPONSE #100 
 SetGlobal("X3RecBadLoss","GLOBAL",3)
 IncrementGlobal("X3RecorderApproval","GLOBAL",-90)
-DisplayStringNoNameDlg(Player1,@39)
+DisplayStringNoNameDlg(Player1,@60039)
 END 
 
 // Instrument Comments, Must be in Recorder's Inventory, NOT party inventory.

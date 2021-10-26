@@ -4,5 +4,5 @@ Dead("X32Run")
 !InParty("X3Rec")
 THEN Response #100 
 SetGlobal("RecorderQuestThree","GLOBAL",10)
-AddJournalEntry(@35,QUEST_DONE)
+AddJournalEntry(@50035,QUEST_DONE)
 END 

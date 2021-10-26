@@ -12,25 +12,25 @@ AddexperienceParty(1200)
 // 	Recorder Alive, spoke to Mark but not Ruby, who is alive quest can be set to complete.
 Kill("X3RPal") 
 SetGlobal("X3RecPalQuest","GLOBAL",3)
-AddJournalEntry(@8,QUEST_DONE)
+AddJournalEntry(@10008,QUEST_DONE)
 AddexperienceParty(1200)
 	RESPONSE #4
 // Recorder and Ruby were killed (On purpose).	
 Kill("X3RPal") 
 SetGlobal("X3RecPalQuest","GLOBAL",3) // End 
-AddJournalEntry(@410,QUEST_DONE)
+AddJournalEntry(@10410,QUEST_DONE)
 AddexperienceParty(1200)
 	RESPONSE #5
 // Recorder alive and in party, Ruby dead, conclude quest, fire Recorder's final quest dialogue. 
 Kill("X3RPal") 
 SetGlobal("X3RecPalQuest","GLOBAL",29) // Finale 
-AddJournalEntry(@8,QUEST_DONE)
+AddJournalEntry(@10008,QUEST_DONE)
 AddexperienceParty(1200)
 	RESPONSE #6 
 // Ruby spoken to, conclude quest, do not fire Recorder's final dialogue. 
 Kill("X3RPal") 
 SetGlobal("X3RecPalQuest","GLOBAL",3) // End 
-AddJournalEntry(@8,QUEST_DONE)
+AddJournalEntry(@10008,QUEST_DONE)
 AddexperienceParty(1200)
 END
 
@@ -59,7 +59,7 @@ THEN
 	SetGlobal("X3RKillPal","GLOBAL",1)
 	AddexperienceParty(1200)
 	SetGlobal("X3RecPalQuest","GLOBAL",29) // Finale Dialogue 
-	AddJournalEntry(@8,QUEST_DONE)
+	AddJournalEntry(@10008,QUEST_DONE)
 END 	
 	
 	IF 
@@ -74,7 +74,7 @@ THEN
 	SetGlobal("X3RKillPal","GLOBAL",1)
 	AddexperienceParty(1200)
 	SetGlobal("X3RecPalQuest","GLOBAL",2) // Revive Dialogue
-	AddJournalEntry(@7,QUEST)
+	AddJournalEntry(@10007,QUEST)
 END 
 
 	IF 
@@ -89,5 +89,5 @@ THEN
 	SetGlobal("X3RKillPal","GLOBAL",1)
 	AddexperienceParty(1200)
 	SetGlobal("X3RecPalQuest","GLOBAL",2) // Revive Dialogue
-	AddJournalEntry(@7,QUEST)
+	AddJournalEntry(@10007,QUEST)
 END 

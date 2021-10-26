@@ -18,5 +18,5 @@ IF
 	Global("RecorderItemFound","GLOBAL",0)
 	THEN RESPONSE #100 
 	SetGlobal("RecorderItemFound","GLOBAL",1)
-	AddJournalEntry(@36,QUEST)
+	AddJournalEntry(@50036,QUEST)
 END 	

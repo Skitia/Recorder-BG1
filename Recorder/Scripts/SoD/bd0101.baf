@@ -59,15 +59,15 @@ THEN
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Rec",~This is your last snack before the march, Gustav. I don't want you eating too much again.~) 
+		DisplayStringHead("X3Rec",@0) 
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Rec",~I wish you were marching beside me, Sir Harmon.~) 
+		DisplayStringHead("X3Rec",@1) 
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Rec",~I can barely concentrate on my preparations with all of this noise.~) 
+		DisplayStringHead("X3Rec",@2) 
 	RESPONSE #90 
 		Continue()
 END

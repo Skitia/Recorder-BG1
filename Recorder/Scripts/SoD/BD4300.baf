@@ -47,7 +47,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("bd_MDD892a_ot","bd4300",1)
 		SetGlobalTimer("bd_MDD892a_ot_timer","bd4300",ONE_MINUTE)
-		DisplayStringHead("X3Rec",~I have observed a troubling amount of carnage on this path of yours, <CHARNAME>.~) 
+		DisplayStringHead("X3Rec",@0) 
 END
 
 IF
@@ -59,5 +59,5 @@ THEN
   RESPONSE #100
     SetGlobalTimer("bd_mdd905a_ot_timer","bd4300",THREE_MINUTES)
     SetGlobal("bd_ot_X3Rec","bd4300",1)
-    DisplayStringHead("X3Rec",~Only a fool would stay past his time. RUN!~)
+    DisplayStringHead("X3Rec",@1)
 END

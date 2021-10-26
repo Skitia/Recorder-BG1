@@ -23,7 +23,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32RecCryptComment1","GLOBAL",2)
-	DisplayStringHead("X3Rec",~Be careful. Crypts are full of traps.~ [X3RNight] ) 
+	DisplayStringHead("X3Rec",@0) 
 END
 
 // SoD - talk after Korlasz
@@ -50,5 +50,5 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32RecCryptComment2","GLOBAL",2)
-	DisplayStringHead("X3Rec",~It was an honor to travel with you <CHARNAME>. But it is time to make my own way.~)
+	DisplayStringHead("X3Rec",@1)
 END
