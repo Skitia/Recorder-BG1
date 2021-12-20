@@ -31,18 +31,18 @@ END
 
 CHAIN X3RecP Q4 
 @17
-DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@20010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3RecP Q5 
 @18
-DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@20010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3RecP Q6 
 @19
 == X3Rec @20
-DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@10018,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3RecP Q7 

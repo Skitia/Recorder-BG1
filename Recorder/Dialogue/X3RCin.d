@@ -77,29 +77,29 @@ END
 
 CHAIN X3RCin GetOutBad 
 @35
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@10015,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXIT 
 
 CHAIN X3RCin GetOutGreedy 
 @36
 == X3RecJ @37
 == X3RCin @38
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@10015,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
 
 CHAIN X3RecJ GetOutRecorder 
 @39 
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@15,QUEST_DONE)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",5)AddJournalEntry(@10015,QUEST_DONE)~ EXIT 
 
 CHAIN X3RCin Defend 
 @40
 == X3RCin @41
 == X3RecJ @42
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@10014,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ EXIT 
 
 CHAIN X3RecJ GetOutGood 
 @43
 == X3RCin @44
 == X3RecJ @45 
-DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@14,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ EXIT 
+DO ~SetGlobal("X3RecSecQuest","GLOBAL",6)AddJournalEntry(@10014,QUEST_DONE)IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)~ EXIT 
 
 CHAIN IF ~Global("X3RecSecQuest","GLOBAL",5)~ THEN X3RCin GetOut 
 @46

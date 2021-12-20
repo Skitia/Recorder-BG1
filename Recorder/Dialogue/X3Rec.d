@@ -6,12 +6,12 @@ BEGIN X3Rec
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",0)~ THEN X3Rec CandleTalk 
 @0
-DO ~MakeGlobal()SetGlobal("X3RecCandleQuest","GLOBAL",1)AddJournalEntry(@1,QUEST)~
+DO ~MakeGlobal()SetGlobal("X3RecCandleQuest","GLOBAL",1)AddJournalEntry(@10001,QUEST)~
 EXIT 
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",2)~ THEN X3Rec CandleTalk1 
 @1
-DO ~AddJournalEntry(@3,QUEST_DONE)AddexperienceParty(50)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@42)GiveItem("X3RPOT1",Player1)ActionOverride("X3RPal",EscapeArea())EscapeArea()~
+DO ~AddJournalEntry(@10003,QUEST_DONE)AddexperienceParty(50)IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@42)GiveItem("X3RPOT1",Player1)ActionOverride("X3RPal",EscapeArea())EscapeArea()~
 EXIT 
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2600")Global("X3RecCandleQuest","GLOBAL",1)~ THEN X3Rec CandleTalk2 
@@ -52,7 +52,7 @@ EXTERN X3Rec b2
 
 CHAIN X3Rec b6
 @17
-DO ~AddJournalEntry(@5, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)SetGlobal("X3RecPalRejQuest","GLOBAL",1)MoveToPoint([3036.626])~ EXIT // Recorder will move to just inside the ruins. Initialize Quest, set rejection variable online.  
+DO ~AddJournalEntry(@10005, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)SetGlobal("X3RecPalRejQuest","GLOBAL",1)MoveToPoint([3036.626])~ EXIT // Recorder will move to just inside the ruins. Initialize Quest, set rejection variable online.  
 
 CHAIN X3Rec b5 
 @18
@@ -96,12 +96,12 @@ END
 
 CHAIN X3Rec b8 
 @40
-DO ~AddJournalEntry(@4, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)~ // Recorder can stay wherever she is. Initialize Quest. 
+DO ~AddJournalEntry(@10004, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)~ // Recorder can stay wherever she is. Initialize Quest. 
 EXIT 
 
 CHAIN X3Rec b9 
 @41
-DO ~AddJournalEntry(@4, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)JoinParty()~
+DO ~AddJournalEntry(@10004, QUEST)SetGlobal("X3RecPalQuest","GLOBAL",1)JoinParty()~
 EXIT 
 
 // Recorder NOT In Party, has never joined, Sir Mark Harmon Not Dead, Party Rejected her initially. 
@@ -163,18 +163,18 @@ END
 
 CHAIN X3Rec Q4 
 @69
-DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q5 
 @70
-DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q6 
 @71
 == X3Rec @72
-DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@10018,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q7 
@@ -191,7 +191,7 @@ END
 
 CHAIN X3Rec QD2 
 @69
-DO ~JoinParty()AddJournalEntry(@10,INFO)~
+DO ~JoinParty()AddJournalEntry(@10010,INFO)~
 EXIT 
 
 CHAIN X3Rec QD3 

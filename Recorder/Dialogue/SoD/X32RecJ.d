@@ -671,8 +671,8 @@ END
 
 IF ~~ ThirdQuest.Accept 
 SAY @225
-IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
-IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
 END 
 
 IF ~~ ThirdQuest.Decline2 

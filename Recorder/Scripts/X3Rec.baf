@@ -415,7 +415,7 @@ IncrementGlobal("X3RecorderApproval","GLOBAL",6)
 DisplayStringNoNameDlg(Player1,@60041)
 END
 IF
-ReputationGT(Player1,20)
+ReputationGT(Player1,19)
 Global("X3RecGoodBoost","GLOBAL",0)
 InParty("X3Rec")
 THEN RESPONSE #100

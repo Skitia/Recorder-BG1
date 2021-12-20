@@ -36,7 +36,7 @@ END
 
 CHAIN X32Rec pletterA
 @13
-DO ~TakePartyItem("X3RLet")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@22,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
+DO ~TakePartyItem("X3RLet")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
 END 
 ++ @14 + pbye 
 ++ @15 + pjoin
@@ -44,7 +44,7 @@ END
 
 CHAIN X32Rec pletterB
 @17
-DO ~TakePartyItem("X3RLetB")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@22,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
+DO ~TakePartyItem("X3RLetB")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
 END 
 ++ @14 + pbye 
 ++ @15 + pjoin
@@ -204,8 +204,8 @@ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)SetGlobal("RecorderQuestThr
 CHAIN X32Rec ThirdQuest.Accept 
 @66
 END 
-IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
-IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetC",0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~CreateItem("X3RLetD",0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
 
 
 CHAIN X32Rec ThirdQuest.Decline2 
@@ -215,28 +215,28 @@ DO ~SetGlobal("RecorderQuestThree","GLOBAL",-1)~ EXIT
 CHAIN X32Rec ThirdQuest.Join 
 @68
 END 
-IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~JoinParty()GiveItemCreate("X3RLetC",Player1,0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
-IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~JoinParty()GiveItemCreate("X3RLetD",Player1,0,0,0)AddJournalEntry(@30,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~Global("X3RecSecQuest","GLOBAL",6)~ DO ~JoinParty()GiveItemCreate("X3RLetC",Player1,0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
+IF ~GlobalLT("X3RecSecQuest","GLOBAL",6)~ DO ~JoinParty()GiveItemCreate("X3RLetD",Player1,0,0,0)AddJournalEntry(@50030,QUEST)IncrementGlobal("X3RecorderApproval","GLOBAL",3)SetGlobal("RecorderQuestThree","GLOBAL",3)~ EXIT 
 
 
 CHAIN IF ~Global("RecorderQuestThree","GLOBAL",9)~ THEN X32Rec ThirdQuest  
 @69
 == X32Rec @70
 END 
-++ @71 DO ~AddexperienceParty(4500)SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@33,QUEST_DONE)~  + p.0
-++ @72 DO ~AddexperienceParty(4500)SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@33,QUEST_DONE)~ + p.0
+++ @71 DO ~AddexperienceParty(4500)SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@50033,QUEST_DONE)~  + p.0
+++ @72 DO ~AddexperienceParty(4500)SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@50033,QUEST_DONE)~ + p.0
 ++ @73 + 3Q.2
 ++ @74 + 3Q.1
 
 CHAIN X32Rec 3Q.2 
 @75
-DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@33,QUEST_DONE)AddexperienceParty(4500)~
+DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@50033,QUEST_DONE)AddexperienceParty(4500)~
 EXIT 
 
 CHAIN X32Rec 3Q.1 
 @76
 == X32Rec @77
-DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@33,QUEST_DONE)AddexperienceParty(4500)~
+DO ~SetGlobal("RecorderQuestThree","GLOBAL",10)AddJournalEntry(@50033,QUEST_DONE)AddexperienceParty(4500)~
 EXIT 
 
 // Just in case SoD moves her back and her approval is at -90.

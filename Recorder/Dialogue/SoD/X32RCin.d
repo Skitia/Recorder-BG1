@@ -37,10 +37,10 @@ END
 
 CHAIN X32RCin Quest.AcceptedA 
 @17
-DO ~AddJournalEntry(@21,QUEST)GiveItemCreate("X3RLet","Player1",0,0,0)EscapeArea()~
+DO ~AddJournalEntry(@40021,QUEST)GiveItemCreate("X3RLet","Player1",0,0,0)EscapeArea()~
 EXIT 
 
 CHAIN X32RCin Quest.AcceptedB
 @18
-DO ~AddJournalEntry(@21,QUEST)GiveItemCreate("X3RLetB","Player1",0,0,0)EscapeArea()~
+DO ~AddJournalEntry(@40021,QUEST)GiveItemCreate("X3RLetB","Player1",0,0,0)EscapeArea()~
 EXIT 

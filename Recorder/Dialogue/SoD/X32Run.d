@@ -72,7 +72,7 @@ EXIT
 CHAIN X32Run QuestForward 
 @30
 == X32Run @31
-DO ~SetGlobal("RecorderQuestThree","GLOBAL",5)AddJournalEntry(@31,QUEST)~
+DO ~SetGlobal("RecorderQuestThree","GLOBAL",5)AddJournalEntry(@50031,QUEST)~
 EXIT 
 
 CHAIN X32Run QuestExplain 
@@ -99,5 +99,5 @@ CHAIN X32Run QuestFinished
 == X32RecJ IF ~InParty("X3Rec")~ THEN @43
 == X32Run @44
 END 
-IF ~InParty("X3Rec")~ DO ~TakePartyItem("X3RLetC")TakePartyItem("X3RLetD")AddJournalEntry(@34,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",10)AddexperienceParty(9000)EscapeArea()~ EXIT 
-IF ~!InParty("X3Rec")~  DO ~TakePartyItem("X3RLetC")TakePartyItem("X3RLetD")AddJournalEntry(@32,QUEST)SetGlobal("RecorderQuestThree","GLOBAL",9)AddexperienceParty(4500)EscapeArea()~ EXIT
+IF ~InParty("X3Rec")~ DO ~TakePartyItem("X3RLetC")TakePartyItem("X3RLetD")AddJournalEntry(@50034,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",10)AddexperienceParty(9000)EscapeArea()~ EXIT 
+IF ~!InParty("X3Rec")~  DO ~TakePartyItem("X3RLetC")TakePartyItem("X3RLetD")AddJournalEntry(@50032,QUEST)SetGlobal("RecorderQuestThree","GLOBAL",9)AddexperienceParty(4500)EscapeArea()~ EXIT

@@ -2,7 +2,7 @@ BEGIN X3RPal
 
 CHAIN IF ~AreaCheck("%bg1_eet_symbol%2617")NumTimesTalkedTo(0)~ THEN X3RPal CandleQuest
 @0
-DO ~EscapeAreaMove("%bg1_eet_symbol%2600",3906,532,SW)AddJournalEntry(@2,QUEST)SetGlobal("X3RecCandleQuest","GLOBAL",2)~
+DO ~EscapeAreaMove("%bg1_eet_symbol%2600",3906,532,SW)AddJournalEntry(@10002,QUEST)SetGlobal("X3RecCandleQuest","GLOBAL",2)~
 EXIT 
 
 CHAIN IF ~NumTimesTalkedToGT(0)AreaCheck("%bg1_eet_symbol%2600")~ THEN X3RPal CandleQuest1 

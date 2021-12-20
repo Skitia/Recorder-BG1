@@ -174,20 +174,20 @@ END
 
 IF ~~ Q4 
 SAY @68
-IF ~~ DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+IF ~~ DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 END 
 
 IF ~~ Q5 
 SAY @69
-IF ~~ DO ~JoinParty()AddJournalEntry(@8,QUEST_DONE)AddJournalEntry(@10,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+IF ~~ DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 END 
 
 IF ~~ Q6 
 SAY @70
 = @71
-IF ~~ DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@18,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
+IF ~~ DO ~MoveGlobal("%bg1_eet_symbol%2304","X3Rec",[431.243])AddJournalEntry(@10018,QUEST_DONE)SetGlobal("X3RecPalQuest","GLOBAL",3)AddexperienceParty(1200)~
 EXIT 
 END 
 
@@ -224,7 +224,7 @@ END
 
 IF ~~ QuestTalk 
 SAY @80
-++ @81 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)SetGlobal("X3RecSecQuest","GLOBAL",3)AddJournalEntry(@13,QUEST)~ + QuestAccepted
+++ @81 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)SetGlobal("X3RecSecQuest","GLOBAL",3)AddJournalEntry(@10013,QUEST)~ + QuestAccepted
 ++ @82 + QuestKeepWeapon
 ++ @83  DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + QuestRejectedB 
 END 
@@ -256,7 +256,7 @@ END
 
 IF ~~ QuestKeepWeapon 
 SAY @91
-++ @92 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("X3RecSecQuest","GLOBAL",4)AddJournalEntry(@12,QUEST)~ + QuestAccepted
+++ @92 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("X3RecSecQuest","GLOBAL",4)AddJournalEntry(@10012,QUEST)~ + QuestAccepted
 ++ @93 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + QuestRejectedB 
 ++ @94 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + QuestRejectedC 
 END 
