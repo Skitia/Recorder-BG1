@@ -163,12 +163,12 @@ END
 
 CHAIN X3Rec Q4 
 @69
-DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@20010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q5 
 @70
-DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@10010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
+DO ~JoinParty()AddJournalEntry(@10008,QUEST_DONE)AddJournalEntry(@20010,INFO)SetGlobal("X3RecPalQuest","GLOBAL",3)SetGlobal("X3RecKickedOut","GLOBAL",0)AddexperienceParty(1200)~
 EXIT 
 
 CHAIN X3Rec Q6 
@@ -191,7 +191,7 @@ END
 
 CHAIN X3Rec QD2 
 @69
-DO ~JoinParty()AddJournalEntry(@10010,INFO)~
+DO ~JoinParty()AddJournalEntry(@20010,INFO)~
 EXIT 
 
 CHAIN X3Rec QD3 
