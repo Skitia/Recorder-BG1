@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.47~
+VERSION ~1.48~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -283,7 +283,7 @@ ADD_JOURNAL TITLE (@10000) @10001 @10002 @10003 @10004 @10005 @10006 @10007 @100
 ADD_JOURNAL TITLE (@20009) @20010 @20100 USING ~Recorder/Tra/English/Setup.tra~
 ADD_JOURNAL TITLE (@30011) @30012 @30013 @30014 @30015 USING ~Recorder/Tra/English/Setup.tra~
 ADD_JOURNAL TITLE (@40020) @40021 @40022 USING ~Recorder/Tra/English/Setup.tra~
-ADD_JOURNAL TITLE (@50029) @50030 @50031 @50034 @50035 @50036 USING ~Recorder/Tra/English/Setup.tra~
+ADD_JOURNAL TITLE (@50029) @50030 @50031 @50033 @50034 @50035 @50036 USING ~Recorder/Tra/English/Setup.tra~
  
 // Area Scripts   
   
