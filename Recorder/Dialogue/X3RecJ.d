@@ -16,14 +16,14 @@ END
 IF ~~ Q2Nervous  
 SAY @5
 ++ @6 + Q2Easy 
-++ @7 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Q2Comfort 
+++ @7 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Q2Comfort 
 ++ @8 + Q2Easy
 END 
 
 IF ~~ Q2Lost 
 SAY @9
 = @10
-IF ~~ DO ~SetGlobal("X3RecSecQuest","GLOBAL",4)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ EXIT 
+IF ~~ DO ~SetGlobal("X3RecSecQuest","GLOBAL",4)IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60038)~ EXIT 
 END 
 
 IF ~~ Q2ChangeMind 
@@ -35,12 +35,12 @@ END
 
 IF ~~ Q2KeepA 
 SAY @15
-IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Q2Nervous 
+IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Q2Nervous 
 END 
 
 IF ~~ Q2KeepB 
 SAY @16
-IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@37)~ EXIT
+IF ~~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60037)~ EXIT
 END 
  
 IF ~~ Q2Joke 
@@ -165,11 +165,11 @@ SAY @59
 = @60
 = @61
 = @62
-++ @63 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Q4
-++ @64 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Q5
+++ @63 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Q4
+++ @64 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Q5
 ++ @65 + Q6
 ++ @66 + Q7
-++ @67 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + Q6 
+++ @67 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60038)~ + Q6 
 END 
 
 IF ~~ Q4 
@@ -203,18 +203,18 @@ SAY @59
 = @73
 = @74
 = @62
-++ @63 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Q4
-++ @64 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Q5
+++ @63 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Q4
+++ @64 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Q5
 ++ @65 + Q6
 ++ @66 + Q7
-++ @67 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + Q6 
+++ @67 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60038)~ + Q6 
 END 
 
 IF ~Global("X3RecSecQuest","GLOBAL",2)~ X3RecSecQuestStart
 SAY @75
 ++ @76 + QuestTalk 
 ++ @77 + QuestComplicated 
-++ @78 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + QuestRejectedA 
+++ @78 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + QuestRejectedA 
 END 
 
 IF ~~ QuestComplicated 
@@ -224,9 +224,9 @@ END
 
 IF ~~ QuestTalk 
 SAY @80
-++ @81 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@41)SetGlobal("X3RecSecQuest","GLOBAL",3)AddJournalEntry(@30013,QUEST)~ + QuestAccepted
+++ @81 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",6)DisplayStringNoNameDlg(Player1,@60041)SetGlobal("X3RecSecQuest","GLOBAL",3)AddJournalEntry(@30013,QUEST)~ + QuestAccepted
 ++ @82 + QuestKeepWeapon
-++ @83  DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + QuestRejectedB 
+++ @83  DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + QuestRejectedB 
 END 
 
 IF ~~ QuestRejectedA 
@@ -249,16 +249,16 @@ END
 
 IF ~~ QuestAccepted 
 SAY @87
-++ @88 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Q2A.1
+++ @88 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Q2A.1
 ++ @89 + Q2A.2 
-++ @90 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Q2A.3 
+++ @90 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Q2A.3 
 END 
 
 IF ~~ QuestKeepWeapon 
 SAY @91
-++ @92 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)SetGlobal("X3RecSecQuest","GLOBAL",4)AddJournalEntry(@30012,QUEST)~ + QuestAccepted
-++ @93 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + QuestRejectedB 
-++ @94 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + QuestRejectedC 
+++ @92 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)SetGlobal("X3RecSecQuest","GLOBAL",4)AddJournalEntry(@30012,QUEST)~ + QuestAccepted
+++ @93 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + QuestRejectedB 
+++ @94 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60038)~ + QuestRejectedC 
 END 
 
 IF ~~ Q2A.1 
@@ -314,12 +314,12 @@ CHAIN X3RecJ T1.1
 END 
 ++ @104 + T1.2
 ++ @105 + T1.3
-++ @106 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + T1.2
+++ @106 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + T1.2
 
 CHAIN X3RecJ T1.2 
 @107
 END
-++ @108 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T1.4
+++ @108 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T1.4
 ++ @109 + T1.3 
 ++ @110 + T1.5
 ++ @111 + T1.5
@@ -328,7 +328,7 @@ CHAIN X3RecJ T1.3
 @112
 == X3RecJ @113
 END 
-++ @114 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T1.6
+++ @114 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T1.6
 ++ @115 + T1.7
 ++ @116 + T1.8
 ++ @117 + T1.9
@@ -370,13 +370,13 @@ DO ~IncrementGlobal("X3RecTalk","GLOBAL",1)RealSetGlobalTimer("X3RecTimer","GLOB
 END 
 ++ @126 + T2.1
 ++ @127 + T2.1
-++ @128 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + T2.0 
+++ @128 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + T2.0 
 
 CHAIN X3RecJ T2.1 
 @129
 == X3RecJ @130
 END 
-++ @131 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T2.2 
+++ @131 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T2.2 
 ++ @132 + T2.3 
 ++ @133 + T2.0 
 
@@ -453,7 +453,7 @@ END
 
 CHAIN X3RecJ T3.4 
 @160
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXTERN X3RecJ T3.6
 
 CHAIN X3RecJ T3.6 
@@ -466,7 +466,7 @@ END
 
 CHAIN X3RecJ T3.3 
 @165
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 CHAIN X3RecJ T3.7 
@@ -477,8 +477,8 @@ CHAIN X3RecJ T3.8
 @167
 == X3RecJ @168
 END 
-++ @169 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T3.Rest 
-++ @170 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T3.11 
+++ @169 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T3.Rest 
+++ @170 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T3.11 
 ++ @171 + T3.9 
 
 
@@ -489,8 +489,8 @@ EXIT
 CHAIN X3RecJ T3.10 
 @173
 END 
-++ @169 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T3.Rest 
-++ @170 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + T3.11 
+++ @169 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T3.Rest 
+++ @170 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + T3.11 
 ++ @171 + T3.9 
 
 CHAIN X3RecJ T3.Rest 
@@ -550,12 +550,12 @@ EXIT
 
 CHAIN X3RecJ T4.Spoilers
 @195
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXIT 
 
 CHAIN X3RecJ T4.Double 
 @196
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 CHAIN X3RecJ T4.GoodInt 
@@ -583,7 +583,7 @@ END
 
 CHAIN X3RecJ T4.Great 
 @209
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXIT 
 
 CHAIN X3RecJ T4.Best 
@@ -597,19 +597,19 @@ EXIT
 CHAIN X3RecJ T4.Better 
 @212
 == X3RecJ @213 
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXIT 
 
 CHAIN X3RecJ T4.Might 
 @214
 == X3RecJ @215 
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 CHAIN X3RecJ T4.Liked 
 @216
 == X3RecJ @215 
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 CHAIN IF ~Global("X3RecTalk","GLOBAL",10)~ THEN X3RecJ Talk5
@@ -637,9 +637,9 @@ CHAIN X3RecJ Talk5.Reply
 == X3RecJ @228
 == X3RecJ @229
 END 
-++ @230 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk5.Revenge 
-++ @231 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk5.Fond 
-++ @232 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@38)~ + Talk5.Pity 
+++ @230 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk5.Revenge 
+++ @231 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Talk5.Fond 
+++ @232 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-6)DisplayStringNoNameDlg(Player1,@60038)~ + Talk5.Pity 
 
 CHAIN X3RecJ Talk5.Revenge 
 @233
@@ -676,7 +676,7 @@ END
 ++ @245 + Talk6.Why 
 ++ @246 + Talk6.Name 
 ++ @247 + Talk6.Exit 
-++ @248 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk6.Exit 
+++ @248 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk6.Exit 
 
 CHAIN X3RecJ Talk6.Exit 
 @249 
@@ -687,7 +687,7 @@ CHAIN X3RecJ Talk6.Why
 END
 ++ @246 + Talk6.Name 
 ++ @247 + Talk6.Exit 
-++ @248 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk6.Exit 
+++ @248 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk6.Exit 
 
 CHAIN X3RecJ Talk6.Name 
 @251
@@ -710,7 +710,7 @@ CHAIN X3RecJ Talk6.Family
 END 
 ++ @259 + Talk6.Bard 
 ++ @260 + Talk6.Childhood 
-++ @261 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk6.Boring 
+++ @261 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk6.Boring 
 
 CHAIN X3RecJ Talk6.Bard 
 @262
@@ -769,7 +769,7 @@ END
 ++ @283 + Talk7.Beginning 
 +~GlobalLT("Chapter","GLOBAL",5)~+ @284 + Talk7.Beginning 
 ++ @285 + Talk7.Beginning 
-++ @286 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk7.Afraid 
+++ @286 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk7.Afraid 
 ++ @287 + Talk7.Beginning 
 
 CHAIN X3RecJ Talk7.Beginning 
@@ -779,10 +779,10 @@ EXTERN X3RecJ Talk7.Good
 CHAIN X3RecJ Talk7.Good 
 @289
 END 
-++ @290 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk7.Protect 
+++ @290 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Talk7.Protect 
 ++ @291 + Talk7.Few 
 ++ @292 + Talk7.Why 
-++ @293 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk7.Remembered 
+++ @293 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk7.Remembered 
 
 CHAIN X3RecJ Talk7.Afraid 
 @294
@@ -804,9 +804,9 @@ CHAIN X3RecJ Talk7.Why
 @298
 END 
 ++ @299 + Talk7.Revenge 
-++ @300 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + Talk7.Tired 
+++ @300 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + Talk7.Tired 
 ++ @301 + Talk7.Know 
-++ @302 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + Talk7.Glory 
+++ @302 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + Talk7.Glory 
 
 CHAIN X3RecJ Talk7.Revenge 
 @303
@@ -953,18 +953,18 @@ END
 
 I_C_T SLAVFREE 0 X3RecSLAVFREE0 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @352
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",10)DisplayStringNoNameDlg(Player1,@42)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",10)DisplayStringNoNameDlg(Player1,@60042)~
 == SLAVFREE @353
 END
 
 I_C_T BREVLI 17 X3RebBrevLI17
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @354
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60037)~
 END
 
 I_C_T SLAVFREE 1 X3RecSLAVFREE1 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @355
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-10)DisplayStringNoNameDlg(Player1,@39)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-10)DisplayStringNoNameDlg(Player1,@60039)~
 == SLAVFREE @356
 END
 
@@ -993,7 +993,7 @@ END
 
 I_C_T ULCAST 5 X3RecUlcast5 
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @363
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@42)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",9)DisplayStringNoNameDlg(Player1,@60042)~
 == ULCAST @364
 END 
 
@@ -1009,21 +1009,21 @@ END
 I_C_T GELLAN 0 X3RecGellan0  
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @368
 == Gellan @369
-== X3RecJ @370 
+== X3RecJ @600370 
 END
 
 I_C_T BENTLY 1 X3RecBently1 
-== BENTLY IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @371
-== X3RecJ @372
+== BENTLY IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600371
+== X3RecJ @600372
 END 
 
 I_C_T DRIZZT 0 X3RecDRIZZT0 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @373
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600373
 END 
 
 I_C_T ARCAND 3 X3RecArcand3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @374
-== ARCAND @375
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600374
+== ARCAND @600375
 END
 
 // For Rill 
@@ -1031,158 +1031,158 @@ ADD_TRANS_ACTION SLAVLEAD BEGIN 3 END BEGIN END ~SetGlobal("X3RecApprovalChange"
 ADD_TRANS_ACTION SLAVLEAD BEGIN 4 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",5)~ 
 
 I_C_T JHASSO 3 X3RecJHASSO 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @376
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600376
 END 
 
 I_C_T KARAN 2 X3RecKaran
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @377
-== KARAN @378
-== X3RecJ @379
-== KARAN @380
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600377
+== KARAN @600378
+== X3RecJ @600379
+== KARAN @600380
 END
 
 I_C_T KOVERA 1 X3RecKOVERA 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @381
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600381
 END
 
 I_C_T RIELTA 0 X3RecRielta 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @382
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600382
 END
 
 I_C_T ULRAUN 6 X3RecUlraun 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @383
-== ULRAUN @384
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600383
+== ULRAUN @600384
 END
 
 I_C_T TETHTO 2 X3RecTETHTO
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @385
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600385
 END
 
 I_C_T DIARMID 4 X3RecDIARMID4 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @386
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600386
 END
 
 I_C_T NEB 1 X3RecNeb1
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @387
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600387
 END
 
 I_C_T HUSAM 3 X3RecHUSAM
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @388
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600388
 END
 
 I_C_T TAMOKO 2 X3RecTAMOKO 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @389
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600389
 END
 
 I_C_T CYTHAN 5 X3RecCythan 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @390
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600390
 END
 ADD_TRANS_ACTION CYTHAN BEGIN 6 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~
 ADD_TRANS_ACTION CYTHAN BEGIN 7 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",4)~ 
 
 I_C_T DOPDUR3 1 X3RecJDopdur31 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @391
-== DOPDUR3 @392
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600391
+== DOPDUR3 @600392
 END 
 
 I_C_T DOPDUR2 0 X3RecJDopdur20
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @393
-== DOPDUR2 @394
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600393
+== DOPDUR2 @600394
 END 
 
 I_C_T DOPDUR1 0 X3RecJDopdur10
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @395
-== DOPDUR1 @396
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600395
+== DOPDUR1 @600396
 END 
 
 I_C_T DEATH2 2  X3RecDeath22
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @397
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600397
 END
 
 I_C_T Pallon 3 X3RecPallon3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @398
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600398
 END
 
 EXTEND_TOP Brage 2 #7
-+~IsValidForPartyDialog("X3Rec")~+ @399 EXTERN X3RecJ X3RecBrageR 
++~IsValidForPartyDialog("X3Rec")~+ @600399 EXTERN X3RecJ X3RecBrageR 
 END 
 
 CHAIN X3RecJ X3RecBrageR
-@400
+@600400
 COPY_TRANS Brage 2
 
 I_C_T Brage 2 X3RecBrage2
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @401
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600401
 END 
 ADD_TRANS_ACTION Brage BEGIN 4 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",5)~
 ADD_TRANS_ACTION Brage BEGIN 5 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~ 
 
 I_C_T CHARLE 8 X3RecCharle8 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @402
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600402
 END 
 
 I_C_T CHARLE 18 X3RecCharle18 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @403
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600403
 END 
 
 I_C_T GALLOR 1 X3RecGallor1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @404
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600404
 END 
 
 I_C_T GALLOR 6 X3RecGallor6
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @405
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~ 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600405
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@60039)~ 
 END 
 
 I_C_T GALLOR 7 X3RecGallor7
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @405
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~ 
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600405
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@60039)~ 
 END 
 
 I_C_T VOLO 0 X3RecJVOLO0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @406
-== VOLO @407
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600406
+== VOLO @600407
 END
 
 I_C_T DRIENN 1 X3RecDRIENN1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @408
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600408
 END
 
 I_C_T ALBERT 1 X3RecAlbert1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @409
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600409
 END
 
 I_C_T NOSFER 2 X3RecNOSFER2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @410
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600410
 END
 
 I_C_T GAZIB 0 X3RecGazib0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @411
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600411
 END
 
 I_C_T NARCIL 2 X3RecNARCiL2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @412
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600412
 END
 
 I_C_T POE 16 X3RecPOE16 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @413
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600413
 END
 
 I_C_T HAFIZ 3 X3RecHafiz3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @414
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600414
 END
 
 I_C_T GALILE 0 X3RecGALiLE0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @415
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600415
 END
 
 I_C_T DUSHAI 10 X3RecDushai
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @416
-== DUSHAI @417
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600416
+== DUSHAI @600417
 END 
 
 I_C_T CARSA 5 X3RecCarsa 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @418
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600418
 END 
 
 
@@ -1190,29 +1190,29 @@ END
 
 
 EXTEND_TOP CARSA 6 #1
-+~IsValidForPartyDialog("X3Rec")~+ @419 EXTERN X3RecJ X3RecCarsa2
++~IsValidForPartyDialog("X3Rec")~+ @600419 EXTERN X3RecJ X3RecCarsa2
 END 
 
 CHAIN X3RecJ X3RecCarsa2
-@420
-== CARSA @421
-== X3RecJ @422
+@600420
+== CARSA @600421
+== X3RecJ @600422
 DO ~SetGlobal("X3RCarsaTalk","LOCALS",1)~
 EXTERN Carsa 8
 
 CHAIN IF ~Global("X3RCarsaTalk","LOCALS",2)Dead("KAHRK")~ THEN X3RecJ X3RecCarsa3
-@423
+@600423
 DO ~IncrementGlobal("X3RCarsaTalk","LOCALS",1)~
 END 
-++ @424 + Carsa4
-++ @425 + Carsa5
-++ @426 + Carsa6 
+++ @600424 + Carsa4
+++ @600425 + Carsa5
+++ @600426 + Carsa6 
  
 CHAIN X3RecJ Carsa4 
-@427
+@600427
 END 
-++ @428 + Carsa7
-++ @429 + Carsa7
+++ @600428 + Carsa7
+++ @600429 + Carsa7
 ++ @430 + Carsa8
 
 CHAIN X3RecJ Carsa5 
@@ -1220,7 +1220,7 @@ CHAIN X3RecJ Carsa5
 == X3RecJ @432
 END 
 ++ @433 + Carsa9
-++ @434 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ EXIT 
+++ @434 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ EXIT 
 ++ @435 + Carsa10
 
 CHAIN X3RecJ Carsa6 
@@ -1233,27 +1233,27 @@ END
 
 CHAIN X3RecJ Carsa7
 @441
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXIT 
 
 CHAIN X3RecJ Carsa8 
 @442
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 CHAIN X3RecJ Carsa9
 @443
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~
 EXIT 
 
 CHAIN X3RecJ Carsa10
 @444
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@39)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@60039)~
 EXIT 
 
 CHAIN X3RecJ Carsa11 
 @445
-DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~
+DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~
 EXIT 
 
 
@@ -1305,7 +1305,7 @@ END
 
 IF ~~ Break.6
 SAY @461
-IF ~~ DO ~SetGlobal("X3RecBreak","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",15)DisplayStringNoNameDlg(Player1,@42)~
+IF ~~ DO ~SetGlobal("X3RecBreak","GLOBAL",3)IncrementGlobal("X3RecorderApproval","GLOBAL",15)DisplayStringNoNameDlg(Player1,@60042)~
 EXIT 
 END 
 
@@ -1719,7 +1719,7 @@ IF ~~ RecP.RealName
 SAY @580
 ++ @581 + RN.Truth 
 ++ @582 + RN.Truth  
-++ @583 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + RN.Rebeca 
+++ @583 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + RN.Rebeca 
 END 
 
 IF ~~ RN.Rebeca 
@@ -1757,7 +1757,7 @@ END
 IF ~~ RecP.Special 
 SAY @594
 = @595
-++ @596 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.1 
+++ @596 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + SpecialP.1 
 ++ @597 + SpecialP.2 
 ++ @590  + RecP.Talk 
 ++ @598 EXIT
@@ -1783,15 +1783,15 @@ SAY @606
 = @607
 = @608
 ++ @609 + SpecialP.4 
-++ @610 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.5 
-++ @611 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.6 
+++ @610 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + SpecialP.5 
+++ @611 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + SpecialP.6 
 END 
 
 IF ~~ SpecialP.4 
 SAY @612
 +~Global("X3RecRealName","GLOBAL",1)~+ @613 + SpecialP.7 
-++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
-++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
+++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + SpecialP.8 
+++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + SpecialP.9
 ++ @616 + RecP.Talk
 ++ @471 EXIT 
 END 
@@ -1800,8 +1800,8 @@ IF ~~ SpecialP.5
 SAY @617
 = @618
 +~Global("X3RecRealName","GLOBAL",1)~+ @613 + SpecialP.7 
-++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
-++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
+++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + SpecialP.8 
+++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + SpecialP.9
 ++ @616 + RecP.Talk
 ++ @471 EXIT 
 END 
@@ -1810,8 +1810,8 @@ IF ~~ SpecialP.6
 SAY @619
 = @620
 +~Global("X3RecRealName","GLOBAL",1)~+ @613 + SpecialP.7 
-++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + SpecialP.8 
-++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + SpecialP.9
+++ @614 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + SpecialP.8 
+++ @615 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + SpecialP.9
 ++ @616 + RecP.Talk
 ++ @471 EXIT 
 END 
@@ -1842,14 +1842,14 @@ SAY @625
 = @626
 = @627
 ++ @628 + HarmonP.1 
-++ @629 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + HarmonP.2 
-++ @630 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + HarmonP.3
+++ @629 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + HarmonP.2 
+++ @630 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + HarmonP.3
 END  
 
 IF ~~ HarmonP.1 
 SAY @631
-++ @629 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + HarmonP.2 
-++ @630 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + HarmonP.3 
+++ @629 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + HarmonP.2 
+++ @630 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + HarmonP.3 
 ++ @590  + RecP.Talk 
 ++ @471 EXIT 
 END  
@@ -1873,9 +1873,9 @@ SAY @635
 = @637
 = @638
 = @639
-++ @640 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + CandlekeepP.1 
+++ @640 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + CandlekeepP.1 
 ++ @641 + CandlekeepP.2  
-++ @642 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + CandlekeepP.3
+++ @642 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + CandlekeepP.3
 END 
 
 IF ~~ CandlekeepP.1 
@@ -1929,8 +1929,8 @@ END
 
 IF ~~ RecP.Teach 
 SAY @657
-IF ~Class(Player1,BARD_ALL)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + TeachP.1 
-IF ~CheckStatGT(Player1,14,CON)CheckStatGT(Player1,12,CHR)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@40)~ + TeachP.2 
+IF ~Class(Player1,BARD_ALL)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + TeachP.1 
+IF ~CheckStatGT(Player1,14,CON)CheckStatGT(Player1,12,CHR)~ DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",3)DisplayStringNoNameDlg(Player1,@60040)~ + TeachP.2 
 IF ~OR(2)CheckStatLT(Player1,15,CON)CheckStatLT(Player1,13,CHR)~ + TeachP.3
 END 
 
@@ -1979,14 +1979,14 @@ SAY @674
 = @675
 ++ @676 + NotesP.1
 ++ @677 + NotesP.2 
-++ @678 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~  + NotesP.2 
+++ @678 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~  + NotesP.2 
 END
 
 IF ~~ NotesP.1 
 SAY @679
 ++ @680 + NotesP.3 
 ++ @681 + NotesP.4 
-++ @682 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + NotesP.5
+++ @682 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + NotesP.5
 END  
 
 IF ~~ NotesP.2 
@@ -1994,7 +1994,7 @@ SAY @683
 = @684
 ++ @680 + NotesP.3 
 ++ @681 + NotesP.4 
-++ @682 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@37)~ + NotesP.4
+++ @682 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-3)DisplayStringNoNameDlg(Player1,@60037)~ + NotesP.4
 END  
 
 IF ~~ NotesP.3 
