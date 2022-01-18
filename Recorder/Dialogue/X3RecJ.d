@@ -1031,158 +1031,158 @@ ADD_TRANS_ACTION SLAVLEAD BEGIN 3 END BEGIN END ~SetGlobal("X3RecApprovalChange"
 ADD_TRANS_ACTION SLAVLEAD BEGIN 4 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",5)~ 
 
 I_C_T JHASSO 3 X3RecJHASSO 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600376
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @376
 END 
 
 I_C_T KARAN 2 X3RecKaran
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600377
-== KARAN @600378
-== X3RecJ @600379
-== KARAN @600380
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @377
+== KARAN @378
+== X3RecJ @379
+== KARAN @380
 END
 
 I_C_T KOVERA 1 X3RecKOVERA 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600381
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @381
 END
 
 I_C_T RIELTA 0 X3RecRielta 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600382
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @382
 END
 
 I_C_T ULRAUN 6 X3RecUlraun 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600383
-== ULRAUN @600384
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @383
+== ULRAUN @384
 END
 
 I_C_T TETHTO 2 X3RecTETHTO
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600385
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @385
 END
 
 I_C_T DIARMID 4 X3RecDIARMID4 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600386
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @386
 END
 
 I_C_T NEB 1 X3RecNeb1
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600387
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @387
 END
 
 I_C_T HUSAM 3 X3RecHUSAM
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600388
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @388
 END
 
 I_C_T TAMOKO 2 X3RecTAMOKO 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600389
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @389
 END
 
 I_C_T CYTHAN 5 X3RecCythan 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600390
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @390
 END
 ADD_TRANS_ACTION CYTHAN BEGIN 6 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~
 ADD_TRANS_ACTION CYTHAN BEGIN 7 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",4)~ 
 
 I_C_T DOPDUR3 1 X3RecJDopdur31 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600391
-== DOPDUR3 @600392
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @391
+== DOPDUR3 @392
 END 
 
 I_C_T DOPDUR2 0 X3RecJDopdur20
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600393
-== DOPDUR2 @600394
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @393
+== DOPDUR2 @394
 END 
 
 I_C_T DOPDUR1 0 X3RecJDopdur10
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600395
-== DOPDUR1 @600396
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @395
+== DOPDUR1 @396
 END 
 
 I_C_T DEATH2 2  X3RecDeath22
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600397
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @397
 END
 
 I_C_T Pallon 3 X3RecPallon3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600398
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @398
 END
 
 EXTEND_TOP Brage 2 #7
-+~IsValidForPartyDialog("X3Rec")~+ @600399 EXTERN X3RecJ X3RecBrageR 
++~IsValidForPartyDialog("X3Rec")~+ @399 EXTERN X3RecJ X3RecBrageR 
 END 
 
 CHAIN X3RecJ X3RecBrageR
-@600400
+@400
 COPY_TRANS Brage 2
 
 I_C_T Brage 2 X3RecBrage2
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600401
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @401
 END 
 ADD_TRANS_ACTION Brage BEGIN 4 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",5)~
 ADD_TRANS_ACTION Brage BEGIN 5 END BEGIN END ~SetGlobal("X3RecApprovalChange","GLOBAL",2)~ 
 
 I_C_T CHARLE 8 X3RecCharle8 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600402
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @402
 END 
 
 I_C_T CHARLE 18 X3RecCharle18 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600403
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @403
 END 
 
 I_C_T GALLOR 1 X3RecGallor1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600404
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @404
 END 
 
 I_C_T GALLOR 6 X3RecGallor6
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600405
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @405
 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@60039)~ 
 END 
 
 I_C_T GALLOR 7 X3RecGallor7
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600405
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @405
 DO ~IncrementGlobal("X3RecorderApproval","GLOBAL",-9)DisplayStringNoNameDlg(Player1,@60039)~ 
 END 
 
 I_C_T VOLO 0 X3RecJVOLO0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600406
-== VOLO @600407
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @406
+== VOLO @407
 END
 
 I_C_T DRIENN 1 X3RecDRIENN1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600408
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @408
 END
 
 I_C_T ALBERT 1 X3RecAlbert1 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600409
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @409
 END
 
 I_C_T NOSFER 2 X3RecNOSFER2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600410
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @410
 END
 
 I_C_T GAZIB 0 X3RecGazib0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600411
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @411
 END
 
 I_C_T NARCIL 2 X3RecNARCiL2 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600412
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @412
 END
 
 I_C_T POE 16 X3RecPOE16 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600413
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @413
 END
 
 I_C_T HAFIZ 3 X3RecHafiz3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600414
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @414
 END
 
 I_C_T GALILE 0 X3RecGALiLE0
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600415
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @415
 END
 
 I_C_T DUSHAI 10 X3RecDushai
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600416
-== DUSHAI @600417
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @416
+== DUSHAI @417
 END 
 
 I_C_T CARSA 5 X3RecCarsa 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600418
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @418
 END 
 
 
@@ -1190,29 +1190,29 @@ END
 
 
 EXTEND_TOP CARSA 6 #1
-+~IsValidForPartyDialog("X3Rec")~+ @600419 EXTERN X3RecJ X3RecCarsa2
++~IsValidForPartyDialog("X3Rec")~+ @419 EXTERN X3RecJ X3RecCarsa2
 END 
 
 CHAIN X3RecJ X3RecCarsa2
-@600420
-== CARSA @600421
-== X3RecJ @600422
+@420
+== CARSA @421
+== X3RecJ @422
 DO ~SetGlobal("X3RCarsaTalk","LOCALS",1)~
 EXTERN Carsa 8
 
 CHAIN IF ~Global("X3RCarsaTalk","LOCALS",2)Dead("KAHRK")~ THEN X3RecJ X3RecCarsa3
-@600423
+@423
 DO ~IncrementGlobal("X3RCarsaTalk","LOCALS",1)~
 END 
-++ @600424 + Carsa4
-++ @600425 + Carsa5
-++ @600426 + Carsa6 
+++ @424 + Carsa4
+++ @425 + Carsa5
+++ @426 + Carsa6 
  
 CHAIN X3RecJ Carsa4 
-@600427
+@427
 END 
-++ @600428 + Carsa7
-++ @600429 + Carsa7
+++ @428 + Carsa7
+++ @429 + Carsa7
 ++ @430 + Carsa8
 
 CHAIN X3RecJ Carsa5 
