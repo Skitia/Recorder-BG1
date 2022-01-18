@@ -1009,21 +1009,21 @@ END
 I_C_T GELLAN 0 X3RecGellan0  
 == X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @368
 == Gellan @369
-== X3RecJ @600370 
+== X3RecJ @370 
 END
 
 I_C_T BENTLY 1 X3RecBently1 
-== BENTLY IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600371
-== X3RecJ @600372
+== BENTLY IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @371
+== X3RecJ @372
 END 
 
 I_C_T DRIZZT 0 X3RecDRIZZT0 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600373
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @373
 END 
 
 I_C_T ARCAND 3 X3RecArcand3 
-== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @600374
-== ARCAND @600375
+== X3RecJ IF ~InParty("X3Rec") InMyArea("X3Rec") !StateCheck("X3Rec",CD_STATE_NOTVALID)~ THEN @374
+== ARCAND @375
 END
 
 // For Rill 
