@@ -1732,7 +1732,7 @@ SAY @395
 +~InParty("mkhiin")~+ @409 + Em.MKhiin 
 +~InParty("Voghlin")~+ @410 + Em.Voghlin
 // CrossMod Choices 
-+~InParty("X3Helga")~+ @411 + Em.Helga
++~InParty("X3Helga")~+ @686 + Em.Helga
 +~InParty("X3mily")~+ @412 + Em.Emily
 +~InParty("X3Vien")~+ @411 + Em.Vienxay 
 +~InParty("X3Kale")~+ @413 + Em.Kale 
