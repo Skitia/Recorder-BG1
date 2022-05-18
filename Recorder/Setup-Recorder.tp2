@@ -453,8 +453,8 @@ LAF HANDLE_AUDIO
     sox_path = ~Recorder/music~
 END
 
-//All Optional Additions 
-
+//All Cut Optional Additions 
+/*
 BEGIN @103
 SUBCOMPONENT @104
 
@@ -563,3 +563,4 @@ COPY ~Recorder/cre/X32RecB.cre~ ~override/X32RecB.cre~
   SAY SET_A_TRAP ~~ []
   SAY HIDDEN_IN_SHADOWS ~~ []
   SAY PICKED_POCKET ~~ []
+*/
