@@ -1,6 +1,6 @@
 BACKUP ~Recorder\backup~
 AUTHOR ~https://forums.beamdog.com/profile/Skitia~
-VERSION ~1.49~
+VERSION ~1.5~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
