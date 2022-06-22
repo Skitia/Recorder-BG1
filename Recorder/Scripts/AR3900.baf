@@ -3,11 +3,9 @@ IF
 THEN
 RESPONSE #100
 	SetGlobal("X3RecordCandleKeepSpawn","GLOBAL",2)
-	CreateCreature("X3Rec",[3065.1993],S)
-    ChangeEnemyAlly("X3Rec",NEUTRAL)
-    ChangeSpecifics("X3Rec",ALLIES)
-	ActionOverride("X3Rec",Polymorph("CLERIC_FEMALE_GNOME"))
-	ActionOverride("X3Rec",DestroyItem("X3RPot1"))
+	MoveGlobal("%bg1_eet_symbol%3900","X3Rec",[3065.1993])
+	SmallWait(1)
+	ActionOverride("X3Rec",Face(S))
 	Continue()
 END 
 	
