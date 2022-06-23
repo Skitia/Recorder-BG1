@@ -1,6 +1,11 @@
 BEGIN X32Rec
 // Recorder  before joining.  
 
+CHAIN IF ~AreaCheck("bd4300")GlobalGT("bd_plot","global",585)~ THEN X32Rec SoD.BattleOver 
+@50
+EXIT
+
+
 CHAIN IF WEIGHT #-1 ~Global("X32RecMet","GLOBAL",0)BeenInParty("X3Rec")!AreaCheck("BD0120")!AreaCheck("BD0130")~ THEN X32Rec p1a
 @0
 DO ~SetGlobal("X32RecMet","GLOBAL",1)~ 
@@ -159,11 +164,6 @@ DO ~SetGlobal("bd_joined","locals",0)~ EXIT
 CHAIN X32Rec n.3
 @49
 DO ~JoinParty()~ EXIT
-
-CHAIN IF ~AreaCheck("bd4300")GlobalGT("bd_plot","global",585)~ THEN X32Rec SoD.BattleOver 
-@50
-EXIT
-
 
 //Rejoin Recorder
 
