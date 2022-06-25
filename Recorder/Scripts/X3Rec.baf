@@ -346,27 +346,18 @@ StartDialogueNoSet(Player1)
 END
 
 // Approval Shifts and -90 Conversation. 
-IF
-GlobalGT("X3RecorderApproval","GLOBAL",74)
-Global("X3Luck","GLOBAL",0)
-THEN RESPONSE #100 
-SetGlobal("X3Luck","GLOBAL",1)
-ChangeStat(Myself,LUCK,1,ADD)
-END
-
-IF
-GlobalLT("X3RecorderApproval","GLOBAL",75)
-Global("X3Luck","GLOBAL",1)
-THEN RESPONSE #100 
-SetGlobal("X3Luck","GLOBAL",0)
-ChangeStat(Myself,LUCK,-1,ADD)
-END
-
-IF
+IF 
 GlobalGT("X3RecorderApproval","GLOBAL",90)
-THEN RESPONSE #100 
+InParty(Myself)
+Switch("X3RecorderAppMaxBonus","LOCALS")
+THEN RESPONSE #0
 SetGlobal("X3RecorderApproval","GLOBAL",90)
-END
+SetGlobal("X3RecorderAppMaxBonus","LOCALS",1)
+ChangeStat(Myself,INT,1,ADD)
+DisplayStringNoNameDlg(Player1,@40099)
+RESPONSE #1 
+SetGlobal("X3RecorderApproval","GLOBAL",90)
+END 
 
 IF 
 GlobalLT("X3RecorderApproval","GLOBAL",-89)
