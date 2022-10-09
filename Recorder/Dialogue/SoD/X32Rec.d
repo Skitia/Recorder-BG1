@@ -24,8 +24,8 @@ END
 +~PartyHasItem("X3RLetB")~+ @4 + pletterB 
 +~PartyHasItem("X3RLetB")~+ @3 + pletterA
 +~PartyHasItem("X3RLet")~+ @4 + pletterB 
-+~OR(2)!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @5 + pintroduce
-+~OR(2)!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @6 + pbye2
++~!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @5 + pintroduce
++~!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @6 + pbye2
 
 CHAIN X32Rec pknow 
 @7
@@ -35,13 +35,13 @@ END
 +~PartyHasItem("X3RLetB")~+ @8 + pletterB 
 +~PartyHasItem("X3RLet")~+ @9 + pletterA 
 +~PartyHasItem("X3RLetB")~+ @9 + pletterB 
-+~OR(2)!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @10 + pjoin
-+~OR(2)!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @11 + pare
-+~OR(2)!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @12 + pbye2
++~!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @10 + pjoin
++~!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @11 + pare
++~!PartyHasItem("X3RLet")!PartyHasItem("X3RLetB")~+ @12 + pbye2
 
 CHAIN X32Rec pletterA
 @13
-DO ~TakePartyItem("X3RLet")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
+DO ~TakePartyItem("X3RLet")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)SetGlobal("X32RecInBG1","GLOBAL",1)~ 
 END 
 ++ @14 + pbye 
 ++ @15 + pjoin
@@ -49,7 +49,7 @@ END
 
 CHAIN X32Rec pletterB
 @17
-DO ~TakePartyItem("X3RLetB")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)~ 
+DO ~TakePartyItem("X3RLetB")ActionOverride(Player1,CreateItem("X3RPOT1",0,0,0))AddJournalEntry(@40022,QUEST_DONE)SetGlobal("RecorderQuestThree","GLOBAL",1)SetGlobal("X32RecInBG1","GLOBAL",1)~ 
 END 
 ++ @14 + pbye 
 ++ @15 + pjoin
