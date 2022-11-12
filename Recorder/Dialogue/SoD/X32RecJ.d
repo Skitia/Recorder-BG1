@@ -251,7 +251,7 @@ SAY @89
 IF ~~ + Talk4.10 
 END 
 
-IF ~Global("X32RecTalk","GLOBAL",10)~ Talk4.10
+IF ~~ Talk4.10
 SAY @90
 IF ~~ EXIT 
 END 
