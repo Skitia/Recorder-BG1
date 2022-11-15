@@ -542,10 +542,10 @@ END
 IF ~Global("X32RecTalk","GLOBAL",14)~ Talk7 
 SAY @184
 +~!Global("X32RecRomanceActive","GLOBAL",2)~+ @185 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.1 
-+~Global("X32milyRomanceActive","GLOBAL",2)~+ @186 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.2 
++~Global("X32RecRomanceActive","GLOBAL",2)~+ @186 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.2 
 +~!Global("X32RecRomanceActive","GLOBAL",2)~+ @187 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.3 
-+~Global("X32milyRomanceActive","GLOBAL",2)~+ @187 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.4 
-++ @188 + Talk7.5
++~Global("X32RecRomanceActive","GLOBAL",2)~+ @187 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.4 
+++ @188 DO ~IncrementGlobal("X32RecTalk","GLOBAL",1)~ + Talk7.5
 END 
 
 IF ~~ Talk7.1 
