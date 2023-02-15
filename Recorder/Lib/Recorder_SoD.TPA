@@ -3,7 +3,7 @@
 //////////////////////////Siege of Dragonspear////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-
+LOAD_TRA ~%MOD_FOLDER%/Tra/%LANGUAGE%/Recorder_SoD.tra~
 //CREATURES
 
 COPY ~Recorder/cre/X32Rec.cre~ ~override/X32Rec.cre~
@@ -153,5 +153,7 @@ SAY NAME1 @43
 SAY NAME2 @43
   WRITE_ASCII 0x248 ~X32RB6~ #8  //override script
   WRITE_ASCII 0x280 ~X32RB6~ #32  //DV
-  WRITE_ASCII 0x2cc ~X32RB6~ #8   //pre-joining dialogue file  
+  WRITE_ASCII 0x2cc ~X32RB6~ #8   //pre-joining dialogue file 
+  
+   LOAD_TRA ~%MOD_FOLDER%/Tra/%LANGUAGE%/Setup.tra~
   
